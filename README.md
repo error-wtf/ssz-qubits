@@ -783,10 +783,10 @@ A: A coherent zone is a height range where Xi variation stays below a certain to
 
 ### Primary Literature
 
-1. Casu, L. & Wrede, C. (2025). "Segmented Spacetime: A Discrete Framework for Quantum Gravity"
-2. Casu, L. & Wrede, C. (2025). "SSZ Applications in Quantum Computing"
+1. Casu, L. & Wrede, C. (2025). "Segmented Spacetime: A Discrete Framework for Quantum Gravity" *(in preparation)*
+2. Casu, L. & Wrede, C. (2025). "SSZ Applications in Quantum Computing" *(in preparation)*
 
-### Experimental Validation
+### Experimental Validation (used for SSZ validation)
 
 3. Pound, R.V. & Rebka, G.A. (1960). "Apparent Weight of Photons". Physical Review Letters, 4(7), 337-341.
 4. Chou, C.W. et al. (2010). "Optical Clocks and Relativity". Science, 329(5999), 1630-1633.
