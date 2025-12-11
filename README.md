@@ -3,6 +3,7 @@
 [![License: ACSL](https://img.shields.io/badge/License-Anti--Capitalist-red.svg)](LICENSE)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![Tests: 74/74](https://img.shields.io/badge/Tests-74%2F74%20Passed-brightgreen.svg)](tests/)
+[![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-orange.svg)](CONTRIBUTING.md)
 
 ---
 
@@ -23,7 +24,8 @@
 13. [Project Structure](#project-structure)
 14. [FAQ](#faq)
 15. [References](#references)
-16. [Authors & License](#authors--license)
+16. [Contributing](#contributing)
+17. [Authors & License](#authors--license)
 
 ---
 
@@ -796,6 +798,36 @@ A: A coherent zone is a height range where Xi variation stays below a certain to
 
 6. Ashby, N. (2003). "Relativity in the Global Positioning System". Living Reviews in Relativity, 6(1).
 7. Will, C.M. (2014). "The Confrontation between General Relativity and Experiment". Living Reviews in Relativity, 17(1).
+
+---
+
+## Contributing
+
+We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
+
+### Quick Start for Contributors
+
+```bash
+# Fork and clone
+git clone https://github.com/YOUR_USERNAME/ssz-qubits.git
+cd ssz-qubits
+
+# Create feature branch
+git checkout -b feature/your-feature
+
+# Make changes, then test
+python run_tests.py
+
+# Submit pull request
+```
+
+### Areas for Contribution
+
+- 🔬 **Experimental validation** with real qubit hardware
+- 🔗 **Integration** with Qiskit, Cirq, or other quantum frameworks
+- 📚 **Documentation** improvements and tutorials
+- 🧪 **Additional tests** and edge cases
+- 🚀 **Performance** optimizations
 
 ---
 
