@@ -67,8 +67,12 @@ SSZ quantifies these effects and enables their compensation.
 **Even micrometer-scale height differences between qubits lead to measurable effects!**
 
 ```
-1 μm height difference -> ΔXi ~ 10⁻²²
-1 mm height difference -> ΔXi ~ 10⁻¹⁹ -> ~0.01 ps/s desynchronization
+1 μm height difference -> ΔXi ~ 10⁻²² -> ~10⁻²² s/s time drift
+1 mm height difference -> ΔXi ~ 10⁻¹⁹ -> ~10⁻¹⁹ s/s (0.1 attosecond/s) time drift
+
+Note: These effects are extremely small at Earth's surface but accumulate 
+over millions of gate operations. For satellite-to-ground links (Δh ~ 400 km),
+the effect becomes significant: ΔXi ~ 10⁻¹¹ -> ~1.4 rad/s phase drift at 5 GHz.
 ```
 
 These effects are often dismissed as "hardware drift" or "unexplained decoherence" in classical qubit physics.
