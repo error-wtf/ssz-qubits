@@ -808,6 +808,7 @@ A: A coherent zone is a height range where Xi variation stays below a certain to
 
 ### Contact
 
+- Email: [mail@error.wtf](mailto:mail@error.wtf)
 - GitHub: [github.com/error-wtf](https://github.com/error-wtf)
 - Repository: [github.com/error-wtf/ssz-qubits](https://github.com/error-wtf/ssz-qubits)
 
