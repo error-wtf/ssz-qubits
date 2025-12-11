@@ -4,6 +4,7 @@
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![Tests: 74/74](https://img.shields.io/badge/Tests-74%2F74%20Passed-brightgreen.svg)](tests/)
 [![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-orange.svg)](CONTRIBUTING.md)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/error-wtf/ssz-qubits/blob/main/SSZ_Qubits_Colab.ipynb)
 
 ---
 
