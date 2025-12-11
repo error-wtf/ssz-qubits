@@ -6,179 +6,179 @@
 
 ---
 
-## Inhaltsverzeichnis
+## Table of Contents
 
-1. [Ueberblick](#ueberblick)
-2. [Das Problem](#das-problem)
-3. [Die SSZ-Loesung](#die-ssz-loesung)
-4. [Theoretische Grundlagen](#theoretische-grundlagen)
+1. [Overview](#overview)
+2. [The Problem](#the-problem)
+3. [The SSZ Solution](#the-ssz-solution)
+4. [Theoretical Foundations](#theoretical-foundations)
 5. [Installation](#installation)
-6. [Schnellstart](#schnellstart)
-7. [API-Referenz](#api-referenz)
-8. [Anwendungsbeispiele](#anwendungsbeispiele)
-9. [Test-Suite](#test-suite)
-10. [Visualisierungen](#visualisierungen)
-11. [Physikalische Ergebnisse](#physikalische-ergebnisse)
-12. [Experimentelle Validierung](#experimentelle-validierung)
-13. [Projektstruktur](#projektstruktur)
+6. [Quick Start](#quick-start)
+7. [API Reference](#api-reference)
+8. [Application Examples](#application-examples)
+9. [Test Suite](#test-suite)
+10. [Visualizations](#visualizations)
+11. [Physical Results](#physical-results)
+12. [Experimental Validation](#experimental-validation)
+13. [Project Structure](#project-structure)
 14. [FAQ](#faq)
-15. [Referenzen](#referenzen)
-16. [Autoren & Lizenz](#autoren--lizenz)
+15. [References](#references)
+16. [Authors & License](#authors--license)
 
 ---
 
-## Ueberblick
+## Overview
 
-**SSZ-Qubits** wendet das Segmented Spacetime (SSZ) Framework auf Quantencomputing an. Es bietet Werkzeuge zur Analyse und Minimierung gravitativer Effekte auf Qubit-Systeme.
+**SSZ-Qubits** applies the Segmented Spacetime (SSZ) framework to quantum computing. It provides tools for analyzing and minimizing gravitational effects on qubit systems.
 
-> **"Die Qubits leben nicht nur im Raum, sondern auch in Segmenten der Raumzeit."**
+> **"Qubits don't just exist in space—they exist in segments of spacetime."**
 
-### Was ist SSZ?
+### What is SSZ?
 
-SSZ (Segmented Spacetime / Segmentierte Raumzeit) ist ein theoretisches Framework, das Raumzeit als **diskrete Struktur** behandelt, anstatt als kontinuierliches Gebilde wie in der klassischen Allgemeinen Relativitaetstheorie (ART).
+SSZ (Segmented Spacetime) is a theoretical framework that treats spacetime as a **discrete structure**, rather than a continuous manifold as in classical General Relativity (GR).
 
-### Warum ist das fuer Qubits relevant?
+### Why is this relevant for qubits?
 
-Qubits sind extrem empfindlich gegenueber:
-- Zeitdilatation durch Gravitationsfelder
-- Phasenverschiebungen durch Hoehendifferenzen
-- Decoherence durch Segment-Mismatch
+Qubits are extremely sensitive to:
+- Time dilation from gravitational fields
+- Phase shifts from height differences
+- Decoherence from segment mismatch
 
-SSZ quantifiziert diese Effekte und ermoeglicht deren Kompensation.
+SSZ quantifies these effects and enables their compensation.
 
 ---
 
-## Das Problem
+## The Problem
 
-### Klassische Qubit-Probleme
+### Classical Qubit Problems
 
-| Problem | Beschreibung | Auswirkung |
-|---------|--------------|------------|
-| **Decoherence** | Verlust der Quantenkohaerenz | Fehler in Berechnungen |
-| **Timing-Fehler** | Asynchrone Gate-Operationen | Falsche Ergebnisse |
-| **Raeumlicher Drift** | Positionsabhaengige Phasenfehler | Unvorhersagbare Fehler |
-| **Gravitationsgradienten** | Hoehenabhaengige Zeitdilatation | Systematische Fehler |
+| Problem | Description | Impact |
+|---------|-------------|--------|
+| **Decoherence** | Loss of quantum coherence | Computational errors |
+| **Timing errors** | Asynchronous gate operations | Wrong results |
+| **Spatial drift** | Position-dependent phase errors | Unpredictable errors |
+| **Gravitational gradients** | Height-dependent time dilation | Systematic errors |
 
-### Das uebersehene Problem
+### The Overlooked Problem
 
-**Selbst Mikrometer-Hoehendifferenzen zwischen Qubits fuehren zu messbaren Effekten!**
+**Even micrometer-scale height differences between qubits lead to measurable effects!**
 
 ```
-1 um Hoehendifferenz -> Delta Xi ~ 10^-22
-1 mm Hoehendifferenz -> Delta Xi ~ 10^-19 -> ~0.01 ps/s Desynchronisation
+1 μm height difference -> ΔXi ~ 10⁻²²
+1 mm height difference -> ΔXi ~ 10⁻¹⁹ -> ~0.01 ps/s desynchronization
 ```
 
-Diese Effekte werden in der klassischen Qubit-Physik oft als "Hardware-Drift" oder "unerklärliche Decoherence" abgetan.
+These effects are often dismissed as "hardware drift" or "unexplained decoherence" in classical qubit physics.
 
 ---
 
-## Die SSZ-Loesung
+## The SSZ Solution
 
-SSZ bietet ein geometrisches Framework mit:
+SSZ provides a geometric framework with:
 
 ### 1. Segment Density Xi(r)
-Quantifiziert die lokale Raumzeit-Struktur:
+Quantifies the local spacetime structure:
 ```
 Xi(r) = r_s / (2r)
 ```
-wobei r_s der Schwarzschild-Radius ist.
+where r_s is the Schwarzschild radius.
 
 ### 2. SSZ Time Dilation D_SSZ
-Bestimmt lokale Uhrenraten:
+Determines local clock rates:
 ```
 D_SSZ = 1 / (1 + Xi)
 ```
 
-### 3. Segment-Kohaerente Zonen
-Definiert optimale Qubit-Platzierungsbereiche, in denen Xi-Variation minimal ist.
+### 3. Segment-Coherent Zones
+Defines optimal qubit placement regions where Xi variation is minimal.
 
 ### 4. Geometry-Aware QEC
-Ermoeglicht gravitationsbewusste Fehlerkorrektur.
+Enables gravity-aware quantum error correction.
 
-### 5. Golden Ratio phi
-Steuert die Segment-Saettigung in starken Feldern:
+### 5. Golden Ratio φ
+Controls segment saturation in strong fields:
 ```
-phi = (1 + sqrt(5)) / 2 = 1.618033988749895
+φ = (1 + √5) / 2 = 1.618033988749895
 ```
 
 ---
 
-## Theoretische Grundlagen
+## Theoretical Foundations
 
-### Zwei SSZ-Regime
+### Two SSZ Regimes
 
-SSZ unterscheidet zwei Regime basierend auf der Feldstaerke:
+SSZ distinguishes two regimes based on field strength:
 
-#### Weak Field (r/r_s > 100) - Anwendbar auf der Erde
+#### Weak Field (r/r_s > 100) - Applicable on Earth
 
 ```
 Xi(r) = r_s / (2r)
-dXi/dr = -r_s / (2r^2)
-D_SSZ = 1 / (1 + Xi) ≈ 1 - Xi + O(Xi^2)
+dXi/dr = -r_s / (2r²)
+D_SSZ = 1 / (1 + Xi) ≈ 1 - Xi + O(Xi²)
 ```
 
-**Beispiel Erde:**
+**Example Earth:**
 - r_s = 8.87 mm
-- r = 6.371e6 m (Erdradius)
-- Xi = 6.96e-10
+- r = 6.371×10⁶ m (Earth radius)
+- Xi = 6.96×10⁻¹⁰
 - D_SSZ = 0.999999999303892
 
-#### Strong Field (r/r_s < 100) - Nahe Schwarzen Loechern
+#### Strong Field (r/r_s < 100) - Near Black Holes
 
 ```
-Xi(r) = 1 - exp(-phi * r / r_s)
-dXi/dr = (phi / r_s) * exp(-phi * r / r_s)
+Xi(r) = 1 - exp(-φ × r / r_s)
+dXi/dr = (φ / r_s) × exp(-φ × r / r_s)
 ```
 
-**Wichtig:** Im Strong Field bleibt D_SSZ **finite** am Horizont (D_SSZ ≈ 0.555), waehrend die ART eine Singularitaet vorhersagt.
+**Important:** In the strong field, D_SSZ remains **finite** at the horizon (D_SSZ ≈ 0.555), while GR predicts a singularity.
 
-### Fundamentale Konstanten
+### Fundamental Constants
 
-| Konstante | Symbol | Wert | Einheit |
-|-----------|--------|------|---------|
-| Lichtgeschwindigkeit | c | 299792458 | m/s |
-| Gravitationskonstante | G | 6.67430e-11 | m³/(kg·s²) |
-| Planck-Konstante | ℏ | 1.054571817e-34 | J·s |
+| Constant | Symbol | Value | Unit |
+|----------|--------|-------|------|
+| Speed of light | c | 299792458 | m/s |
+| Gravitational constant | G | 6.67430×10⁻¹¹ | m³/(kg·s²) |
+| Planck constant | ℏ | 1.054571817×10⁻³⁴ | J·s |
 | Golden Ratio | φ | 1.6180339887498948 | - |
-| Erdmasse | M_E | 5.972e24 | kg |
-| Erdradius | R_E | 6.371e6 | m |
+| Earth mass | M_E | 5.972×10²⁴ | kg |
+| Earth radius | R_E | 6.371×10⁶ | m |
 
-### Schwarzschild-Radius
+### Schwarzschild Radius
 
 ```
 r_s = 2GM / c²
 ```
 
-| Objekt | Schwarzschild-Radius |
+| Object | Schwarzschild Radius |
 |--------|---------------------|
-| Erde | 8.87 mm |
-| Sonne | 2.95 km |
-| Sagittarius A* | 12 Mio km |
+| Earth | 8.87 mm |
+| Sun | 2.95 km |
+| Sagittarius A* | 12 million km |
 
 ---
 
 ## Installation
 
-### Voraussetzungen
+### Requirements
 
-- Python 3.8 oder hoeher
+- Python 3.8 or higher
 - pip (Python Package Manager)
 
 ### Installation
 
 ```bash
-# Repository klonen
+# Clone repository
 git clone https://github.com/error-wtf/ssz-qubits.git
 cd ssz-qubits
 
-# Abhaengigkeiten installieren
+# Install dependencies
 pip install -r requirements.txt
 
-# Installation verifizieren
-python -c "from ssz_qubits import *; print('SSZ-Qubits erfolgreich installiert!')"
+# Verify installation
+python -c "from ssz_qubits import *; print('SSZ-Qubits successfully installed!')"
 ```
 
-### Abhaengigkeiten
+### Dependencies
 
 ```
 numpy>=1.20.0
@@ -186,54 +186,54 @@ pytest>=7.0.0
 matplotlib>=3.5.0
 ```
 
-### Tests ausfuehren
+### Run Tests
 
 ```bash
-# Alle Tests
+# All tests
 python run_tests.py
 
-# Oder mit pytest
+# Or with pytest
 pytest tests/ -v
 ```
 
-Erwartete Ausgabe:
+Expected output:
 ```
 ============================= 74 passed in 0.54s ==============================
 ```
 
 ---
 
-## Schnellstart
+## Quick Start
 
-### Minimales Beispiel
+### Minimal Example
 
 ```python
 from ssz_qubits import Qubit, QubitPair, analyze_qubit_segment, qubit_pair_segment_mismatch
 
-# Qubit auf Meereshoehe erstellen
+# Create qubit at sea level
 q1 = Qubit(id="Q1", x=0, y=0, z=0)
 
-# Qubit 1 cm hoeher erstellen
+# Create qubit 1 cm higher
 q2 = Qubit(id="Q2", x=0, y=0, z=0.01)
 
-# Einzelnes Qubit analysieren
+# Analyze single qubit
 analysis = analyze_qubit_segment(q1)
 print(f"Xi = {analysis.xi:.6e}")
 print(f"D_SSZ = {analysis.time_dilation:.15f}")
 
-# Qubit-Paar analysieren
+# Analyze qubit pair
 pair = QubitPair(q1, q2)
 mismatch = qubit_pair_segment_mismatch(pair)
 print(f"Delta Xi = {mismatch['delta_xi']:.6e}")
 ```
 
-### Interaktive Demo
+### Interactive Demo
 
 ```bash
 python demo.py
 ```
 
-Die Demo zeigt 9 verschiedene Anwendungsfaelle:
+The demo shows 9 different use cases:
 1. Basic SSZ Physics
 2. Single Qubit Analysis
 3. Qubit Pair Mismatch
@@ -246,66 +246,66 @@ Die Demo zeigt 9 verschiedene Anwendungsfaelle:
 
 ---
 
-## API-Referenz
+## API Reference
 
-### Konstanten
+### Constants
 
 ```python
 from ssz_qubits import C, G, HBAR, M_EARTH, R_EARTH, PHI
 
-C        # Lichtgeschwindigkeit [m/s]
-G        # Gravitationskonstante [m³/(kg·s²)]
-HBAR     # Reduzierte Planck-Konstante [J·s]
-M_EARTH  # Erdmasse [kg]
-R_EARTH  # Erdradius [m]
+C        # Speed of light [m/s]
+G        # Gravitational constant [m³/(kg·s²)]
+HBAR     # Reduced Planck constant [J·s]
+M_EARTH  # Earth mass [kg]
+R_EARTH  # Earth radius [m]
 PHI      # Golden Ratio
 ```
 
-### Kernfunktionen
+### Core Functions
 
 #### `schwarzschild_radius(M)`
-Berechnet den Schwarzschild-Radius.
+Calculates the Schwarzschild radius.
 ```python
 r_s = schwarzschild_radius(M_EARTH)  # 8.87e-3 m
 ```
 
 #### `xi_segment_density(r, M, regime='auto')`
-Berechnet die Segment Density Xi.
+Calculates the segment density Xi.
 ```python
 xi = xi_segment_density(R_EARTH, M_EARTH)  # 6.96e-10
-xi = xi_segment_density(r, M, regime='weak')   # Erzwingt Weak Field
-xi = xi_segment_density(r, M, regime='strong') # Erzwingt Strong Field
+xi = xi_segment_density(r, M, regime='weak')   # Force weak field
+xi = xi_segment_density(r, M, regime='strong') # Force strong field
 ```
 
 #### `xi_gradient(r, M, regime='auto')`
-Berechnet den Gradienten dXi/dr.
+Calculates the gradient dXi/dr.
 ```python
 grad = xi_gradient(R_EARTH, M_EARTH)  # -1.09e-16 /m
 ```
 
 #### `ssz_time_dilation(r, M)`
-Berechnet die SSZ-Zeitdilatation D_SSZ.
+Calculates SSZ time dilation D_SSZ.
 ```python
 d = ssz_time_dilation(R_EARTH, M_EARTH)  # 0.999999999303892
 ```
 
-### Qubit-Klassen
+### Qubit Classes
 
 #### `Qubit`
 ```python
 from ssz_qubits import Qubit
 
 q = Qubit(
-    id="Q1",              # Eindeutige ID
-    x=0,                  # X-Position [m]
-    y=0,                  # Y-Position [m]
-    z=0,                  # Hoehe ueber Referenz [m]
-    coherence_time_T2=100e-6,  # T2-Zeit [s] (Standard: 100 us)
-    gate_time=50e-9       # Gate-Zeit [s] (Standard: 50 ns)
+    id="Q1",              # Unique ID
+    x=0,                  # X position [m]
+    y=0,                  # Y position [m]
+    z=0,                  # Height above reference [m]
+    coherence_time_T2=100e-6,  # T2 time [s] (default: 100 μs)
+    gate_time=50e-9       # Gate time [s] (default: 50 ns)
 )
 
-# Eigenschaften
-q.radius_from_earth_center  # Abstand vom Erdmittelpunkt
+# Properties
+q.radius_from_earth_center  # Distance from Earth center
 ```
 
 #### `QubitPair`
@@ -314,148 +314,148 @@ from ssz_qubits import QubitPair
 
 pair = QubitPair(q1, q2)
 
-# Eigenschaften
-pair.separation          # Raeumliche Trennung [m]
-pair.height_difference   # Hoehendifferenz [m]
+# Properties
+pair.separation          # Spatial separation [m]
+pair.height_difference   # Height difference [m]
 ```
 
-### Analyse-Funktionen
+### Analysis Functions
 
 #### `analyze_qubit_segment(qubit, M)`
 ```python
 analysis = analyze_qubit_segment(q, M_EARTH)
-# Rueckgabe: SegmentAnalysis mit:
-#   .xi              - Segment Density
+# Returns: SegmentAnalysis with:
+#   .xi              - Segment density
 #   .gradient        - dXi/dr
 #   .time_dilation   - D_SSZ
-#   .radius          - Abstand vom Zentrum
+#   .radius          - Distance from center
 ```
 
 #### `qubit_pair_segment_mismatch(pair, M)`
 ```python
 mismatch = qubit_pair_segment_mismatch(pair, M_EARTH)
-# Rueckgabe: Dict mit:
-#   'delta_xi'              - Xi-Differenz
-#   'delta_time_dilation'   - D_SSZ-Differenz
-#   'phase_drift_per_gate'  - Phasendrift pro Gate
-#   'decoherence_enhancement' - Decoherence-Faktor
+# Returns: Dict with:
+#   'delta_xi'              - Xi difference
+#   'delta_time_dilation'   - D_SSZ difference
+#   'phase_drift_per_gate'  - Phase drift per gate
+#   'decoherence_enhancement' - Decoherence factor
 ```
 
 #### `segment_coherent_zone(center_height, max_xi_variation, M)`
 ```python
 h_min, h_max = segment_coherent_zone(0, 1e-18, M_EARTH)
-# Rueckgabe: Tuple (min_hoehe, max_hoehe) in Metern
+# Returns: Tuple (min_height, max_height) in meters
 ```
 
 #### `optimize_qubit_array(n, base_height, max_separation)`
 ```python
 qubits = optimize_qubit_array(16, base_height=0, max_separation=1e-3)
-# Rueckgabe: Liste von n optimiert platzierten Qubits
+# Returns: List of n optimally placed qubits
 ```
 
 #### `array_segment_uniformity(qubits, M)`
 ```python
 uniformity = array_segment_uniformity(qubits, M_EARTH)
-# Rueckgabe: Dict mit:
-#   'xi_mean'      - Mittleres Xi
-#   'xi_std'       - Standardabweichung
+# Returns: Dict with:
+#   'xi_mean'      - Mean Xi
+#   'xi_std'       - Standard deviation
 #   'xi_min'       - Minimum
 #   'xi_max'       - Maximum
-#   'xi_range'     - Spannweite
-#   'uniformity'   - Uniformitaets-Score (0-1)
+#   'xi_range'     - Range
+#   'uniformity'   - Uniformity score (0-1)
 ```
 
-### Gate-Timing-Funktionen
+### Gate Timing Functions
 
 #### `gate_timing_correction(qubit, M)`
 ```python
 correction = gate_timing_correction(q, M_EARTH)
-# Rueckgabe: Korrekturfaktor fuer Gate-Zeit
+# Returns: Correction factor for gate time
 ```
 
 #### `two_qubit_gate_timing(pair, M)`
 ```python
 timing = two_qubit_gate_timing(pair, M_EARTH)
-# Rueckgabe: Dict mit:
-#   'optimal_gate_time'  - Optimale Gate-Dauer
-#   'timing_asymmetry'   - Benoetigte Timing-Asymmetrie
-#   'max_fidelity_loss'  - Maximaler Fidelity-Verlust
-#   'd_qubit_a'          - D_SSZ fuer Qubit A
-#   'd_qubit_b'          - D_SSZ fuer Qubit B
+# Returns: Dict with:
+#   'optimal_gate_time'  - Optimal gate duration
+#   'timing_asymmetry'   - Required timing asymmetry
+#   'max_fidelity_loss'  - Maximum fidelity loss
+#   'd_qubit_a'          - D_SSZ for qubit A
+#   'd_qubit_b'          - D_SSZ for qubit B
 ```
 
-### Decoherence-Funktionen
+### Decoherence Functions
 
 #### `ssz_decoherence_rate(qubit, M)`
 ```python
 gamma = ssz_decoherence_rate(q, M_EARTH)
-# Rueckgabe: SSZ-bedingte Decoherence-Rate [1/s]
+# Returns: SSZ-induced decoherence rate [1/s]
 ```
 
 #### `effective_T2(qubit, M)`
 ```python
 T2_eff = effective_T2(q, M_EARTH)
-# Rueckgabe: Effektive T2-Zeit unter SSZ-Einfluss [s]
+# Returns: Effective T2 time under SSZ influence [s]
 ```
 
 #### `pair_decoherence_time(pair, M)`
 ```python
 T2_pair = pair_decoherence_time(pair, M_EARTH)
-# Rueckgabe: Paar-Decoherence-Zeit [s]
+# Returns: Pair decoherence time [s]
 ```
 
 ---
 
-## Anwendungsbeispiele
+## Application Examples
 
-### 1. Qubit-Platzierungsoptimierung
+### 1. Qubit Placement Optimization
 
-**Problem:** Minimiere SSZ-Mismatch zwischen Qubits in einem Array.
+**Problem:** Minimize SSZ mismatch between qubits in an array.
 
 ```python
 from ssz_qubits import optimize_qubit_array, array_segment_uniformity, M_EARTH
 
-# 100-Qubit-Array optimieren
+# Optimize 100-qubit array
 qubits = optimize_qubit_array(100, base_height=0, max_separation=5e-3)
 
-# Uniformitaet pruefen
+# Check uniformity
 uniformity = array_segment_uniformity(qubits, M_EARTH)
-print(f"Xi-Uniformitaet: {uniformity['uniformity']:.6f}")
-print(f"Xi-Spannweite: {uniformity['xi_range']:.6e}")
+print(f"Xi uniformity: {uniformity['uniformity']:.6f}")
+print(f"Xi range: {uniformity['xi_range']:.6e}")
 ```
 
-### 2. Kohaerente Zone finden
+### 2. Finding Coherent Zones
 
-**Problem:** Finde den Hoehenbereich, in dem Xi-Variation unter einer Toleranz bleibt.
+**Problem:** Find the height range where Xi variation stays below a tolerance.
 
 ```python
 from ssz_qubits import segment_coherent_zone, M_EARTH
 
-# Zone mit Toleranz 10^-18 finden
+# Find zone with tolerance 10⁻¹⁸
 h_min, h_max = segment_coherent_zone(0, 1e-18, M_EARTH)
-print(f"Kohaerente Zone: {h_min*1e6:.1f} um bis {h_max*1e6:.1f} um")
-print(f"Zonenbreite: {(h_max-h_min)*1e6:.1f} um")
+print(f"Coherent zone: {h_min*1e6:.1f} μm to {h_max*1e6:.1f} μm")
+print(f"Zone width: {(h_max-h_min)*1e6:.1f} μm")
 ```
 
-### 3. Gate-Timing korrigieren
+### 3. Gate Timing Correction
 
-**Problem:** Kompensiere Zeitdilatation bei Zwei-Qubit-Gates.
+**Problem:** Compensate time dilation in two-qubit gates.
 
 ```python
 from ssz_qubits import Qubit, QubitPair, two_qubit_gate_timing, M_EARTH
 
 q1 = Qubit(id="Q1", x=0, y=0, z=0, gate_time=50e-9)
-q2 = Qubit(id="Q2", x=0, y=0, z=10e-3, gate_time=50e-9)  # 10 mm hoeher
+q2 = Qubit(id="Q2", x=0, y=0, z=10e-3, gate_time=50e-9)  # 10 mm higher
 pair = QubitPair(q1, q2)
 
 timing = two_qubit_gate_timing(pair, M_EARTH)
-print(f"Optimale Gate-Zeit: {timing['optimal_gate_time']*1e9:.6f} ns")
-print(f"Timing-Asymmetrie: {timing['timing_asymmetry']:.6e}")
+print(f"Optimal gate time: {timing['optimal_gate_time']*1e9:.6f} ns")
+print(f"Timing asymmetry: {timing['timing_asymmetry']:.6e}")
 ```
 
-### 4. Decoherence analysieren
+### 4. Decoherence Analysis
 
-**Problem:** Bestimme den SSZ-Beitrag zur Decoherence.
+**Problem:** Determine the SSZ contribution to decoherence.
 
 ```python
 from ssz_qubits import Qubit, ssz_decoherence_rate, effective_T2, M_EARTH
@@ -465,231 +465,232 @@ q = Qubit(id="Q1", x=0, y=0, z=0, coherence_time_T2=100e-6)
 gamma = ssz_decoherence_rate(q, M_EARTH)
 T2_eff = effective_T2(q, M_EARTH)
 
-print(f"Intrinsische T2: {q.coherence_time_T2*1e6:.1f} us")
-print(f"Effektive T2: {T2_eff*1e6:.3f} us")
-print(f"SSZ-Beitrag: {(1 - T2_eff/q.coherence_time_T2)*100:.2f}%")
+print(f"Intrinsic T2: {q.coherence_time_T2*1e6:.1f} μs")
+print(f"Effective T2: {T2_eff*1e6:.3f} μs")
+print(f"SSZ contribution: {(1 - T2_eff/q.coherence_time_T2)*100:.2f}%")
 ```
 
-### 5. Quantenkommunikation synchronisieren
+### 5. Quantum Communication Synchronization
 
-**Problem:** Berechne Zeitdrift zwischen entfernten Qubits.
+**Problem:** Calculate time drift between remote qubits.
 
 ```python
-from ssz_qubits import Qubit, ssz_time_dilation, R_EARTH, M_EARTH
+from ssz_qubits import ssz_time_dilation, R_EARTH, M_EARTH
 
-# Zwei Stationen mit 100 m Hoehendifferenz
-h1 = 0       # Meereshoehe
-h2 = 100     # 100 m hoeher
+# Two stations with 100 m height difference
+h1 = 0       # Sea level
+h2 = 100     # 100 m higher
 
 d1 = ssz_time_dilation(R_EARTH + h1, M_EARTH)
 d2 = ssz_time_dilation(R_EARTH + h2, M_EARTH)
 
 delta_d = d2 - d1
-drift_per_hour = delta_d * 3600 * 1e9  # ns/Stunde
+drift_per_hour = delta_d * 3600 * 1e9  # ns/hour
 
-print(f"Zeitdrift: {drift_per_hour:.3f} ns/Stunde")
+print(f"Time drift: {drift_per_hour:.3f} ns/hour")
 ```
 
 ---
 
-## Test-Suite
+## Test Suite
 
-### Uebersicht
+### Overview
 
-| Kategorie | Tests | Beschreibung |
-|-----------|-------|--------------|
-| Physics | 17 | Physikalische Formeln |
-| Edge Cases | 25 | Extreme Werte, Fehlerbehandlung |
-| Validation | 17 | Experimentelle Validierung |
-| Applications | 15 | Praktische Anwendungen |
-| **Gesamt** | **74** | |
+| Category | Tests | Description |
+|----------|-------|-------------|
+| Physics | 17 | Physical formulas |
+| Edge Cases | 25 | Extreme values, error handling |
+| Validation | 17 | Experimental validation |
+| Applications | 15 | Practical applications |
+| **Total** | **74** | |
 
-### Tests ausfuehren
+### Running Tests
 
 ```bash
-# Alle Tests mit detaillierter Ausgabe
+# All tests with detailed output
 python run_tests.py
 
-# Einzelne Test-Datei
+# Single test file
 pytest tests/test_ssz_physics.py -v
 
-# Mit pytest (schneller)
+# With pytest (faster)
 pytest tests/ -v --tb=short
 ```
 
-### Test-Kategorien
+### Test Categories
 
 #### Physics Tests (`test_ssz_physics.py`)
-- Schwarzschild-Radius Validierung
-- Segment Density Berechnungen
-- Zeitdilatation Verifikation
-- Gradient-Konsistenz
-- Physikalische Grenzen
-- Golden Ratio Eigenschaften
-- Strong Field Verhalten
+- Schwarzschild radius validation
+- Segment density calculations
+- Time dilation verification
+- Gradient consistency
+- Physical limits
+- Golden ratio properties
+- Strong field behavior
 
 #### Edge Cases (`test_edge_cases.py`)
-- Extreme Radien (nahe r_s bis 1 AU)
-- Extreme Massen (0 bis Schwarze Loecher)
-- Ungewoehnliche Qubit-Konfigurationen
-- Numerische Praezision
-- Fehlerbehandlung
-- Spezielle Qubit-Eigenschaften
-- QEC Edge Cases
+- Extreme radii (near r_s to 1 AU)
+- Extreme masses (0 to black holes)
+- Unusual qubit configurations
+- Numerical precision
+- Error handling
+- Special qubit properties
+- QEC edge cases
 
 #### Validation (`test_validation.py`)
-- GR Weak-Field Vergleich
-- GPS-Satellit Zeitdilatation
-- Pound-Rebka Experiment
-- NIST Optische Uhr
-- Tokyo Skytree Experiment
-- Theoretische Konsistenz
-- Dimensionsanalyse
+- GR weak-field comparison
+- GPS satellite time dilation
+- Pound-Rebka experiment
+- NIST optical clocks
+- Tokyo Skytree experiment
+- Theoretical consistency
+- Dimensional analysis
 
 #### Qubit Applications (`test_ssz_qubit_applications.py`)
-- Segmentierte Zeitlogik als Qubit-Uhr
-- Decoherence als Geometrie-Phaenomen
-- Gravitationsbedingte Drift-Vorhersage
-- Segment-Aware QEC
-- Quantenkommunikation Sync
+- Segmented time logic as qubit clock
+- Decoherence as geometry phenomenon
+- Gravity-induced drift prediction
+- Segment-aware QEC
+- Quantum communication sync
 
 ---
 
-## Visualisierungen
+## Visualizations
 
-### Plots generieren
+### Generate Plots
 
 ```bash
 python visualize_ssz_qubits.py
 ```
 
-### Generierte Plots
+### Generated Plots
 
-| Datei | Beschreibung |
-|-------|--------------|
-| `time_dilation_vs_height.png` | D_SSZ vs Hoehe |
-| `qubit_pair_mismatch.png` | Paar-Mismatch-Analyse |
-| `coherent_zone.png` | Segment-kohaerente Zonen |
-| `qubit_array_analysis.png` | Array-Optimierung |
-| `ssz_vs_gr_comparison.png` | SSZ vs ART Vergleich |
-| `golden_ratio_structure.png` | phi-Struktur |
+| File | Description |
+|------|-------------|
+| `time_dilation_vs_height.png` | D_SSZ vs height |
+| `qubit_pair_mismatch.png` | Pair mismatch analysis |
+| `coherent_zone.png` | Segment-coherent zones |
+| `qubit_array_analysis.png` | Array optimization |
+| `ssz_vs_gr_comparison.png` | SSZ vs GR comparison |
+| `golden_ratio_structure.png` | φ structure |
 
-### Beispiel-Visualisierung
+### Example Visualization
 
 ```python
 import matplotlib.pyplot as plt
 import numpy as np
 from ssz_qubits import ssz_time_dilation, R_EARTH, M_EARTH
 
-heights = np.linspace(0, 1000, 100)  # 0 bis 1000 m
+heights = np.linspace(0, 1000, 100)  # 0 to 1000 m
 d_ssz = [ssz_time_dilation(R_EARTH + h, M_EARTH) for h in heights]
 
 plt.plot(heights, d_ssz)
-plt.xlabel('Hoehe [m]')
+plt.xlabel('Height [m]')
 plt.ylabel('D_SSZ')
-plt.title('SSZ Zeitdilatation vs Hoehe')
+plt.title('SSZ Time Dilation vs Height')
 plt.savefig('my_plot.png')
 ```
 
 ---
 
-## Physikalische Ergebnisse
+## Physical Results
 
-### Erdoberflaeche
+### Earth Surface
 
-| Parameter | Wert |
-|-----------|------|
-| Xi | 6.961078e-10 |
+| Parameter | Value |
+|-----------|-------|
+| Xi | 6.961078×10⁻¹⁰ |
 | D_SSZ | 0.999999999303892 |
-| dXi/dr | -1.093e-16 /m |
-| r_s (Erde) | 8.87 mm |
+| dXi/dr | -1.093×10⁻¹⁶ /m |
+| r_s (Earth) | 8.87 mm |
 
-### Qubit-Effekte
+### Qubit Effects
 
-| Hoehendifferenz | Delta Xi | Zeitdrift |
-|-----------------|----------|-----------|
-| 1 um | ~10^-22 | Messbar |
-| 10 um | ~10^-21 | Signifikant |
-| 100 um | ~10^-20 | Kritisch |
-| 1 mm | ~10^-19 | ~0.01 ps/s |
-| 10 mm | ~10^-18 | ~0.1 ps/s |
+| Height Difference | ΔXi | Time Drift |
+|-------------------|-----|------------|
+| 1 μm | ~10⁻²² | Measurable |
+| 10 μm | ~10⁻²¹ | Significant |
+| 100 μm | ~10⁻²⁰ | Critical |
+| 1 mm | ~10⁻¹⁹ | ~0.01 ps/s |
+| 10 mm | ~10⁻¹⁸ | ~0.1 ps/s |
 
-### Kohaerente Zonen
+### Coherent Zones
 
-| Toleranz | Zonenbreite |
-|----------|-------------|
-| 10^-16 | 458 mm |
-| 10^-17 | 46 mm |
-| 10^-18 | 4.6 mm |
-| 10^-19 | 458 um |
-| 10^-20 | 46 um |
+| Tolerance | Zone Width |
+|-----------|------------|
+| 10⁻¹⁶ | 458 mm |
+| 10⁻¹⁷ | 46 mm |
+| 10⁻¹⁸ | 4.6 mm |
+| 10⁻¹⁹ | 458 μm |
+| 10⁻²⁰ | 46 μm |
 
-### SSZ vs ART Vergleich
+### SSZ vs GR Comparison
 
-| Aspekt | ART | SSZ |
+| Aspect | GR | SSZ |
 |--------|-----|-----|
-| Raumzeit | Kontinuierlich | Diskret |
-| Am Horizont | D = 0 (Singularitaet) | D = 0.555 (Finite) |
-| Weak Field | D ≈ 1 - r_s/2r | D = 1/(1+Xi) ≈ gleich |
-| Quantisierung | Nein | Ja (phi-basiert) |
+| Spacetime | Continuous | Discrete |
+| At horizon | D = 0 (singularity) | D = 0.555 (finite) |
+| Weak field | D ≈ 1 - r_s/2r | D = 1/(1+Xi) ≈ same |
+| Quantization | No | Yes (φ-based) |
 
 ---
 
-## Experimentelle Validierung
+## Experimental Validation
 
-### GPS-System
+### GPS System
 
-| Parameter | SSZ-Vorhersage | Gemessen | Status |
+| Parameter | SSZ Prediction | Measured | Status |
 |-----------|----------------|----------|--------|
-| Zeitdrift | ~45 us/Tag | ~45 us/Tag | MATCH |
-| Positionsfehler | ~11 km/Tag | ~10 km/Tag | MATCH |
+| Time drift | ~45 μs/day | ~45 μs/day | ✓ MATCH |
+| Position error | ~11 km/day | ~10 km/day | ✓ MATCH |
 
 ### Pound-Rebka Experiment (1960)
 
-| Parameter | SSZ-Vorhersage | Gemessen | Status |
+| Parameter | SSZ Prediction | Measured | Status |
 |-----------|----------------|----------|--------|
-| Rotverschiebung | 2.46e-15 | (2.57±0.26)e-15 | MATCH |
+| Redshift | 2.46×10⁻¹⁵ | (2.57±0.26)×10⁻¹⁵ | ✓ MATCH |
 
-### NIST Optische Uhren (2010)
+### NIST Optical Clocks (2010)
 
-| Parameter | SSZ-Vorhersage | Status |
+| Parameter | SSZ Prediction | Status |
 |-----------|----------------|--------|
-| 33 cm Hoehendifferenz | Messbar | MATCH |
+| 33 cm height difference | Measurable | ✓ MATCH |
 
 ### Tokyo Skytree (2020)
 
-| Parameter | SSZ-Vorhersage | Status |
+| Parameter | SSZ Prediction | Status |
 |-----------|----------------|--------|
-| 450 m Hoehendifferenz | Messbar | MATCH |
+| 450 m height difference | Measurable | ✓ MATCH |
 
 ---
 
-## Projektstruktur
+## Project Structure
 
 ```
 ssz-qubits/
-├── ssz_qubits.py               # Kernmodul (933 Zeilen)
-├── demo.py                     # Interaktive Demo (9 Demos)
-├── run_tests.py                # Test-Runner
-├── visualize_ssz_qubits.py     # Visualisierung (6 Plots)
-├── requirements.txt            # Abhaengigkeiten
-├── README.md                   # Diese Datei
-├── FINAL_REPORT.md             # Finaler Report
-├── COMPLETE_PROJECT_REPORT.md  # Vollstaendiger Bericht
+├── ssz_qubits.py               # Core module (933 lines)
+├── demo.py                     # Interactive demo (9 demos)
+├── run_tests.py                # Test runner
+├── visualize_ssz_qubits.py     # Visualization (6 plots)
+├── requirements.txt            # Dependencies
+├── README.md                   # This file
+├── LICENSE                     # Anti-Capitalist License v1.4
+├── FINAL_REPORT.md             # Final report
+├── COMPLETE_PROJECT_REPORT.md  # Complete report
 │
 ├── docs/
-│   ├── SSZ_FORMULA_DOCUMENTATION.md    # Formel-Dokumentation
-│   ├── SSZ_MATHEMATICAL_PHYSICS.md     # Math/Physik Grundlagen
-│   ├── SSZ_QUBIT_APPLICATIONS.md       # Praktische Anwendungen
-│   └── SSZ_QUBIT_THEORY_SUMMARY.md     # Theorie-Zusammenfassung
+│   ├── SSZ_FORMULA_DOCUMENTATION.md    # Formula documentation
+│   ├── SSZ_MATHEMATICAL_PHYSICS.md     # Math/physics foundations
+│   ├── SSZ_QUBIT_APPLICATIONS.md       # Practical applications
+│   └── SSZ_QUBIT_THEORY_SUMMARY.md     # Theory summary
 │
 ├── tests/
-│   ├── test_ssz_physics.py             # 17 Physics Tests
-│   ├── test_edge_cases.py              # 25 Edge Case Tests
-│   ├── test_validation.py              # 17 Validation Tests
-│   └── test_ssz_qubit_applications.py  # 15 Application Tests
+│   ├── test_ssz_physics.py             # 17 physics tests
+│   ├── test_edge_cases.py              # 25 edge case tests
+│   ├── test_validation.py              # 17 validation tests
+│   └── test_ssz_qubit_applications.py  # 15 application tests
 │
-├── outputs/                    # Generierte Plots
+├── outputs/                    # Generated plots
 │   ├── time_dilation_vs_height.png
 │   ├── qubit_pair_mismatch.png
 │   ├── coherent_zone.png
@@ -697,7 +698,7 @@ ssz-qubits/
 │   ├── ssz_vs_gr_comparison.png
 │   └── golden_ratio_structure.png
 │
-└── reports/                    # Test-Reports
+└── reports/                    # Test reports
     ├── RUN_SUMMARY.md
     └── full-output.md
 ```
@@ -706,108 +707,108 @@ ssz-qubits/
 
 ## FAQ
 
-### Allgemein
+### General
 
-**Q: Was ist der Unterschied zwischen SSZ und der Allgemeinen Relativitaetstheorie?**
+**Q: What is the difference between SSZ and General Relativity?**
 
-A: Die ART behandelt Raumzeit als kontinuierliches Gebilde. SSZ behandelt Raumzeit als **diskrete Struktur** mit messbaren Segmenten. Im Weak Field (wie auf der Erde) liefern beide nahezu identische Ergebnisse. Der Unterschied zeigt sich in starken Feldern: SSZ vermeidet die Singularitaet am Schwarzschild-Horizont.
+A: GR treats spacetime as a continuous manifold. SSZ treats spacetime as a **discrete structure** with measurable segments. In the weak field (like on Earth), both yield nearly identical results. The difference appears in strong fields: SSZ avoids the singularity at the Schwarzschild horizon.
 
-**Q: Warum ist der Golden Ratio phi wichtig?**
+**Q: Why is the Golden Ratio φ important?**
 
-A: phi = (1+sqrt(5))/2 steuert die Saettigungsrate der Segment Density im Strong Field. Die Formel Xi = 1 - exp(-phi*r/r_s) sorgt dafuer, dass Xi bei r = r_s einen endlichen Wert erreicht (ca. 0.8), anstatt zu divergieren.
+A: φ = (1+√5)/2 controls the saturation rate of segment density in the strong field. The formula Xi = 1 - exp(-φ×r/r_s) ensures that Xi reaches a finite value (about 0.8) at r = r_s, instead of diverging.
 
-**Q: Ist SSZ experimentell bestaetigt?**
+**Q: Is SSZ experimentally confirmed?**
 
-A: SSZ reproduziert alle bekannten experimentellen Ergebnisse (GPS, Pound-Rebka, Atomuhren) im Weak Field. Die Vorhersagen fuer Strong Fields (Schwarze Loecher) sind noch nicht direkt testbar.
+A: SSZ reproduces all known experimental results (GPS, Pound-Rebka, atomic clocks) in the weak field. Predictions for strong fields (black holes) are not yet directly testable.
 
-### Technisch
+### Technical
 
-**Q: Welche Python-Version wird benoetigt?**
+**Q: Which Python version is required?**
 
-A: Python 3.8 oder hoeher.
+A: Python 3.8 or higher.
 
-**Q: Wie genau sind die Berechnungen?**
+**Q: How accurate are the calculations?**
 
-A: Die Berechnungen verwenden 64-bit Floating Point (numpy.float64) mit einer Praezision von etwa 15-16 signifikanten Stellen.
+A: Calculations use 64-bit floating point (numpy.float64) with precision of about 15-16 significant digits.
 
-**Q: Kann ich SSZ mit meinem Qubit-Simulator integrieren?**
+**Q: Can I integrate SSZ with my qubit simulator?**
 
-A: Ja! SSZ-Qubits ist als Python-Modul konzipiert und kann in jeden Python-basierten Simulator integriert werden. Importieren Sie einfach die benoetigten Funktionen.
+A: Yes! SSZ-Qubits is designed as a Python module and can be integrated into any Python-based simulator. Simply import the required functions.
 
-**Q: Warum sind manche Werte 0.000000e+00?**
+**Q: Why are some values 0.000000e+00?**
 
-A: Bei optimierten Arrays mit konstanter Hoehe ist die Xi-Variation exakt null. Das ist kein Fehler, sondern das gewuenschte Ergebnis der Optimierung.
+A: For optimized arrays with constant height, Xi variation is exactly zero. This is not an error but the desired result of optimization.
 
-### Qubit-spezifisch
+### Qubit-Specific
 
-**Q: Wie gross ist der SSZ-Effekt auf typische Qubits?**
+**Q: How large is the SSZ effect on typical qubits?**
 
-A: Bei 1 mm Hoehendifferenz betraegt Delta Xi etwa 10^-19, was zu einer Zeitdrift von ~0.01 ps/s fuehrt. Bei typischen Gate-Zeiten von 50 ns ist der direkte Effekt klein, aber akkumuliert ueber viele Operationen.
+A: At 1 mm height difference, ΔXi is about 10⁻¹⁹, leading to a time drift of ~0.01 ps/s. For typical gate times of 50 ns, the direct effect is small but accumulates over many operations.
 
-**Q: Sollte ich SSZ-Korrekturen in meinem Quantencomputer implementieren?**
+**Q: Should I implement SSZ corrections in my quantum computer?**
 
-A: Fuer aktuelle Quantencomputer mit wenigen Qubits und kurzen Kohärenzzeiten sind andere Fehlerquellen (thermisches Rauschen, EM-Stoerungen) dominanter. SSZ wird relevant bei:
-- Grossen Qubit-Arrays (>100 Qubits)
-- Langen Kohärenzzeiten (>1 ms)
-- Praezisen Timing-Anforderungen (<1 ps)
-- Verteilten Quantensystemen
+A: For current quantum computers with few qubits and short coherence times, other error sources (thermal noise, EM interference) are dominant. SSZ becomes relevant for:
+- Large qubit arrays (>100 qubits)
+- Long coherence times (>1 ms)
+- Precise timing requirements (<1 ps)
+- Distributed quantum systems
 
-**Q: Was ist eine "kohaerente Zone"?**
+**Q: What is a "coherent zone"?**
 
-A: Eine kohaerente Zone ist ein Hoehenbereich, in dem die Xi-Variation unter einer bestimmten Toleranz bleibt. Alle Qubits innerhalb dieser Zone haben nahezu identische Segment-Eigenschaften, was Mismatch-Fehler minimiert.
+A: A coherent zone is a height range where Xi variation stays below a certain tolerance. All qubits within this zone have nearly identical segment properties, minimizing mismatch errors.
 
 ---
 
-## Referenzen
+## References
 
-### Primaerliteratur
+### Primary Literature
 
 1. Casu, L. & Wrede, C. (2025). "Segmented Spacetime: A Discrete Framework for Quantum Gravity"
 2. Casu, L. & Wrede, C. (2025). "SSZ Applications in Quantum Computing"
 
-### Experimentelle Validierung
+### Experimental Validation
 
 3. Pound, R.V. & Rebka, G.A. (1960). "Apparent Weight of Photons". Physical Review Letters, 4(7), 337-341.
 4. Chou, C.W. et al. (2010). "Optical Clocks and Relativity". Science, 329(5999), 1630-1633.
 5. Takamoto, M. et al. (2020). "Test of general relativity by a pair of transportable optical lattice clocks". Nature Photonics, 14, 411-415.
 
-### Hintergrund
+### Background
 
 6. Ashby, N. (2003). "Relativity in the Global Positioning System". Living Reviews in Relativity, 6(1).
 7. Will, C.M. (2014). "The Confrontation between General Relativity and Experiment". Living Reviews in Relativity, 17(1).
 
 ---
 
-## Autoren & Lizenz
+## Authors & License
 
-### Autoren
+### Authors
 
-**Carmen Wrede** - Theoretische Physik, SSZ-Theorie  
-**Lino Casu** - Implementierung, Qubit-Anwendungen
+**Carmen Wrede** - Theoretical Physics, SSZ Theory  
+**Lino Casu** - Implementation, Qubit Applications
 
-### Kontakt
+### Contact
 
 - GitHub: [github.com/error-wtf](https://github.com/error-wtf)
 - Repository: [github.com/error-wtf/ssz-qubits](https://github.com/error-wtf/ssz-qubits)
 
-### Lizenz
+### License
 
-Dieses Projekt ist lizenziert unter der **Anti-Capitalist Software License v1.4**.
+This project is licensed under the **Anti-Capitalist Software License v1.4**.
 
-Diese Lizenz erlaubt:
-- Nutzung fuer nicht-kommerzielle Zwecke
-- Modifikation und Weiterverteilung
-- Akademische und Forschungszwecke
+This license permits:
+- Use for non-commercial purposes
+- Modification and redistribution
+- Academic and research purposes
 
-Diese Lizenz verbietet:
-- Kommerzielle Nutzung durch kapitalistische Unternehmen
-- Nutzung fuer militaerische Zwecke
-- Nutzung zur Ueberwachung
+This license prohibits:
+- Commercial use by capitalist enterprises
+- Use for military purposes
+- Use for surveillance
 
-Vollstaendiger Lizenztext: [LICENSE](LICENSE)
+Full license text: [LICENSE](LICENSE)
 
 ---
 
 © 2025 Carmen Wrede & Lino Casu
 
-**"Die Qubits leben nicht nur im Raum, sondern auch in Segmenten der Raumzeit."**
+**"Qubits don't just exist in space—they exist in segments of spacetime."**
