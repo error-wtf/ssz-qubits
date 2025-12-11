@@ -202,28 +202,28 @@ def plot_qubit_array_analysis():
     """Analyze and visualize optimized qubit array."""
     print("Generating: Qubit Array Analysis...")
     
-    fig, axes = plt.subplots(2, 2, figsize=(12, 10))
+    fig, axes = plt.subplots(2, 2, figsize=(10, 8))
     
-    # Plot 1: Array layout (top view)
+    # Plot 1: Array layout (top view) - 16 qubits
     ax1 = axes[0, 0]
-    qubits = optimize_qubit_array(25, base_height=0, max_separation=1e-3)
+    qubits = optimize_qubit_array(16, base_height=0, max_separation=1e-3)
     
     x_coords = [q.x * 1e3 for q in qubits]  # mm
     y_coords = [q.y * 1e3 for q in qubits]  # mm
     
-    ax1.scatter(x_coords, y_coords, s=100, c='blue', alpha=0.7)
+    ax1.scatter(x_coords, y_coords, s=80, c='blue', alpha=0.7)
     for i, q in enumerate(qubits):
-        ax1.annotate(f'{i}', (q.x*1e3, q.y*1e3), fontsize=8, ha='center', va='center')
+        ax1.annotate(f'{i}', (q.x*1e3, q.y*1e3), fontsize=7, ha='center', va='center')
     
     ax1.set_xlabel('X position [mm]')
     ax1.set_ylabel('Y position [mm]')
-    ax1.set_title('Optimized 25-Qubit Array Layout (Top View)')
+    ax1.set_title('Optimized 16-Qubit Array (Top View)')
     ax1.set_aspect('equal')
     ax1.grid(True, alpha=0.3)
     
-    # Plot 2: Xi uniformity vs array size
+    # Plot 2: Xi uniformity vs array size (fewer points)
     ax2 = axes[0, 1]
-    array_sizes = [4, 9, 16, 25, 36, 49, 64, 81, 100]
+    array_sizes = [4, 9, 16, 25, 36]
     uniformities = []
     
     for n in array_sizes:
@@ -238,14 +238,14 @@ def plot_qubit_array_analysis():
     ax2.set_ylim([0.999, 1.001])
     ax2.grid(True, alpha=0.3)
     
-    # Plot 3: Effect of height variation
+    # Plot 3: Effect of height variation (fewer points)
     ax3 = axes[1, 0]
     
-    # Create array with intentional height variation
-    n_qubits = 16
-    height_variations = np.linspace(0, 1e-3, 20)  # 0 to 1mm variation
+    n_qubits = 9
+    height_variations = np.linspace(1e-6, 1e-3, 10)  # Reduced from 20 to 10
     xi_ranges = []
     
+    np.random.seed(42)
     for h_var in height_variations:
         qubits = []
         for i in range(n_qubits):
@@ -253,48 +253,40 @@ def plot_qubit_array_analysis():
             qubits.append(Qubit(id=f"Q{i}", x=0, y=0, z=z))
         
         u = array_segment_uniformity(qubits, M_EARTH)
-        xi_ranges.append(u['xi_range'])
+        xi_ranges.append(max(u['xi_range'], 1e-25))
     
     ax3.semilogy(height_variations * 1e6, xi_ranges, 'r-', linewidth=2)
-    ax3.set_xlabel('Height Variation Range [um]')
-    ax3.set_ylabel('Xi Range in Array')
-    ax3.set_title('Segment Non-Uniformity vs Height Variation')
+    ax3.set_xlabel('Height Variation [μm]')
+    ax3.set_ylabel('Xi Range')
+    ax3.set_title('Non-Uniformity vs Height Variation')
     ax3.grid(True, alpha=0.3)
     
-    # Plot 4: Comparison with/without SSZ optimization
+    # Plot 4: Comparison optimized vs random
     ax4 = axes[1, 1]
     
-    # Optimized (constant height)
-    qubits_opt = optimize_qubit_array(16, base_height=0, max_separation=1e-3)
+    np.random.seed(42)
+    qubits_opt = optimize_qubit_array(9, base_height=0, max_separation=1e-3)
     u_opt = array_segment_uniformity(qubits_opt, M_EARTH)
     
-    # Non-optimized (random heights)
-    qubits_rand = []
-    for i in range(16):
-        z = np.random.uniform(0, 1e-4)  # 0-100um random height
-        qubits_rand.append(Qubit(id=f"Q{i}", x=0, y=0, z=z))
+    qubits_rand = [Qubit(id=f"Q{i}", x=0, y=0, z=np.random.uniform(0, 1e-4)) for i in range(9)]
     u_rand = array_segment_uniformity(qubits_rand, M_EARTH)
     
-    categories = ['Optimized\n(constant h)', 'Random\n(0-100um)']
-    xi_ranges = [u_opt['xi_range'], u_rand['xi_range']]
+    categories = ['Optimized', 'Random']
+    xi_vals = [max(u_opt['xi_range'], 1e-25), u_rand['xi_range']]
     
-    bars = ax4.bar(categories, xi_ranges, color=['green', 'red'], alpha=0.7)
+    bars = ax4.bar(categories, xi_vals, color=['green', 'red'], alpha=0.7)
     ax4.set_ylabel('Xi Range')
-    ax4.set_title('Segment Uniformity: Optimized vs Random Placement')
+    ax4.set_title('Optimized vs Random Placement')
     ax4.set_yscale('log')
     
-    # Add value labels
-    for bar, val in zip(bars, xi_ranges):
-        ax4.text(bar.get_x() + bar.get_width()/2, bar.get_height(), 
-                f'{val:.2e}', ha='center', va='bottom', fontsize=10)
+    for bar, val in zip(bars, xi_vals):
+        ax4.text(bar.get_x() + bar.get_width()/2, val * 1.5, 
+                f'{val:.1e}', ha='center', va='bottom', fontsize=9)
     
-    try:
-        plt.tight_layout()
-    except:
-        pass
+    plt.tight_layout()
     
     output_file = OUTPUT_DIR / "qubit_array_analysis.png"
-    fig.savefig(output_file, dpi=100, bbox_inches='tight')
+    fig.savefig(output_file, dpi=100, bbox_inches='tight', facecolor='white')
     plt.close(fig)
     print(f"  Saved: {output_file}")
 
