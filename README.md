@@ -565,14 +565,34 @@ python visualize_ssz_qubits.py
 
 ### Generated Plots
 
-| File | Description |
+| Plot | Description |
 |------|-------------|
-| `time_dilation_vs_height.png` | D_SSZ vs height |
-| `qubit_pair_mismatch.png` | Pair mismatch analysis |
-| `coherent_zone.png` | Segment-coherent zones |
-| `qubit_array_analysis.png` | Array optimization |
-| `ssz_vs_gr_comparison.png` | SSZ vs GR comparison |
-| `golden_ratio_structure.png` | φ structure |
+| [![Time Dilation](outputs/time_dilation_vs_height.png)](outputs/time_dilation_vs_height.png) | **D_SSZ vs Height** - Shows how time dilation changes with altitude |
+| [![Qubit Pair Mismatch](outputs/qubit_pair_mismatch.png)](outputs/qubit_pair_mismatch.png) | **Pair Mismatch Analysis** - Xi difference between qubit pairs |
+| [![Coherent Zone](outputs/coherent_zone.png)](outputs/coherent_zone.png) | **Segment-Coherent Zones** - Optimal placement regions |
+| [![Array Analysis](outputs/qubit_array_analysis.png)](outputs/qubit_array_analysis.png) | **Array Optimization** - Multi-qubit array uniformity |
+| [![SSZ vs GR](outputs/ssz_vs_gr_comparison.png)](outputs/ssz_vs_gr_comparison.png) | **SSZ vs GR Comparison** - Framework comparison |
+| [![Golden Ratio](outputs/golden_ratio_structure.png)](outputs/golden_ratio_structure.png) | **φ Structure** - Golden ratio in SSZ |
+
+### Plot Gallery
+
+#### 1. Time Dilation vs Height
+![Time Dilation vs Height](outputs/time_dilation_vs_height.png)
+
+#### 2. Qubit Pair Mismatch
+![Qubit Pair Mismatch](outputs/qubit_pair_mismatch.png)
+
+#### 3. Coherent Zone
+![Coherent Zone](outputs/coherent_zone.png)
+
+#### 4. Qubit Array Analysis
+![Qubit Array Analysis](outputs/qubit_array_analysis.png)
+
+#### 5. SSZ vs GR Comparison
+![SSZ vs GR Comparison](outputs/ssz_vs_gr_comparison.png)
+
+#### 6. Golden Ratio Structure
+![Golden Ratio Structure](outputs/golden_ratio_structure.png)
 
 ### Example Visualization
 
