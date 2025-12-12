@@ -417,12 +417,17 @@ def segment_coherent_zone(center_height: float,
     This defines a "segment-coherent zone" where qubits can operate
     with minimal SSZ-induced decoherence.
     
+    The zone width is calculated using the linear approximation:
+        z = 4 * epsilon * R^2 / r_s
+    
+    This matches the formula in the SSZ Qubit papers.
+    
     Parameters
     ----------
     center_height : float
         Center height above sea level [m]
     max_xi_variation : float
-        Maximum allowed Ξ variation
+        Maximum allowed Ξ variation (epsilon)
     M : float
         Central mass [kg]
         
@@ -431,23 +436,24 @@ def segment_coherent_zone(center_height: float,
     tuple
         (min_height, max_height) defining the coherent zone [m]
     """
-    r_center = R_EARTH + center_height
-    xi_center = xi_segment_density(r_center, M)
-    
-    # Find heights where Ξ = Ξ_center ± max_xi_variation/2
     r_s = schwarzschild_radius(M)
+    r_center = R_EARTH + center_height
     
-    xi_min = xi_center - max_xi_variation / 2
-    xi_max = xi_center + max_xi_variation / 2
+    # Linear approximation for zone width: z = 4 * eps * R^2 / r_s
+    # This comes from: dXi/dh = -r_s / (2*R^2)
+    # So: dh = eps / |dXi/dh| = eps * 2 * R^2 / r_s (one direction)
+    # Total zone width = 2 * dh = 4 * eps * R^2 / r_s
+    zone_width = 4 * max_xi_variation * r_center**2 / r_s
     
-    if xi_min <= 0:
-        xi_min = 1e-20  # Prevent division by zero
+    # For center_height = 0 (sea level), the zone extends upward only
+    # since we can't go below sea level. The zone width is still the
+    # theoretical value, but h_min is clamped to 0.
+    h_min = max(0, center_height - zone_width / 2)
+    h_max = center_height + zone_width / 2
     
-    r_max = r_s / (2 * xi_min)  # Higher r = lower Ξ
-    r_min = r_s / (2 * xi_max)  # Lower r = higher Ξ
-    
-    h_min = max(0, r_min - R_EARTH)
-    h_max = r_max - R_EARTH
+    # If center is at sea level, extend the full zone upward
+    if center_height == 0:
+        h_max = zone_width
     
     return (h_min, h_max)
 
