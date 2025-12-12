@@ -2,7 +2,7 @@
 
 [![License: ACSL](https://img.shields.io/badge/License-Anti--Capitalist-red.svg)](LICENSE)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![Tests: 74/74](https://img.shields.io/badge/Tests-74%2F74%20Passed-brightgreen.svg)](tests/)
+[![Tests: 113/113](https://img.shields.io/badge/Tests-113%2F113%20Passed-brightgreen.svg)](tests/)
 [![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-orange.svg)](CONTRIBUTING.md)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/error-wtf/ssz-qubits/blob/main/SSZ_Qubits_Colab.ipynb)
 
@@ -205,7 +205,7 @@ pytest tests/ -v
 
 Expected output:
 ```
-============================= 74 passed in 0.54s ==============================
+============================= 113 passed in 0.54s ==============================
 ```
 
 ---
@@ -695,15 +695,18 @@ plt.savefig('my_plot.png')
 
 ```
 ssz-qubits/
-├── ssz_qubits.py               # Core module (933 lines)
+├── ssz_qubits.py               # Core module
+├── ssz_entanglement.py         # Entanglement module (Paper B support)
+├── ssz_paper_a_support.py      # Paper A dedicated functions
 ├── demo.py                     # Interactive demo (9 demos)
 ├── run_tests.py                # Test runner
 ├── visualize_ssz_qubits.py     # Visualization (6 plots)
+├── test_paper_consistency.py   # Paper equation verification
+├── final_summary.py            # Repository summary
 ├── requirements.txt            # Dependencies
 ├── README.md                   # This file
+├── PAPER_SUPPORT.md            # Paper support documentation
 ├── LICENSE                     # Anti-Capitalist License v1.4
-├── FINAL_REPORT.md             # Final report
-├── COMPLETE_PROJECT_REPORT.md  # Complete report
 │
 ├── docs/
 │   ├── SSZ_FORMULA_DOCUMENTATION.md    # Formula documentation
@@ -712,10 +715,12 @@ ssz-qubits/
 │   └── SSZ_QUBIT_THEORY_SUMMARY.md     # Theory summary
 │
 ├── tests/
-│   ├── test_ssz_physics.py             # 17 physics tests
-│   ├── test_edge_cases.py              # 25 edge case tests
-│   ├── test_validation.py              # 17 validation tests
-│   └── test_ssz_qubit_applications.py  # 15 application tests
+│   ├── test_ssz_physics.py             # Physics tests
+│   ├── test_edge_cases.py              # Edge case tests
+│   ├── test_validation.py              # Validation tests
+│   ├── test_ssz_qubit_applications.py  # Application tests
+│   ├── test_entanglement.py            # Entanglement tests (23)
+│   └── test_paper_a_support.py         # Paper A support tests (16)
 │
 ├── outputs/                    # Generated plots
 │   ├── time_dilation_vs_height.png
@@ -729,6 +734,28 @@ ssz-qubits/
     ├── RUN_SUMMARY.md
     └── full-output.md
 ```
+
+### New Modules (Paper Support)
+
+#### ssz_entanglement.py - Paper B Support
+Functions for analyzing gravitational effects on entangled qubit pairs:
+- `entangled_pair_phase_drift()` - Phase drift for entangled pairs
+- `bell_state_fidelity()` - F = cos²(ΔΦ/2)
+- `chsh_parameter()` - S = 2√2·cos(ΔΦ) for fixed settings
+- `characteristic_time_T_SSZ()` - Time for π phase accumulation
+- `correction_interval()` - Gates before correction needed
+- `is_in_coherent_zone()` - Check if pair is in same zone
+- `analyze_entangled_pair()` - Complete analysis
+
+#### ssz_paper_a_support.py - Paper A Support
+Dedicated functions for Paper A claims:
+- `gr_time_dilation_weak_field()` - GR comparison
+- `compare_ssz_gr()` - SSZ vs GR analysis
+- `fidelity_reduction_small_angle()` - 1-F ≈ ΔΦ²/4
+- `verify_linear_scaling()` - Verify |ΔΦ| ∝ |Δh|
+- `verify_numerical_stability()` - Closed-form stability
+- `coherent_zone_analysis()` - Complete zone analysis
+- `decoherence_enhancement_factor()` - 1 + (ΔΞ/Ξ_ref)²
 
 ---
 
