@@ -363,13 +363,16 @@ def qubit_pair_segment_mismatch(pair: QubitPair, M: float = M_EARTH) -> Dict[str
     d_b = ssz_time_dilation(r_b, M)
     delta_d = abs(d_a - d_b)
     
-    # Phase drift per gate: Δφ = 2π × Δt/T_gate × (gate_time)
-    # Using average gate time
+    # Phase drift per gate: Δφ = ω × ΔΞ × t_gate
+    # where ω = 2π × f_qubit (typically 5 GHz for superconducting qubits)
     avg_gate_time = (pair.qubit_a.gate_time + pair.qubit_b.gate_time) / 2
-    phase_drift = 2 * np.pi * delta_d * avg_gate_time / avg_gate_time  # Simplified
+    omega = 2 * np.pi * 5e9  # 5 GHz qubit frequency
+    phase_drift = omega * delta_xi * avg_gate_time
     
-    # Decoherence enhancement: exponential in segment mismatch
-    decoherence_enhancement = np.exp(delta_xi * 1e9)  # Scaled for visibility
+    # Decoherence enhancement: 1 + (ΔΞ/Ξ_ref)² where Ξ_ref ~ 10^-10
+    # For Earth-scale effects, this is essentially 1.0
+    xi_ref = 1e-10  # Reference segment density
+    decoherence_enhancement = 1.0 + (delta_xi / xi_ref)**2
     
     return {
         'delta_xi': delta_xi,
@@ -579,19 +582,29 @@ def ssz_decoherence_rate(qubit: Qubit,
     gamma_base = 1.0 / qubit.coherence_time_T2
     
     # SSZ enhancement from segment density
+    # Physical model: SSZ causes dephasing via gravitational time dilation
+    # The rate is: gamma_ssz = omega^2 * Xi^2 * tau_c
+    # where tau_c is the correlation time (~1 ps for solid-state qubits)
     xi = xi_segment_density(r, M)
-    gamma_xi = gamma_base * (1 + xi * 1e9)  # Scaled for Earth's weak field
+    
+    omega = 2 * np.pi * 5e9  # 5 GHz qubit frequency
+    tau_c = 1e-12  # Correlation time [s]
+    gamma_ssz = omega**2 * xi**2 * tau_c
     
     if environment_gradient:
-        # Additional contribution from gradient
+        # Additional contribution from gradient across qubit size
         grad = abs(xi_gradient(r, M))
-        # Gradient causes dephasing over qubit's spatial extent (~1 μm)
         qubit_size = 1e-6  # Typical qubit size [m]
         delta_xi = grad * qubit_size
-        gamma_grad = gamma_base * delta_xi * 1e15  # Scaled
-        gamma_xi += gamma_grad
+        # Gradient contribution: omega^2 * delta_xi^2 * tau_c
+        gamma_grad = omega**2 * delta_xi**2 * tau_c
+        gamma_ssz += gamma_grad
     
-    return gamma_xi
+    # Total rate: base + SSZ contribution
+    # Note: For Earth-scale, gamma_ssz << gamma_base (by ~14 orders of magnitude)
+    gamma_total = gamma_base + gamma_ssz
+    
+    return gamma_total
 
 
 def effective_T2(qubit: Qubit, M: float = M_EARTH) -> float:
@@ -637,11 +650,14 @@ def pair_decoherence_time(pair: QubitPair, M: float = M_EARTH) -> float:
     gamma_a = ssz_decoherence_rate(pair.qubit_a, M=M)
     gamma_b = ssz_decoherence_rate(pair.qubit_b, M=M)
     
-    # Mismatch contribution
+    # Mismatch contribution: omega^2 * delta_xi^2 * tau_c
     mismatch = qubit_pair_segment_mismatch(pair, M)
-    gamma_mismatch = mismatch['delta_xi'] * 1e12  # Scaled
+    omega = 2 * np.pi * 5e9  # 5 GHz
+    tau_c = 1e-12  # Correlation time [s]
+    gamma_mismatch = omega**2 * mismatch['delta_xi']**2 * tau_c
     
     # Total rate (sum of individual rates plus mismatch)
+    # For entangled pairs, rates add
     gamma_total = gamma_a + gamma_b + gamma_mismatch
     
     return 1.0 / gamma_total

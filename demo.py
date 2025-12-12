@@ -119,14 +119,14 @@ def demo_3_qubit_pair_mismatch():
     # Create qubit pairs with different height differences
     print_section("Height Difference Effects")
     
-    base_qubit = Qubit(id="Q0", x=0, y=0, z=0)
+    base_qubit = Qubit(id="Q0", x=0, y=0, z=0, gate_time=50e-9)
     height_diffs = [1e-6, 10e-6, 100e-6, 1e-3, 10e-3]  # 1um to 10mm
     
     print(f"{'Height Diff':>12} | {'Delta Xi':>15} | {'Phase Drift/Gate':>18} | {'Decoherence Factor':>18}")
     print("-" * 70)
     
     for h in height_diffs:
-        q = Qubit(id="Q1", x=0, y=0, z=h)
+        q = Qubit(id="Q1", x=0, y=0, z=h, gate_time=50e-9)
         pair = QubitPair(base_qubit, q)
         mismatch = qubit_pair_segment_mismatch(pair, M_EARTH)
         
