@@ -254,6 +254,11 @@ def ssz_time_dilation_difference(r1: float, r2: float, M: float = M_EARTH) -> fl
     
     Positive means r1 has faster time flow than r2.
     
+    Uses numerically stable closed-form to avoid float cancellation:
+        ΔD = 2 * r_s * (r1 - r2) / ((2*r1 + r_s) * (2*r2 + r_s))
+    
+    This is derived from D_SSZ = 2r/(2r + r_s) and algebraic simplification.
+    
     Parameters
     ----------
     r1, r2 : float
@@ -266,7 +271,11 @@ def ssz_time_dilation_difference(r1: float, r2: float, M: float = M_EARTH) -> fl
     float
         Time dilation difference (dimensionless)
     """
-    return ssz_time_dilation(r1, M) - ssz_time_dilation(r2, M)
+    r_s = schwarzschild_radius(M)
+    # Numerically stable formula avoids subtracting two nearly-equal floats
+    # D = 1/(1+Xi) = 2r/(2r+r_s)
+    # ΔD = D(r1) - D(r2) = 2*r_s*(r1-r2) / ((2*r1+r_s)*(2*r2+r_s))
+    return 2 * r_s * (r1 - r2) / ((2*r1 + r_s) * (2*r2 + r_s))
 
 
 def time_difference_per_second(r1: float, r2: float, M: float = M_EARTH) -> float:
