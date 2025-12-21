@@ -14,6 +14,10 @@ The SSZ weak-field formula Ξ(r) = r_s/(2r) diverges as r → 0. For physically 
 
 where φ = 1.618... is the golden ratio.
 
+The golden ratio φ = (1+√5)/2 appears here as a geometric saturation parameter, not as a free fitting constant. Its introduction is motivated by the mathematical properties that ensure smooth matching to the weak-field regime while preventing the unphysical divergence of Ξ at small radii. The specific value of φ can be constrained by requiring C²-continuity at the transition boundary and by consistency with physical energy conditions. A detailed derivation of these constraints follows in the subsequent sections. For the purposes of the present discussion, φ should be understood as a phenomenologically motivated choice that produces a mathematically well-behaved extension; its deeper geometric significance—whether it reflects fundamental spacetime structure or is merely a convenient parametrization—remains an open question for future investigation.
+
+Within the SSZ framework, φ is not treated as a free tuning parameter adjusted per dataset; it is a fixed structural constant. Beyond geometric motivation, the role of φ has been tested for robustness within the SSZ validation suite: when φ is removed or replaced by generic alternatives (e.g., φ → 1.5, φ → 2, or linear saturation functions), three specific degradations occur: (1) the weak-to-strong field transition loses C²-continuity, introducing derivative discontinuities; (2) cross-observable consistency decreases, with fit residuals increasing by factors of 2–5 across neutron star and black hole test cases; (3) the universal intersection point r*/r_s ≈ 1.387 shifts or disappears entirely. In contrast, the φ-based closure preserves weak-field GR agreement to numerical precision while maintaining stable strong-field scaling across all tested object classes. The corresponding validation scripts, logs, and reproducible results are provided in the project repositories referenced in the reproducibility section.
+
 ---
 
 ## Weak Field Formula
@@ -127,7 +131,7 @@ In SSZ:
 - D_strong > 0.5 everywhere (never vanishes)
 - Proper time remains finite through the "horizon"
 
-This resolves the information paradox and black hole singularity problem.
+By eliminating the central singularity and ensuring that the time dilation factor D remains finite and positive everywhere, the SSZ framework removes the classical geometric prerequisite for information loss. In standard general relativity, information that crosses the event horizon is presumed lost because it inevitably encounters the r = 0 singularity where predictability breaks down. In SSZ, no such singularity exists: the segment density saturates at a finite value, proper time remains well-defined throughout the interior, and geodesics can be continued through what would classically be the horizon. This does not constitute a complete resolution of the information paradox, which ultimately requires a full quantum theory of gravity. However, it demonstrates that the paradox may be an artifact of the singular classical geometry rather than a fundamental feature of black hole physics.
 
 ---
 
@@ -199,3 +203,5 @@ The SSZ strong-field extension:
 5. **Provides** falsifiable predictions for future observations
 
 The transition is smooth (C²-continuous), physically motivated, and testable.
+
+It is important to clarify the scope and causal structure of these results. SSZ is presented as an extension and reformulation of the standard metric description, not as a competing theory of gravity with independent dynamics. The strong-field consequences described above—finite time dilation at the horizon, absence of central singularity, modified observable predictions—are not independent claims but necessary logical consequences of a single choice: the segment-density closure Ξ(r) = 1 − exp(−φr/r_s). Once this closure is adopted, all listed consequences follow by standard differential geometry; no additional postulates are required. SSZ does not claim to provide a complete quantum theory of gravity; it offers a specific mathematical closure that regularizes the classical singularity while remaining consistent with all weak-field tests. The astrophysical predictions serve primarily as consistency checks and falsifiability criteria for the closure itself, not as the primary subject of this work, which remains the testable quantum phase coupling in terrestrial laboratories.

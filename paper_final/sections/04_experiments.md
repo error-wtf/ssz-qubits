@@ -1,8 +1,12 @@
 # 4. Experimental Designs and Feasibility
 
+The ultimate test of any physical theory lies in its experimental verification or falsification. For the SSZ model, this presents both a challenge and an opportunity. The challenge is that the predicted effects are extraordinarily small for most current quantum platforms, requiring either unprecedented precision or alternative measurement strategies. The opportunity is that the theory makes concrete, quantitative predictions that can be rigorously tested once the necessary experimental capabilities are available.
+
+This section presents a detailed analysis of experimental designs that could detect or constrain SSZ effects. We begin by establishing the signal-to-noise requirements, then describe specific experimental protocols ranging from simple chip-tilt measurements to sophisticated multi-node entanglement tests. For each experiment, we provide realistic estimates of the required precision and identify the technological developments needed to achieve detection sensitivity.
+
 ## 4.1 Signal Sizes and Noise Floor
 
-The predicted SSZ drift at mm-scale heights is extremely small. The key question is: **when does signal exceed noise?**
+The predicted SSZ drift at mm-scale heights is extremely small, far below the noise floor of current superconducting qubit technology. However, this does not mean that experiments are futile. Even in the bounded regime where detection is impossible, carefully designed experiments can place meaningful upper limits on any anomalous height-dependent couplings that might exceed the SSZ prediction. The key question for experimental design is: **when does signal exceed noise?**
 
 ### Signal-to-Noise Ratio
 
@@ -130,6 +134,8 @@ SSZ prediction with no free parameters.
 α = free parameter
 ```
 Linear fit to detect any height dependence.
+
+The model comparison proceeds operationally as follows. For each experimental run, the measured phase drift ΔΦ is recorded as a function of height difference Δh. A linear fit yields the slope α = ∂ΔΦ/∂Δh with uncertainty σ_α. The null model M₀ predicts α = 0; the SSZ model predicts α_SSZ = ω × r_s / R² × t; and an anomalous model M_anom allows for an arbitrary coupling strength. The test statistic is the measured slope divided by its uncertainty: z = α_measured / σ_α. A result consistent with zero (|z| < 2) places an upper bound on any height-dependent coupling, including SSZ. A nonzero slope consistent with α_SSZ, combined with successful compensation reversal, would constitute positive evidence for SSZ. A nonzero slope inconsistent with the predicted SSZ scaling (in magnitude or in failure to reverse under compensation) would indicate an anomalous confound. This framework does not require Bayesian priors or complex likelihood ratios; it relies on standard frequentist slope estimation with clearly defined decision boundaries.
 
 ### Likelihood Ratio Test
 

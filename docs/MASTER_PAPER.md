@@ -76,7 +76,7 @@ is measurable precisely because it involves global comparison, not local violati
 
 1. Phase drift is **deterministic**: ΔΦ = ω × (r_s × Δh / R²) × t
 2. Drift is **geometry-coupled**: depends only on Δh, ω, t
-3. Drift is **compensable**: known geometry → calculated correction
+3. Drift is **compensable in principle**: known geometry → calculated correction in the idealized limit, providing a discriminator rather than a practical correction at mm-scale
 4. **Null at mm-scale is SSZ-consistent**: theory predicts negligibility
 
 ### 2.3 What SSZ Does NOT Claim
@@ -125,7 +125,7 @@ D_SSZ ≈ 1 - Ξ = 1 - r_s/(2r)
 D_GR  = √(1 - r_s/r) ≈ 1 - r_s/(2r)
 ```
 
-Distinction emerges only in strong-field regimes.
+Distinction emerges only in strong-field regimes. *Note: The strong-field form is included for theoretical completeness and closure consistency; all experimental predictions in this paper rely exclusively on the weak-field limit.*
 
 ### 3.4 Differential Time Dilation
 
@@ -288,6 +288,8 @@ SSZ prediction: α_SSZ ≈ 6.7×10⁻¹³ rad/m
 - Proper statistics require confidence intervals
 - Model comparison handles uncertainties correctly
 
+*Slope-based inference avoids arbitrary detection thresholds and naturally incorporates null results as quantitative constraints rather than ambiguous non-detections.*
+
 ### 6.4 Power Analysis
 
 For detection at >3σ with optical clocks:
@@ -401,6 +403,21 @@ SSZ makes testable, falsifiable predictions. This paper honestly assesses where 
 
 1. Bothwell, T. et al. (2022). Nature 602, 420-424.
 2. SSZ-Qubits Repository: github.com/error-wtf/ssz-qubits
+
+---
+
+## Supplementary Figures
+
+| Figure | Description | File |
+|--------|-------------|------|
+| S.1 | Strong Field: D_SSZ vs D_GR at horizon | `fig_strong_field_ssz_vs_gr.png` |
+| S.2 | Validation Summary (GPS, Pound-Rebka, NIST, Skytree) | `fig_validation_summary.png` |
+| S.3 | φ-Geometry: Why golden ratio is fundamental | `fig_phi_geometry.png` |
+| S.4 | Coherent Zone Scaling vs tolerance ε | `fig_coherent_zone_scaling.png` |
+| S.5 | Time Drift Accumulation over time/gates | `fig_time_drift_accumulation.png` |
+| S.6 | Qubit Height Sensitivity Analysis | `fig_qubit_height_sensitivity.png` |
+
+*All supplementary figures available in `outputs/` directory.*
 
 ---
 

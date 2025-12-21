@@ -1,5 +1,7 @@
 # Appendix B: Didactic Scaling Definition
 
+**Important Notice:** The numerical values and visualizations presented in this appendix use artificial amplification factors and do not represent physical predictions. Any quantitative result derived from didactically scaled simulations—including apparent fidelity losses, oscillation periods, or signal magnitudes—must not be cited as experimental expectations. The physical SSZ signal in current superconducting systems is approximately 10⁻¹³ radians, which is undetectable by any existing or foreseeable measurement technique. Readers seeking quantitative predictions should refer exclusively to the unscaled calculations in the main text.
+
 ## B.1 Purpose
 
 Didactic scaling is a **visualization technique** used to make extremely small SSZ effects visible in simulations and plots. It is **NOT a physical prediction** and must always be explicitly labeled.

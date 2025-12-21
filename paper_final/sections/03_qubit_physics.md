@@ -1,8 +1,12 @@
 # 3. Qubit Physics and SSZ
 
+The application of gravitational phase coupling to quantum information processing requires a detailed understanding of how qubits operate and how their coherence properties are affected by various physical mechanisms. This section provides the necessary background on qubit physics, focusing particularly on superconducting transmon qubits that form the basis of most current quantum computing platforms. We then analyze how the SSZ-predicted phase drift compares to other sources of dephasing and under what circumstances it might become observable.
+
+The key insight from this analysis is that while current superconducting qubits are far from sensitive enough to detect SSZ effects, the fundamental physics is well understood, and future improvements in coherence times could eventually bring gravitational phase coupling within experimental reach. Moreover, alternative platforms such as optical atomic clocks already operate in regimes where SSZ effects are measurable.
+
 ## 3.1 Transmon Qubit Fundamentals
 
-The transmon qubit is the workhorse of superconducting quantum computing. Understanding its physics is essential for analyzing SSZ effects.
+The transmon qubit is the workhorse of superconducting quantum computing, employed by leading research groups and companies including IBM, Google, and numerous academic laboratories worldwide. Understanding its physics is essential for analyzing SSZ effects, as the transmon's characteristic frequencies and coherence times determine the magnitude of gravitational phase drift relative to other noise sources.
 
 ### Circuit Model
 

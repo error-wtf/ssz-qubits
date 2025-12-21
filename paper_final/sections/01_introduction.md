@@ -2,13 +2,17 @@
 
 ## 1.1 Motivation
 
-Gravitational redshift has been observed in optical clocks [Chou2010, Bothwell2022] and spaceborne experiments [Hafele1972], but its influence on solid-state quantum information processors remains largely unexplored. The gravitational potential difference across a centimetre-scale device corresponds to a fractional frequency shift of order 10⁻¹⁸, far below the noise floor of current superconducting qubits but within reach of state-of-the-art optical clocks.
+The intersection of quantum mechanics and general relativity represents one of the most profound frontiers in modern physics. While a complete theory of quantum gravity remains elusive, the individual predictions of both theories have been confirmed to extraordinary precision in their respective domains. General relativity describes the curvature of spacetime due to mass and energy, while quantum mechanics governs the behaviour of matter and light at the smallest scales. The question naturally arises: what happens when quantum systems operate in regions where gravitational effects, however small, cannot be entirely neglected?
 
-Recent proposals by Wrede and colleagues posit that small but deterministic time-dilation differences arise when qubits occupy slightly different gravitational potentials, leading to an accumulated phase drift. Because the drift is deterministic, it can be predicted and compensated; however, the predicted magnitude in existing superconducting circuits is many orders of magnitude below typical noise.
+Gravitational redshift has been observed in optical clocks [Chou2010, Bothwell2022] and spaceborne experiments [Hafele1972], but its influence on solid-state quantum information processors remains largely unexplored. This gap in our understanding is not due to theoretical impossibility but rather to the extraordinary smallness of the predicted effects. The gravitational potential difference across a typical quantum processor chip corresponds to fractional frequency shifts of order 10⁻¹⁸ or smaller, which is far below the noise floor of current superconducting qubit technology but tantalizingly close to the precision achieved by state-of-the-art optical atomic clocks.
+
+The Segmented Spacetime Zeno (SSZ) theory provides a framework for understanding these gravitational effects on quantum coherence. Recent proposals posit that small but deterministic time-dilation differences arise when qubits occupy slightly different gravitational potentials, leading to an accumulated phase drift. Because the drift is deterministic, it can be predicted and compensated; however, the predicted magnitude in existing superconducting circuits is many orders of magnitude below typical noise.
 
 ## 1.2 Scope of This Paper
 
-This paper unifies four previously separate works into a single, comprehensive treatment:
+The purpose of this work is to provide a comprehensive, self-contained treatment of gravitational phase coupling in quantum systems. Rather than presenting isolated theoretical predictions or experimental proposals, we aim to bridge the gap between fundamental physics and practical quantum engineering. This requires addressing questions at multiple levels of abstraction: from the mathematical foundations of the SSZ model to the concrete implementation details of falsification experiments.
+
+This paper unifies four previously separate works into a single, comprehensive treatment. Each of the original manuscripts addressed a specific aspect of the problem, and their synthesis reveals connections and implications that were not apparent when considering them in isolation:
 
 | Paper | Focus | Key Contribution |
 |-------|-------|-----------------|
@@ -48,6 +52,8 @@ Our claims are bounded by three regimes:
 - **Interpretation**: Engineering consideration
 
 **We explicitly exclude claims that SSZ is detectable in current mm-scale devices.** Simulations showing visible drifts use didactic scaling for visualization and do not represent physical predictions.
+
+The primary objective of this work is the analysis and experimental testing of gravitational phase coupling in quantum systems. While we present the SSZ strong-field extension and its astrophysical consequences for completeness and theoretical consistency, these sections serve as background motivation and boundary conditions rather than the central subject. The experimental proposals, statistical framework, and engineering considerations focus on quantum phase measurements in terrestrial laboratories. Readers primarily interested in astrophysical predictions should consult the dedicated literature; this paper's contribution lies in connecting gravitational time dilation to quantum coherence in a testable, falsifiable manner.
 
 ## 1.4 Relativity Hygiene
 

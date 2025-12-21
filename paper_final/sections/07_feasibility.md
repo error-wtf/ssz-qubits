@@ -96,6 +96,8 @@ The ~10⁵ frequency enhancement (429 THz / 5 GHz) plus longer coherence times (
 - Compensation required for operation
 - SSZ-aware design mandatory
 
+The statement that SSZ-aware design will be required refers specifically to future quantum systems operating in the Detection or Future regimes, not to current technology. In today's superconducting processors with millimetre-scale height variations and microsecond coherence times, the SSZ signal is twelve orders of magnitude below the noise floor; no engineering consideration is warranted. The design implications become relevant only when two conditions are met: (1) height differences exceed approximately one metre, and (2) coherence times or measurement precision reach the level where sub-radian phase stability matters. These conditions may be satisfied by optical-clock networks within the next decade and by satellite-based quantum links thereafter. The engineering recommendations in this section should therefore be understood as a roadmap for future development rather than a critique of current practice.
+
 **Scientific value**:
 - Practical application of theory
 - Network synchronization protocols

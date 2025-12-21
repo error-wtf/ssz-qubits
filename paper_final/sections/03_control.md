@@ -15,6 +15,8 @@ This is fundamentally different from:
 
 **Because SSZ drift is deterministic, it can be fully compensated.**
 
+It is essential to distinguish this deterministic phase drift from quantum decoherence. Decoherence arises when uncontrolled environmental degrees of freedom become entangled with the system, causing the off-diagonal elements of the density matrix to decay irreversibly. In contrast, SSZ drift is a coherent unitary evolution: the quantum state acquires a well-defined phase factor that depends only on known geometric parameters. No entropy is generated, no information is lost to the environment, and the evolution can be exactly reversed by applying the opposite phase. Decoherence would occur only if the height difference Δh, frequency ω, or evolution time t were themselves subject to uncontrolled fluctuations—in which case the phase drift would average over an ensemble and appear as dephasing. When these parameters are stable and known, as they are in a well-characterized quantum processor, the SSZ contribution remains a coherent rotation that is compensable in principle and in practice.
+
 ---
 
 ## 3.2 With/Without Compensation Protocol

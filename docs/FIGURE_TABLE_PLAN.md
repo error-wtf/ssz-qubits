@@ -279,6 +279,19 @@ All figures saved to: `E:\clone\ssz-qubits\outputs\`
 | C.3 Statistics | ✓ | ✓ | ✓ |
 | C.4 Confounds | ✓ | ✓ | ✓ |
 
+### NEW: Supplementary Figures (2025-12-21)
+
+| Figure | Generated | Purpose | File |
+|--------|-----------|---------|------|
+| S.1 Strong Field SSZ vs GR | ✓ | Singularity resolution proof | `fig_strong_field_ssz_vs_gr.png` |
+| S.2 Validation Summary | ✓ | GPS/Pound-Rebka/NIST/Skytree | `fig_validation_summary.png` |
+| S.3 φ-Geometry | ✓ | Why golden ratio matters | `fig_phi_geometry.png` |
+| S.4 Coherent Zone Scaling | ✓ | Zone width vs tolerance ε | `fig_coherent_zone_scaling.png` |
+| S.5 Time Drift Accumulation | ✓ | Phase drift over time/gates | `fig_time_drift_accumulation.png` |
+| S.6 Qubit Height Sensitivity | ✓ | ΔΞ maps + sensitivity table | `fig_qubit_height_sensitivity.png` |
+
+**Generation Script:** `generate_improved_plots.py`
+
 ---
 
 © 2025 Carmen Wrede & Lino Casu  
