@@ -70,6 +70,56 @@
 
 ---
 
+## Strong-Field Physics
+
+[20] Demorest, P.B., et al. (2010). A two-solar-mass neutron star measured using 
+     Shapiro delay. Nature 467, 1081-1083.
+
+[21] Abbott, B.P., et al. (LIGO/Virgo) (2016). Observation of gravitational waves 
+     from a binary black hole merger. Physical Review Letters 116, 061102.
+
+[22] Event Horizon Telescope Collaboration (2019). First M87 Event Horizon Telescope 
+     results. I. The shadow of the supermassive black hole. ApJ Letters 875, L1.
+
+[23] Miller, M.C., et al. (2019). PSR J0030+0451 mass and radius from NICER data. 
+     ApJ Letters 887, L24.
+
+[24] Riley, T.E., et al. (2019). A NICER view of PSR J0030+0451. ApJ Letters 887, L21.
+
+## Quantum Networks
+
+[25] Kimble, H.J. (2008). The quantum internet. Nature 453, 1023-1030.
+
+[26] Wehner, S., et al. (2018). Quantum internet: A vision for the road ahead. 
+     Science 362, eaam9288.
+
+[27] Pompili, M., et al. (2021). Realization of a multinode quantum network of 
+     remote solid-state qubits. Science 372, 259-264.
+
+## Gravitational Decoherence
+
+[28] Pikovski, I., et al. (2015). Universal decoherence due to gravitational time 
+     dilation. Nature Physics 11, 668-672.
+
+[29] Zych, M., et al. (2011). Quantum interferometric visibility as a witness of 
+     general relativistic proper time. Nature Communications 2, 505.
+
+[30] Bouwmeester, D., et al. (2020). Quantum superposition of spacetimes. 
+     arXiv:2007.02333.
+
+## Additional Atomic Clock References
+
+[31] Huntemann, N., et al. (2016). Single-ion atomic clock with 3×10⁻¹⁸ systematic 
+     uncertainty. Physical Review Letters 116, 063001.
+
+[32] Brewer, S.M., et al. (2019). ²⁷Al⁺ quantum-logic clock with a systematic 
+     uncertainty below 10⁻¹⁸. Physical Review Letters 123, 033201.
+
+[33] Takamoto, M., et al. (2020). Test of general relativity by a pair of 
+     transportable optical lattice clocks. Nature Photonics 14, 411-415.
+
+---
+
 ## BibTeX Format
 
 ```bibtex
