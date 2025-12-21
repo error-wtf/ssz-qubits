@@ -294,16 +294,21 @@ def assemble_document():
     add_markdown_content(doc, read_section("00_abstract"))
     doc.add_page_break()
     
-    # Main sections
+    # Main sections - all 14 (13 after abstract)
     sections = [
-        ("01_introduction", "F1_phase_vs_height"),
-        ("02_theory", "F4_ssz_vs_gr"),
+        ("01_introduction", None),
+        ("01b_history", "F9_validation"),
+        ("02_theory", "F1_phase_vs_height"),
+        ("02b_strong_field", "F7_strong_field"),
+        ("03_qubit_physics", None),
         ("03_control", "F6_compensation"),
         ("04_experiments", "F2_platform_comparison"),
         ("05_entanglement", None),
         ("06_engineering", "F5_zone_width"),
         ("07_feasibility", "F3_confound_matrix"),
         ("08_conclusion", None),
+        ("10_roadmap", "F8_timeline"),
+        ("12_reproducibility", "F10_network"),
     ]
     
     for section_name, figure_name in sections:
