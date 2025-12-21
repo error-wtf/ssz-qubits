@@ -411,9 +411,9 @@ def test_phase_drift_transmon():
     assert 6e-13 < dphi < 8e-13
 
 def test_zone_width():
-    """Zone width at ε=10⁻¹⁸ is ~183 μm."""
+    """Zone width at ε=10⁻¹⁸ is ~18.3 mm."""
     z = zone_width(1e-18)
-    assert 1.5e-4 < z < 2.0e-4
+    assert 1.5e-2 < z < 2.0e-2
 ```
 
 ---

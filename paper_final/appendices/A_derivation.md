@@ -130,7 +130,7 @@ The factor 4 comes from normalizing to a reference system.
 ```
 z = 4 × 10⁻¹⁸ × (6.371×10⁶)² / 8.87×10⁻³
   = 4 × 10⁻¹⁸ × 4.059×10¹³ / 8.87×10⁻³
-  = 1.83×10⁻⁴ m = 183 μm
+  = 1.83×10⁻² m = 18.3 mm
 ```
 
 ## A.8 Unit Verification

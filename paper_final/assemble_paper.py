@@ -316,12 +316,16 @@ def assemble_document():
         
         doc.add_page_break()
     
-    # Appendices
+    # Appendices - all 8
     appendices = [
         ("A_derivation", "Appendix A: Full Mathematical Derivation"),
         ("B_didactic", "Appendix B: Didactic Scaling Definition"),
         ("C_confounds", "Appendix C: Confound Playbook"),
         ("D_constants", "Appendix D: Physical Constants"),
+        ("E_transition", "Appendix E: Weak-Strong Field Transition"),
+        ("F_platforms", "Appendix F: Platform Technical Specifications"),
+        ("G_statistics", "Appendix G: Statistical Methods"),
+        ("H_code", "Appendix H: Code Listings"),
     ]
     
     for app_name, app_title in appendices:

@@ -76,7 +76,7 @@ drift = pair.phase_drift(100e-6)
 
 # Zone width
 z = zone_width(1e-18)
-# Returns: 1.83e-4 m (183 μm)
+# Returns: 1.83e-2 m (18.3 mm)
 
 # Validate
 result = validate_gps()

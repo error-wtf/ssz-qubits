@@ -177,9 +177,10 @@ z(ε) = 4ε × R² / r_s
 
 | Tolerance ε | Zone Width z(ε) | Application |
 |-------------|-----------------|-------------|
-| 10⁻¹⁸ | 183 μm | QEC threshold |
-| 10⁻¹⁵ | 183 mm | High-fidelity gates |
-| 10⁻¹² | 183 m | Standard gates |
+| 10⁻²⁰ | 183 μm | Extreme precision |
+| 10⁻¹⁸ | 18.3 mm | QEC threshold |
+| 10⁻¹⁵ | 18.3 m | High-fidelity gates |
+| 10⁻¹² | 18.3 km | Standard gates |
 
 ### Design Implication
 

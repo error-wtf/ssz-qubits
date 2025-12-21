@@ -22,15 +22,15 @@ z(ε) = 4ε × R² / r_s
 
 For planar superconducting chips:
 - Typical height variation: < 10 μm (lithography/substrate)
-- Zone width at ε = 10⁻¹⁵: z = 183 mm
+- Zone width at ε = 10⁻¹⁵: z = 18.3 m
 - **Conclusion**: All qubits on a planar chip are within one zone
 
 ### 3D Integration Considerations
 
 For stacked chiplets or 3D integration:
 - Layer separation: 50-500 μm typical
-- Zone width at ε = 10⁻¹⁸: z = 183 μm
-- **Conclusion**: Cross-layer operations may require compensation in future high-coherence systems
+- Zone width at ε = 10⁻¹⁸: z = 18.3 mm
+- **Conclusion**: Cross-layer operations easily within one zone for current systems
 
 ### Layout Recommendations
 

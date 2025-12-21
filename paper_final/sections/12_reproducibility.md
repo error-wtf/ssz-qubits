@@ -89,7 +89,7 @@ dphi = phase_drift(omega=2*np.pi*5e9, delta_h=1e-3, t=1e-4)
 
 # Coherent zone width
 z = zone_width(epsilon=1e-18)
-# Returns: 1.83e-4 m (183 μm)
+# Returns: 1.83e-2 m (18.3 mm)
 ```
 
 ### Qubit Classes
@@ -211,8 +211,8 @@ epsilon = 1e-18
 # SSZ calculation
 z = 4 * epsilon * R**2 / r_s
 
-print(f"z = {z*1e6:.0f} μm")
-# Output: z = 183 μm
+print(f"z = {z*1e3:.1f} mm")
+# Output: z = 18.3 mm
 ```
 
 ---
