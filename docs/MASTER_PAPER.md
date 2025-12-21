@@ -401,8 +401,11 @@ SSZ makes testable, falsifiable predictions. This paper honestly assesses where 
 
 ## References
 
-1. Bothwell, T. et al. (2022). Nature 602, 420-424.
-2. SSZ-Qubits Repository: github.com/error-wtf/ssz-qubits
+1. Bothwell, T. et al. (2022). Resolving the gravitational redshift across a millimetre-scale atomic sample. Nature 602, 420-424.
+2. SSZ-Qubits Repository: https://github.com/error-wtf/ssz-qubits
+3. Validation Report: https://github.com/error-wtf/ssz-qubits/blob/main/PAPER_D_VALIDATION_REPORT.md
+4. Test Suite: https://github.com/error-wtf/ssz-qubits/blob/main/tests/test_paper_d_validation.py (182 tests, 100% pass)
+5. Supplementary Figures: https://github.com/error-wtf/ssz-qubits/tree/main/outputs
 
 ---
 
