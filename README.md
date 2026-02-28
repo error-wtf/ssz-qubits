@@ -720,12 +720,15 @@ ssz-qubits/
 │   └── SSZ_QUBIT_THEORY_SUMMARY.md     # Theory summary
 │
 ├── tests/
-│   ├── test_ssz_physics.py             # Physics tests
-│   ├── test_edge_cases.py              # Edge case tests
-│   ├── test_validation.py              # Validation tests
-│   ├── test_ssz_qubit_applications.py  # Application tests
+│   ├── test_ssz_physics.py             # Physics tests (17)
+│   ├── test_edge_cases.py              # Edge case tests (27)
+│   ├── test_validation.py              # Validation tests (17)
+│   ├── test_ssz_qubit_applications.py  # Application tests (15)
 │   ├── test_entanglement.py            # Entanglement tests (23)
-│   └── test_paper_a_support.py         # Paper A support tests (16)
+│   ├── test_paper_a_support.py         # Paper A support tests (16)
+│   ├── test_paper_c_support.py         # Paper C experimental framework (19)
+│   ├── test_paper_d_validation.py      # Paper D master document checks (32)
+│   └── test_roadmap_validation.py      # Roadmap & feasibility tests (18)
 │
 ├── outputs/                    # Generated plots
 │   ├── time_dilation_vs_height.png
