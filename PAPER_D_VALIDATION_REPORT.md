@@ -113,7 +113,7 @@ Including the Paper D validation tests, the complete ssz-qubits test suite shows
 | test_ssz_physics.py | 17 | PASS |
 | test_ssz_qubit_applications.py | 15 | PASS |
 | test_validation.py | 17 | PASS |
-| **TOTAL** | **182** | **PASS** |
+| **TOTAL** | **184** | **PASS** |
 
 ---
 

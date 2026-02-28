@@ -2,7 +2,7 @@
 
 [![License: ACSL](https://img.shields.io/badge/License-Anti--Capitalist-red.svg)](LICENSE)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![Tests: 113/113](https://img.shields.io/badge/Tests-113%2F113%20Passed-brightgreen.svg)](tests/)
+[![Tests: 184/184](https://img.shields.io/badge/Tests-184%2F184%20Passed-brightgreen.svg)](tests/)
 [![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-orange.svg)](CONTRIBUTING.md)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/error-wtf/ssz-qubits/blob/main/SSZ_Qubits_Colab.ipynb)
 
@@ -205,7 +205,7 @@ pytest tests/ -v
 
 Expected output:
 ```
-============================= 113 passed in 0.54s ==============================
+============================= 184 passed in 0.48s ==============================
 ```
 
 ---
@@ -506,10 +506,15 @@ print(f"Time drift: {drift_per_hour:.3f} ns/hour")
 | Category | Tests | Description |
 |----------|-------|-------------|
 | Physics | 17 | Physical formulas |
-| Edge Cases | 25 | Extreme values, error handling |
+| Edge Cases | 27 | Extreme values, boundary conditions |
 | Validation | 17 | Experimental validation |
 | Applications | 15 | Practical applications |
-| **Total** | **74** | |
+| Entanglement | 23 | Bell states & fidelity |
+| Paper A Support | 16 | Geometry & coherent zones |
+| Paper C Support | 19 | Experimental framework |
+| Paper D Validation | 32 | Master document checks |
+| Roadmap Validation | 18 | Feasibility & roadmap |
+| **Total** | **184** | |
 
 ### Running Tests
 

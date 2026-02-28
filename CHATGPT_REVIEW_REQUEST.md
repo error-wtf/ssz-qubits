@@ -14,8 +14,8 @@ This is a physics paper about **Segmented Spacetime (SSZ)** applied to quantum c
 
 ### Overall Status
 ```
-Total Tests: 182
-Passed: 182
+Total Tests: 184
+Passed: 184
 Failed: 0
 Pass Rate: 100%
 ```
@@ -292,17 +292,17 @@ Rate:   100.0%
 
 ---
 
-## Full Test Suite (182 tests)
+## Full Test Suite (184 tests)
 
 ```
-tests/test_edge_cases.py          25 PASSED
+tests/test_edge_cases.py          27 PASSED
 tests/test_paper_d_validation.py  32 PASSED
 tests/test_roadmap_validation.py  18 PASSED
 tests/test_ssz_physics.py         17 PASSED
 tests/test_ssz_qubit_applications.py  15 PASSED
 tests/test_validation.py          17 PASSED
 --------------------------------------
-TOTAL                            182 PASSED (100%)
+TOTAL                            184 PASSED (100%)
 ```
 
 ---

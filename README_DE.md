@@ -2,7 +2,7 @@
 
 [![License: ACSL](https://img.shields.io/badge/License-Anti--Capitalist-red.svg)](LICENSE)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![Tests: 74/74](https://img.shields.io/badge/Tests-74%2F74%20Passed-brightgreen.svg)](tests/)
+[![Tests: 184/184](https://img.shields.io/badge/Tests-184%2F184%20Passed-brightgreen.svg)](tests/)
 
 ---
 
@@ -499,10 +499,15 @@ print(f"Zeitdrift: {drift_per_hour:.3f} ns/Stunde")
 | Kategorie | Tests | Beschreibung |
 |-----------|-------|--------------|
 | Physics | 17 | Physikalische Formeln |
-| Edge Cases | 25 | Extreme Werte, Fehlerbehandlung |
+| Edge Cases | 27 | Extreme Werte, Randbedingungen |
 | Validation | 17 | Experimentelle Validierung |
 | Applications | 15 | Praktische Anwendungen |
-| **Gesamt** | **74** | |
+| Entanglement | 23 | Verschraenkung & Bell States |
+| Paper A Support | 16 | Geometry & Coherent Zones |
+| Paper C Support | 19 | Experimental Framework |
+| Paper D Validation | 32 | Master Document Checks |
+| Roadmap Validation | 18 | Feasibility & Roadmap |
+| **Gesamt** | **184** | |
 
 ### Tests ausfuehren
 
@@ -685,9 +690,14 @@ ssz-qubits/
 │
 ├── tests/
 │   ├── test_ssz_physics.py             # 17 Physics Tests
-│   ├── test_edge_cases.py              # 25 Edge Case Tests
+│   ├── test_edge_cases.py              # 27 Edge Case Tests
 │   ├── test_validation.py              # 17 Validation Tests
-│   └── test_ssz_qubit_applications.py  # 15 Application Tests
+│   ├── test_ssz_qubit_applications.py  # 15 Application Tests
+│   ├── test_entanglement.py            # 23 Entanglement Tests
+│   ├── test_paper_a_support.py         # 16 Paper A Tests
+│   ├── test_paper_c_support.py         # 19 Paper C Tests
+│   ├── test_paper_d_validation.py      # 32 Paper D Tests
+│   └── test_roadmap_validation.py      # 18 Roadmap Tests
 │
 ├── outputs/                    # Generierte Plots
 │   ├── time_dilation_vs_height.png

@@ -87,7 +87,7 @@ N = (SNR × σ_noise / signal)²
 
 **The SSZ effect at GR-predicted levels is ~12 orders of magnitude below detectability with current superconducting qubit technology.**
 
-This is not a failure of the theory—it is the expected regime where gravitational effects are negligible for solid-state systems on Earth.
+This is not a failure of the theory—it is the expected regime where gravitational effects produce ΔΦ ≈ 10⁻¹⁶ rad/gate for solid-state systems on Earth.
 
 ---
 
@@ -127,7 +127,7 @@ Trapped ions offer intermediate parameters:
 An upper-bound experiment provides value by:
 
 1. **Constraining anomalous couplings**: If any beyond-GR phase coupling exists, it must be smaller than our upper bound
-2. **Validating null predictions**: SSZ predicts negligible effect at mm-scale—confirming this is a positive result
+2. **Validating null predictions**: SSZ predicts ΔΦ < 10⁻¹⁰ rad (after 10⁶ gates) at mm-scale—confirming this is a positive result
 3. **Establishing methodology**: First systematic study of gravitational phase coupling in solid-state qubits
 
 ### 4.2 Hardware Configurations for Δh Generation
@@ -292,7 +292,7 @@ Papers A/B suggest SSZ effects are relevant for quantum computing. Paper C shows
 
 **Papers A/B:** Describe the *regime where SSZ becomes relevant*—as QEC improves and coherence times extend, the cumulative effect grows. The papers identify **when** SSZ corrections would be needed (future systems).
 
-**Paper C:** Tests *current systems* where SSZ effects are negligible. This is not a contradiction—it is the expected result in the present regime.
+**Paper C:** Tests *current systems* where SSZ effects are of order 10⁻¹⁶ rad/gate. This is not a contradiction—it is the expected result in the present regime.
 
 ### 7.3 The Scaling Argument
 
@@ -302,7 +302,7 @@ The key insight from Papers A/B is that relevance scales with:
 - Accumulated gate count (N_gates)
 - Height difference (Δh)
 
-For current systems: T₂ ~ 100 μs, Δh ~ mm → negligible
+For current systems: T₂ ~ 100 μs, Δh ~ mm → ΔΦ ≈ 10⁻¹⁶ rad/gate
 For future systems: T₂ ~ 1 s, Δh ~ m → potentially relevant
 
 Paper C tests the present regime and provides the methodology for future tests.

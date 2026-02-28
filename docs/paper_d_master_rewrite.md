@@ -323,7 +323,7 @@ For a 5 GHz transmon with 100 μs Ramsey time:
 
 This is approximately **12 orders of magnitude** below detectability.
 
-**A null result is SSZ-CONSISTENT.** The theory predicts negligible effects in this regime.
+**A null result is SSZ-CONSISTENT.** The theory predicts effects of order ΔΦ ≈ 10⁻¹⁶ rad/gate at mm-scale Δh — approximately 12 OoM below current noise floors (~10⁻³–10⁻⁴).
 
 ---
 
@@ -334,7 +334,7 @@ This is approximately **12 orders of magnitude** below detectability.
 An upper-bound experiment provides value by:
 
 1. **Constraining anomalous couplings:** If any beyond-GR phase coupling exists, it must be smaller than our upper bound
-2. **Validating null predictions:** SSZ predicts negligible effect at mm-scale—confirming this is a positive result
+2. **Validating null predictions:** SSZ predicts ΔΦ < 10⁻¹⁰ rad (after 10⁶ gates) at mm-scale—confirming this is a positive result
 3. **Establishing methodology:** First systematic study of gravitational phase coupling in solid-state qubits
 
 ### 8.2 Hardware Configurations

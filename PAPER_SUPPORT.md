@@ -168,7 +168,7 @@ Paper B Equations verified: 9, 10, 11, 13, 15
 ### Total Test Count
 
 ```
-113 tests passed
+184 tests passed
 ```
 
 ---

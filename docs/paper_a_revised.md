@@ -184,7 +184,7 @@ For future systems where effects become relevant:
 
 ## 7. Conclusion
 
-The SSZ framework provides a geometric basis for understanding gravitational phase coupling in quantum systems. While effects are negligible for current mm-scale superconducting qubits, the framework becomes relevant for:
+The SSZ framework provides a geometric basis for understanding gravitational phase coupling in quantum systems. While effects are of order ΔΦ ≈ 10⁻¹⁶ rad/gate for current mm-scale superconducting qubits, the framework becomes relevant for:
 
 - Future high-coherence systems
 - Large-scale distributed quantum networks

@@ -212,7 +212,7 @@ The strongest discriminator:
 
 **Apparent contradiction:** A/B discuss SSZ relevance; C shows undetectability.
 
-**Resolution:** A/B describe the *regime where SSZ becomes relevant*—future systems with T₂ >> 1 s, Δh ~ m. Paper C tests *current systems* where effects are negligible.
+**Resolution:** A/B describe the *regime where SSZ becomes relevant*—future systems with T₂ >> 1 s, Δh ~ m. Paper C tests *current systems* where effects are of order 10⁻¹⁶ rad/gate.
 
 **A null result today validates SSZ in the regime where it predicts negligibility.**
 
