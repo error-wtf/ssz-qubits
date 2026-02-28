@@ -43,7 +43,7 @@
 | Best precision | 10⁻³ rad | 10⁻⁵ rad | 10⁻⁸ rad | 10⁻¹² rad |
 | Platforms validated | 1 | 3 | 5 | 8 |
 | Publications | 5 | 15 | 30 | 50+ |
-| Test suite size | 150 | 500 | 1000 | 2000+ |
+| Test suite size | 184 | 500 | 1000 | 2000+ |
 
 ## Resource Requirements
 

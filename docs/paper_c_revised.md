@@ -39,7 +39,7 @@ We present an experimental framework for testing gravitational phase coupling in
 
 5. **Statistical framework:** Slope-fitting with confidence intervals replaces binary thresholds.
 
-All calculations verified; 150 tests pass (100%).
+All calculations verified; 184 tests pass (100%).
 
 ---
 

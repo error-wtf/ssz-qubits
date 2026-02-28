@@ -14,7 +14,7 @@ ssz-qubits/
 ├── demo.py                  # Interactive demonstration
 ├── run_tests.py             # Test runner
 │
-├── tests/                   # Test suite (74 tests)
+├── tests/                   # Test suite (184 tests)
 │   ├── test_ssz_physics.py
 │   ├── test_validation.py
 │   ├── test_edge_cases.py
@@ -297,8 +297,8 @@ jobs:
 
 | Branch | Tests | Coverage | Status |
 |--------|-------|----------|--------|
-| main | 74/74 | 100% | ✅ |
-| develop | 74/74 | 100% | ✅ |
+| main | 184/184 | 100% | ✅ |
+| develop | 184/184 | 100% | ✅ |
 
 ---
 

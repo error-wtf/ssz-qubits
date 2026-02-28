@@ -13,7 +13,7 @@ The SSZ-Qubits project is **fully completed** with:
 
 | Metric | Result |
 |--------|--------|
-| **Tests** | 74/74 PASSED |
+| **Tests** | 184/184 PASSED |
 | **Demo** | Working |
 | **Visualizations** | 6 plots generated |
 | **Documentation** | 4 documents + README |
@@ -68,7 +68,7 @@ The SSZ-Qubits project is **fully completed** with:
 ### 2.1 Overview
 
 ```
-============================= 74 passed in 0.54s ==============================
+============================= 184 passed in 0.54s ==============================
 ```
 
 ### 2.2 Test Categories
@@ -220,7 +220,7 @@ from ssz_qubits import (
 | Component | Status |
 |-----------|--------|
 | Core module | ✅ Complete |
-| Tests | ✅ 74/74 passed |
+| Tests | ✅ 184/184 passed |
 | Documentation | ✅ Complete |
 | Visualizations | ✅ 6 plots |
 | Demo | ✅ 9 demos |

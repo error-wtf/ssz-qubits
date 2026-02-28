@@ -347,10 +347,10 @@ Ketten-Analyse:
 
 ## 7. Validierte Tests
 
-### Gesamtergebnis: 74/74 PASSED
+### Gesamtergebnis: 184/184 PASSED
 
 ```
-============================= 74 passed in 0.41s ==============================
+============================= 184 passed in 0.41s ==============================
 ```
 
 ### Test-Kategorien

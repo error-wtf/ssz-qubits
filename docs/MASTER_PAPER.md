@@ -9,7 +9,7 @@
 
 ## Abstract
 
-The Segmented Spacetime (SSZ) framework predicts deterministic phase drifts in quantum systems at different gravitational potentials. This unified paper presents: (1) **Upper-bound experiments** with superconducting qubits (~12 OoM below noise—null is SSZ-consistent); (2) **Direct detection** via optical clocks (~0.6 rad at 1 m); (3) **Compensation protocols** for future quantum networks. We provide a statistical falsification framework using slope-fitting with confidence intervals. All 150 tests pass; all results reproducible.
+The Segmented Spacetime (SSZ) framework predicts deterministic phase drifts in quantum systems at different gravitational potentials. This unified paper presents: (1) **Upper-bound experiments** with superconducting qubits (~12 OoM below noise—null is SSZ-consistent); (2) **Direct detection** via optical clocks (~0.6 rad at 1 m); (3) **Compensation protocols** for future quantum networks. We provide a statistical falsification framework using slope-fitting with confidence intervals. All 184 tests pass; all results reproducible.
 
 **Keywords:** SSZ, Gravitational Phase Coupling, Quantum Computing, Falsifiability, Optical Clocks
 
@@ -351,7 +351,7 @@ SSZ compensation becomes engineering-relevant when:
 ### 8.2 Commands
 
 ```bash
-# Run all 150 tests
+# Run all 184 tests
 python -m pytest tests/ -v
 
 # Generate figures
@@ -384,7 +384,7 @@ python paper_suite_integrator.py
 3. **Gold standard:** Optical clocks (0.59 rad @ 1 m)
 4. **Discriminator:** WITH/WITHOUT compensation
 5. **Statistics:** Slope-fitting with CI, not binary thresholds
-6. **Reproducible:** 150 tests, all pass
+6. **Reproducible:** 184 tests, all pass
 
 ### 9.2 What Would Falsify SSZ
 

@@ -128,7 +128,7 @@
 ✅ CONSISTENCY_REPORT.md constraints: SATISFIED
 ✅ CHANGELOG.md modifications: DOCUMENTED
 ✅ FIGURE_TABLE_PLAN.md callouts: MATCHED
-✅ All 150 tests: PASSING
+✅ All 184 tests: PASSING
 ✅ Numerical verification: COMPLETE
 ```
 

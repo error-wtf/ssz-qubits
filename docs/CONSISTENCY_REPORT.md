@@ -133,7 +133,7 @@ z(ε) = 4ε × R² / r_s
 ### 4.9 Test Suite Reference
 **Issue:** A/B did not reference reproducibility package.  
 **Resolution:** Added to all papers:
-> "All predictions are reproducible via the ssz-qubits repository (https://github.com/error-wtf/ssz-qubits). 150 unit tests verify numerical consistency."
+> "All predictions are reproducible via the ssz-qubits repository (https://github.com/error-wtf/ssz-qubits). 184 unit tests verify numerical consistency."
 
 ### 4.10 Claim Taxonomy
 **Issue:** No unified framework for what SSZ claims vs. doesn't claim.  
@@ -177,7 +177,7 @@ z(ε) = 4ε × R² / r_s
 - [x] Every central equation has defined variables + units
 - [x] Didactic scaling explicitly defined and separated from physical detectability
 - [x] SSZ vs GR weak-field consistency clearly stated
-- [x] Repo reference (150 tests) in all papers
+- [x] Repo reference (184 tests) in all papers
 - [x] Optical clock identified as gold standard
 - [x] Upper-bound framing for transmon experiments
 - [x] Slope-fitting statistical framework (not binary thresholds)

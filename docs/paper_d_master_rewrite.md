@@ -40,7 +40,7 @@ The Segmented Spacetime (SSZ) framework predicts that quantum systems at differe
 
 4. **Falsifiability:** We present a statistical framework using slope-fitting with explicit confidence intervals rather than binary thresholds.
 
-5. **Reproducibility:** All 150 unit tests pass (100%). All predictions are reproducible via the accompanying code repository.
+5. **Reproducibility:** All 184 unit tests pass (100%). All predictions are reproducible via the accompanying code repository.
 
 **Core claim:** SSZ predicts a deterministic, geometry-coupled phase drift that is principally compensable. Current transmons provide robust upper bounds; optical-clock regimes are the gold standard for direct detection.
 
@@ -455,7 +455,7 @@ The statement "if measured effect < 50% of prediction → falsified" is inapprop
 ### 11.2 One-Command Reproduction
 
 ```bash
-# All 150 tests
+# All 184 tests
 python -m pytest tests/ -v
 
 # All Paper D figures
@@ -509,7 +509,7 @@ python paper_suite_integrator.py
 3. Optical atomic clocks are gold-standard platform (ΔΦ ~ 0.6 rad at 1 m)
 4. With/without compensation is the strongest discriminator
 5. Statistical framework uses slope-fitting, not binary thresholds
-6. All 150 tests pass; all results reproducible
+6. All 184 tests pass; all results reproducible
 
 ### 13.2 Roadmap
 
@@ -587,7 +587,7 @@ For Δh << R:
 ## Appendix C: Test Suite Summary
 
 ```
-ssz-qubits:        150 tests (100%)
+ssz-qubits:        184 tests (100%)
 ssz-metric-pure:    12 tests (100%)
 ssz-full-metric:    41 tests (100%)
 g79-cygnus:         14 tests (100%)

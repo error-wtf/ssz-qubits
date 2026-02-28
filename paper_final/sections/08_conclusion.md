@@ -129,7 +129,7 @@ All calculations and figures in this paper can be reproduced using the open-sour
 
 **Key commands**:
 ```bash
-# Run all tests (150 tests)
+# Run all tests (184 tests)
 pytest tests/ -v
 
 # Generate figures
@@ -141,7 +141,7 @@ python paper_final/figures/F2_platform_comparison.py
 python -c "from ssz_qubits import phase_drift; print(phase_drift(5e9, 1e-3, 1e-4))"
 ```
 
-**Test coverage**: 150 tests covering all formulas, edge cases, and numerical examples
+**Test coverage**: 184 tests covering all formulas, edge cases, and numerical examples
 
 **License**: Anti-Capitalist Software License v1.4
 

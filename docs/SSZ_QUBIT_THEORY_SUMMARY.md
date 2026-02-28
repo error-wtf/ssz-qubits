@@ -2,7 +2,7 @@
 
 **Project:** Segmented Spacetime (SSZ) for Qubit Systems  
 **Date:** 2025-12-11  
-**Status:** ✅ Validated (74/74 tests passed)  
+**Status:** ✅ Validated (184/184 tests passed)  
 **Authors:** Carmen Wrede & Lino Casu
 
 ---
@@ -170,7 +170,7 @@ F = 1 - epsilon * delta_xi**2  # F ≈ 0.999999...
 ### Test Results
 
 ```
-============================= 74 passed in 0.89s ==============================
+============================= 184 passed in 0.89s ==============================
 
 Test Categories:
   - Edge Cases:           25 PASSED
@@ -225,7 +225,7 @@ ssz-qubits/
 │   ├── SSZ_MATHEMATICAL_PHYSICS.md  # Math/physics foundations
 │   ├── SSZ_QUBIT_APPLICATIONS.md    # Practical applications
 │   └── SSZ_QUBIT_THEORY_SUMMARY.md  # This summary
-├── tests/                           # 74 tests
+├── tests/                      # 184 tests
 └── outputs/                         # 6 visualizations
 ```
 

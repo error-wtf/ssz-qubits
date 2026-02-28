@@ -27,7 +27,7 @@ This changelog documents all modifications made to Papers A, B, C, and D to achi
 - [x] Statistical falsification framework (slope-fitting, CI)
 - [x] Upper-bound experiment design with concrete example
 - [x] Confound discrimination matrix
-- [x] Reproducibility package reference (150 tests)
+- [x] Reproducibility package reference (184 tests)
 
 ### Numerical Corrections
 - [x] Verified all ΔΦ calculations with unit checks
@@ -157,7 +157,7 @@ This changelog documents all modifications made to Papers A, B, C, and D to achi
 
 ```
 Repository: https://github.com/error-wtf/ssz-qubits
-Tests: 150/150 passing (100%)
+Tests: 184/184 passing (100%)
 Command: python -m pytest tests/ -v
 ```
 

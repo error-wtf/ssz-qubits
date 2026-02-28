@@ -29,7 +29,7 @@ We analyze phase coherence and entanglement preservation in quantum systems with
 - Distributed quantum networks (Δh ~ meters)
 - **Optical atomic clocks** (gold standard: ΔΦ ~ 0.6 rad at 1 m)
 
-All results are reproducible via the ssz-qubits repository (150 tests, 100% passing).
+All results are reproducible via the ssz-qubits repository (184 tests, 100% passing).
 
 ---
 

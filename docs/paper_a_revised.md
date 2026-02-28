@@ -30,7 +30,7 @@ We present the Segmented Spacetime (SSZ) framework for understanding gravitation
 - Larger height differences (Δh ~ meters)
 - Optical atomic clocks (where ΔΦ ~ 0.6 rad at Δh = 1 m is detectable)
 
-All predictions are reproducible via the ssz-qubits repository (150 tests, 100% passing).
+All predictions are reproducible via the ssz-qubits repository (184 tests, 100% passing).
 
 ---
 

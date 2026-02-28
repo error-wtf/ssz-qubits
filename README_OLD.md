@@ -2,7 +2,7 @@
 
 [![License: ACSL](https://img.shields.io/badge/License-Anti--Capitalist-red.svg)](LICENSE)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![Tests: 74/74](https://img.shields.io/badge/Tests-74%2F74%20Passed-brightgreen.svg)](tests/)
+[![Tests: 184/184](https://img.shields.io/badge/Tests-184%2F184%20Passed-brightgreen.svg)](tests/)
 
 ## Overview
 
@@ -115,7 +115,7 @@ print(f"Phase drift/gate = {mismatch['phase_drift_per_gate']:.6e} rad")
 
 ## Test Suite
 
-The test suite includes **74 tests** covering:
+The test suite includes **184 tests** covering:
 
 ### Physics Tests (`test_ssz_physics.py`)
 - Schwarzschild radius validation

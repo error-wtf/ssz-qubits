@@ -32,7 +32,7 @@ Segmented spacetime, gravitational phase coupling, quantum coherence, time dilat
 - 12 orders of magnitude gap between transmon signal and noise floor
 - Optical clocks at metre scale: direct detection possible
 - With/without compensation protocol discriminates SSZ from confounds
-- 150 validated tests ensure numerical consistency
+- 184 validated tests ensure numerical consistency
 
 ---
 
