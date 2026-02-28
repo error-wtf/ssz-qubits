@@ -23,7 +23,7 @@ from docx.oxml import OxmlElement
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 OUTPUT_DIR = os.path.join(SCRIPT_DIR, 'outputs')
-PAPERS_DIR = r'E:\clone\SSZ_QUBIT_PAPERS'
+PAPERS_DIR = r'SSZ_QUBIT_PAPERS'
 
 def set_cell_shading(cell, color):
     shading = OxmlElement('w:shd')

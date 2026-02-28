@@ -286,7 +286,7 @@ Phase 6: DOCX generieren und prüfen
 ## Nächster Schritt
 
 ```bash
-cd E:\clone\ssz-qubits\paper_final
+cd ssz-qubits/paper_final  # https://github.com/error-wtf/ssz-qubits
 python assemble_paper.py
 ```
 

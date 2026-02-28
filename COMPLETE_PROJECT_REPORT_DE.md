@@ -170,7 +170,7 @@ Pound-Rebka Experiment:
 ## 6. Projektstruktur
 
 ```
-E:\clone\ssz-qubits\
+https://github.com/error-wtf/ssz-qubits\
 |-- ssz_qubits.py               # Kernmodul (933 Zeilen)
 |-- demo.py                     # Interaktive Demo (9 Demos)
 |-- run_tests.py                # Test-Runner

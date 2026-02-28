@@ -231,7 +231,7 @@ Syndrome-Gewichte berücksichtigen lokales Xi
 ## 6. Projektstruktur
 
 ```
-E:\clone\ssz-qubits\
+https://github.com/error-wtf/ssz-qubits\
 ├── ssz_qubits.py              # Kernmodul (933 Zeilen)
 ├── visualize_ssz_qubits.py    # Visualisierung
 ├── run_tests.py               # Test-Runner

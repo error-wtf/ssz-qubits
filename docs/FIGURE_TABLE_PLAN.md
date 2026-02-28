@@ -225,7 +225,7 @@ Papers A and B retain their original conceptual figures but add:
 
 ### Reproduction Commands
 ```bash
-cd E:\clone\ssz-qubits
+cd https://github.com/error-wtf/ssz-qubits
 
 # Generate all Paper D figures
 python generate_paper_d_master_plots.py
@@ -238,7 +238,7 @@ python paper_suite_integrator.py
 ```
 
 ### Output Directory
-All figures saved to: `E:\clone\ssz-qubits\outputs\`
+All figures saved to: `https://github.com/error-wtf/ssz-qubits\outputs\`
 
 ---
 

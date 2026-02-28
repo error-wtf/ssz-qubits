@@ -257,7 +257,7 @@ Even if the SSZ term is small on current on-chip scales, it is valuable because 
 
 ```bash
 # Run full validation
-cd E:\clone\ssz-qubits
+cd https://github.com/error-wtf/ssz-qubits
 python ssz_roadmap_validation.py
 
 # Run tests

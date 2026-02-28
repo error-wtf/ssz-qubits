@@ -203,7 +203,7 @@ Status: ✅ KONSISTENT
 ## Projektstruktur
 
 ```
-E:\clone\ssz-qubits\
+https://github.com/error-wtf/ssz-qubits\
 ├── ssz_qubits.py              # Kernmodul (korrigiert)
 ├── run_tests.py               # Test-Runner
 ├── visualize_ssz_qubits.py    # Visualisierung
@@ -278,9 +278,9 @@ Das `ssz-qubits` Modul ist jetzt vollständig korrigiert und validiert:
 
 ## Referenzen
 
-- `E:\clone\ssz-metric-pure\src\ssz_core\segment_density.py`
-- `E:\clone\Segmented-Spacetime-Mass-Projection-Unified-Results\validation_complete_extended\reports\02_MATHEMATICAL_FORMULAS.md`
-- `E:\clone\segmented-energy\segmented_energy_ssz.py`
+- `https://github.com/error-wtf/ssz-metric-pure/blob/main/src/ssz_core/segment_density.py`
+- `https://github.com/error-wtf/Segmented-Spacetime-Mass-Projection-Unified-Results\validation_complete_extended\reports\02_MATHEMATICAL_FORMULAS.md`
+- `https://github.com/error-wtf/segmented-energy\segmented_energy_ssz.py`
 
 ---
 

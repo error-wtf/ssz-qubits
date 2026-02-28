@@ -92,7 +92,7 @@ Vollständiges, journal-ready Paper aus allen SSZ-Quellen (A, B, C, D, E)
 ## Nächster Schritt
 
 ```bash
-cd E:\clone\ssz-qubits\paper_final
+cd ssz-qubits/paper_final  # https://github.com/error-wtf/ssz-qubits
 python assemble_paper.py
 ```
 

@@ -115,7 +115,7 @@ Alle 10 PNG/PDF generiert in `output/figures/`
 
 ### Schritt 1: DOCX generieren
 ```bash
-cd E:\clone\ssz-qubits\paper_final
+cd ssz-qubits/paper_final  # https://github.com/error-wtf/ssz-qubits
 python assemble_paper.py
 ```
 

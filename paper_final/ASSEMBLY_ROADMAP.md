@@ -92,7 +92,7 @@ Aus allen vorbereiteten Komponenten ein finales **80+ Seiten DOCX** generieren.
 
 ### Phase 1: Figure-Generierung ⏱️ 10 min
 ```bash
-cd E:\clone\ssz-qubits\paper_final\figures
+cd ssz-qubits/paper_final/figures  # https://github.com/error-wtf/ssz-qubits
 mkdir -p ../output/figures
 
 # Alle Figures generieren
@@ -185,7 +185,7 @@ Prüfen und ggf. anpassen:
 
 ### Phase 4: DOCX-Generierung ⏱️ 5 min
 ```bash
-cd E:\clone\ssz-qubits\paper_final
+cd ssz-qubits/paper_final  # https://github.com/error-wtf/ssz-qubits
 python assemble_paper.py
 ```
 
@@ -319,5 +319,5 @@ Figures → Assembler → DOCX → Prüfung → Korrektur → Final
 
 ```
 → Phase 1: Figures generieren
-  cd E:\clone\ssz-qubits\paper_final\figures
+  cd ssz-qubits/paper_final/figures  # https://github.com/error-wtf/ssz-qubits
 ```

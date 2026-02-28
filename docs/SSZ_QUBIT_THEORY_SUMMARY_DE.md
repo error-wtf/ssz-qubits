@@ -217,7 +217,7 @@ Es bietet sowohl:
 ## Anhang: Projektstruktur
 
 ```
-E:\clone\ssz-qubits\
+https://github.com/error-wtf/ssz-qubits\
 ├── ssz_qubits.py                    # Kernmodul (933 Zeilen)
 ├── FINAL_REPORT.md                  # Finaler Report
 ├── docs/
