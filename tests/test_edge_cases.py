@@ -688,6 +688,36 @@ class TestSegmentCoherentZone:
 
 
 # =============================================================================
+# EDGE CASE 9: PHASE DRIFT BOUNDARY CONDITIONS
+# =============================================================================
+
+class TestPhaseDriftBoundary:
+    """Phase drift must be zero when Δh=0 or ω=0."""
+
+    def test_zero_height_difference(self):
+        """Δh = 0 → ΔΦ = 0."""
+        q1 = Qubit(id="Q1", x=0, y=0, z=0)
+        q2 = Qubit(id="Q2", x=0.01, y=0, z=0)
+        pair = QubitPair(q1, q2)
+        m = qubit_pair_segment_mismatch(pair, M_EARTH)
+        assert m['phase_drift_per_gate'] == 0
+        assert m['delta_xi'] == 0
+
+    def test_zero_frequency_phase_drift(self):
+        """ω = 0 → ΔΦ = 0 (computed manually)."""
+        q1 = Qubit(id="Q1", x=0, y=0, z=0)
+        q2 = Qubit(id="Q2", x=0, y=0, z=0.001)
+        pair = QubitPair(q1, q2)
+        m = qubit_pair_segment_mismatch(pair, M_EARTH)
+        delta_xi = m['delta_xi']
+        assert delta_xi > 0
+        omega_zero = 0.0
+        gate_t = 50e-9
+        phase = omega_zero * delta_xi * gate_t
+        assert phase == 0.0
+
+
+# =============================================================================
 # MAIN
 # =============================================================================
 

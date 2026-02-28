@@ -39,6 +39,12 @@ PHI = (1 + np.sqrt(5)) / 2  # φ ≈ 1.618033988749895
 ALPHA_SSZ = 1.0           # Coupling constant for segment density
 KAPPA_SSZ = 1e-9          # Refractive index coupling (dimensionless)
 
+# Didactic scaling factor (S=1e8) used ONLY in Paper B simulations
+# to visualize SSZ effects above noise floors.
+# Physical ΔΦ is S times smaller; set S=1 for real-world predictions.
+# At Δh=1mm, f=5GHz: ΔΦ ≈ 1.7e-16 rad/gate → 1.7e-10 rad after 10⁶ gates.
+DIDACTIC_SCALING = 1e8    # For educational/visualization purposes only
+
 
 # =============================================================================
 # DATA CLASSES
