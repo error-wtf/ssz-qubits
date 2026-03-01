@@ -84,7 +84,7 @@ Unauthorized reproduction or commercial exploitation is explicitly prohibited an
 [188] The fidelity is:
 [192] For small ΔΦ, Taylor expansion gives:
 [196] The fidelity loss is:
-[200] Key insight: While individual effects are small, they are systematic and cumulative, unlike random noise which averages out. Over sufficiently long circuits, SSZ effects become the dominant source of systematic error.
+[200] Key insight: While individual effects are small, they are systematic and cumulative, unlike random noise which averages out. Over sufficiently long circuits, SSZ effects become a non-negligible source of systematic bias—though at mm-scale on Earth this threshold is not reached with current technology (see Paper C).
 [201] Phase Compensation Protocol
 [202] The Correction Formula
 [203] To compensate for SSZ-induced phase drift, apply a correction:  The primary experimental discriminator is WITH/WITHOUT compensation: SSZ predicts deterministic drift reduction, generic noise does not.
@@ -172,7 +172,7 @@ Unauthorized reproduction or commercial exploitation is explicitly prohibited an
 [367] Implications for Quantum Communication
 [368] SSZ Effects at Various Height Scales
 [370] Table 5: SSZ effects at various height scales (5 GHz qubit frequency)
-[372] Figure 5: Critical segment density differences ΔΞ for various height differences. At millimetre scales the segment density difference enters the measurable regime.
+[372] Figure 5: Critical segment density differences ΔΞ for various height differences. At millimetre scales the segment density difference enters the modelable regime (direct detection requires optical-clock platforms).
 [373] Satellite-Based Quantum Networks
 [374] For quantum communication between satellites and ground stations:
 [375] Altitude difference: Δh ~ 400 km (LEO)
@@ -290,7 +290,7 @@ Unauthorized reproduction or commercial exploitation is explicitly prohibited an
   ROW 0: Scenario | Δh | ΔΞ | ΔΦ/s | Impact
   ROW 1: On-chip (lab) | 1 mm | 1.1 × 10⁻¹⁹ | 3.4 × 10⁻⁹ rad/s | Negligible
   ROW 2: Multi-chip module | 1 cm | 1.1 × 10⁻¹⁸ | 3.4 × 10⁻⁸ rad/s | Small
-  ROW 3: Cryostat stages | 50 cm | 5.5 × 10⁻¹⁷ | 1.7 × 10⁻⁶ rad/s | Measurable
+  ROW 3: Cryostat stages | 50 cm | 5.5 × 10⁻¹⁷ | 1.7 × 10⁻⁶ rad/s | Modelable*
   ROW 4: Tokyo Skytree | 450 m | 4.9 × 10⁻¹⁴ | 1.5 × 10⁻³ rad/s | Moderate
   ROW 5: Mountain vs.  sea | 4 km | 4.4 × 10⁻¹³ | 1.4 × 10⁻² rad/s | Moderate
   ROW 6: LEO satellite | 400 km | 4.4 × 10⁻¹¹ | 1.4 rad/s | Significant

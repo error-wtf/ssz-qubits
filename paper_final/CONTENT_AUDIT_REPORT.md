@@ -136,6 +136,12 @@ Previous fix scripts had NOT fully applied. Re-verified all `_repaired.docx` dir
 
 FULL_TEXT_*.txt re-extracted from fixed `_repaired.docx`. All 12 verification checks PASS.
 
+## Round 3 Fixes (2026-03-01) — Anti-Overclaiming
+
+- **Paper A:** 6 fixes (language only, no formulas)
+- **Paper B:** 3 fixes (dominant→non-negligible, measurable→modelable)
+- **Paper C:** 1 fix (measurable→predictable)
+
 ---
 
 ## Automated Verification (2025-02-28)

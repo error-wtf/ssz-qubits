@@ -34,7 +34,7 @@ Gravitational Phase Coupling in Quantum Systems
 [037] 1. Introduction
 [038] 1.1 Context from Papers A and B
 [039] In the preceding papers of this trilogy, we established:
-[040] Paper A: Demonstrated that height differences as small as 1 mm create measurable segment density gradients affecting gate timing. Derived the SSZ time dilation formula and segment-coherent zones.
+[040] Paper A: Demonstrated that height differences as small as 1 mm create predictable segment density gradients that systematically affect gate timing. Derived the SSZ time dilation formula and segment-coherent zones.
 [041] Paper B: Showed that SSZ effects accumulate coherently over time, enabling compensation via calibrated phase corrections. Established the entanglement preservation protocol.
 [042] 1.2 The Critical Question
 [043] This paper addresses the fundamental question: Can the predicted SSZ phase drift be detected with current quantum technology?
