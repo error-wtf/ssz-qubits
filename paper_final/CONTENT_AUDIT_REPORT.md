@@ -142,6 +142,11 @@ FULL_TEXT_*.txt re-extracted from fixed `_repaired.docx`. All 12 verification ch
 - **Paper B:** 3 fixes (dominant→non-negligible, measurable→modelable)
 - **Paper C:** 1 fix (measurable→predictable)
 
+## Round 4 Fixes (2026-03-01) — Precision Wording
+
+- **Paper A:** 7 fixes (upgraded R3 with exact regime qualifiers)
+- **Paper C:** 2 fixes (detection-regime caveat + optical-clock systematics)
+
 ---
 
 ## Automated Verification (2025-02-28)
