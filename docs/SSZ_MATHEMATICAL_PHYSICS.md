@@ -358,5 +358,40 @@ Zone width ≈ 2 · ε · R_Earth² / r_s ≈ 4.6 mm
 
 ---
 
+### 9. Discrete φ-Ladder Formulation
+
+The discrete SSZ state formulation provides exact algebraic recursion formulas for the state variables along the φ-ladder r_k = r_s · φ^k. This is a canonical extension of the continuous theory presented above.
+
+**State vector:** Y_k = (Ξ_k, s_k, D_k, N'_k, ν_k) with:
+
+```
+Ξ_k = Ξ(φ^k)                    s_k = 1 + Ξ_k
+D_k = 1 / (1 + Ξ_k)             N'_k = 4 · (1 + Ξ_k)
+ν_k = ln(1 + Ξ_k) / ln(φ)       [local φ-level]
+```
+
+**Natural boundary values at x = 1 (r = r_s):**
+
+```
+Ξ_* = 0.801711847,  s_* = 1.801711847,  D_* = 0.555027710
+N'_* = 7.206847389,  ν_* ≈ 1.22
+```
+
+**Weak-field recursion** (outward step x → φx):
+
+```
+Ξ_{k+1} = Ξ_k / φ
+```
+
+**Strong-field recursion** (outward step x → φx):
+
+```
+Ξ_{k+1} = 1 - (1 - Ξ_k)^φ
+```
+
+For complete derivations, see: **`DISCRETE_SSZ_STATE_FORMULATION.md`** in this directory.
+
+---
+
 © 2025 Carmen Wrede & Lino Casu  
 Licensed under the ANTI-CAPITALIST SOFTWARE LICENSE v1.4

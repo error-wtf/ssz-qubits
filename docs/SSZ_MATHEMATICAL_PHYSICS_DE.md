@@ -668,5 +668,40 @@ z = D_SSZ(r₂)/D_SSZ(r₁) - 1
 
 ---
 
+### 9. Diskrete φ-Leiter-Formulierung
+
+Die diskrete SSZ-Zustandsformulierung liefert exakte algebraische Rekursionsformeln für die Zustandsgrößen entlang der φ-Leiter r_k = r_s · φ^k. Dies ist eine kanonische Erweiterung der obigen kontinuierlichen Theorie.
+
+**Zustandsvektor:** Y_k = (Ξ_k, s_k, D_k, N'_k, ν_k) mit:
+
+```
+Ξ_k = Ξ(φ^k)                    s_k = 1 + Ξ_k
+D_k = 1 / (1 + Ξ_k)             N'_k = 4 · (1 + Ξ_k)
+ν_k = ln(1 + Ξ_k) / ln(φ)       [lokales φ-Level]
+```
+
+**Natürliche Randwerte bei x = 1 (r = r_s):**
+
+```
+Ξ_* = 0.801711847,  s_* = 1.801711847,  D_* = 0.555027710
+N'_* = 7.206847389,  ν_* ≈ 1.22
+```
+
+**Schwachfeld-Rekursion** (Schritt nach außen x → φx):
+
+```
+Ξ_{k+1} = Ξ_k / φ
+```
+
+**Starkfeld-Rekursion** (Schritt nach außen x → φx):
+
+```
+Ξ_{k+1} = 1 - (1 - Ξ_k)^φ
+```
+
+Vollständige Herleitungen: **`DISCRETE_SSZ_STATE_FORMULATION_DE.md`** in diesem Verzeichnis.
+
+---
+
 © 2025 Carmen Wrede & Lino Casu  
 Licensed under the ANTI-CAPITALIST SOFTWARE LICENSE v1.4
