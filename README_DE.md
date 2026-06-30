@@ -126,8 +126,8 @@ D_SSZ = 1 / (1 + Xi) ≈ 1 - Xi + O(Xi^2)
 #### Strong Field (r/r_s < 100) - Nahe Schwarzen Loechern
 
 ```
-Xi(r) = 1 - exp(-phi * r / r_s)
-dXi/dr = (phi / r_s) * exp(-phi * r / r_s)
+Xi(r) = 1 - exp(-phi * r_s / r)
+dXi/dr = (phi / r_s) * exp(-phi * r_s / r)
 ```
 
 **Wichtig:** Im Strong Field bleibt D_SSZ **finite** am Horizont (D_SSZ ≈ 0.555), waehrend die ART eine Singularitaet vorhersagt.
@@ -724,7 +724,7 @@ A: Die ART behandelt Raumzeit als kontinuierliches Gebilde. SSZ behandelt Raumze
 
 **Q: Warum ist der Golden Ratio phi wichtig?**
 
-A: phi = (1+sqrt(5))/2 steuert die Saettigungsrate der Segment Density im Strong Field. Die Formel Xi = 1 - exp(-phi*r/r_s) sorgt dafuer, dass Xi bei r = r_s einen endlichen Wert erreicht (ca. 0.8), anstatt zu divergieren.
+A: phi = (1+sqrt(5))/2 steuert die Saettigungsrate der Segment Density im Strong Field. Die Formel Xi = 1 - exp(-phi*r_s / r) sorgt dafuer, dass Xi bei r = r_s einen endlichen Wert erreicht (ca. 0.8), anstatt zu divergieren.
 
 **Q: Ist SSZ experimentell bestaetigt?**
 

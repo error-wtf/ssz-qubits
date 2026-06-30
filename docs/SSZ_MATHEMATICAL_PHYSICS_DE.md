@@ -150,7 +150,7 @@ dΞ/dr = (φ / r_s) · exp(-φ · r / r_s)
 
 **Spezielle Werte:**
 
-| r/r_s | Ξ(r) | exp(-φr/r_s) |
+| r/r_s | Ξ(r) | exp(-φr_s / r) |
 |-------|------|--------------|
 | 0 | 0 | 1 |
 | 0.5 | 0.553 | 0.447 |
@@ -190,7 +190,7 @@ D_SSZ = 1 / (1 + r_s/(2r))
 
 **Strong Field:**
 ```
-D_SSZ = 1 / (2 - exp(-φr/r_s))
+D_SSZ = 1 / (2 - exp(-φr_s / r))
 ```
 
 #### 3.3 Vergleich mit GR
@@ -639,8 +639,8 @@ dΞ/dr = -r_s/(2r²)
 
 **Segment Density (Strong):**
 ```
-Ξ = 1 - exp(-φr/r_s)
-dΞ/dr = (φ/r_s) · exp(-φr/r_s)
+Ξ = 1 - exp(-φr_s / r)
+dΞ/dr = (φ/r_s) · exp(-φr_s / r)
 ```
 
 **Time Dilation:**

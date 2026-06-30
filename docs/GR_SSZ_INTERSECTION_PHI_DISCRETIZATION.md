@@ -48,7 +48,7 @@ im Bracket [1, φ].
 
 ```
 Abklingform (Calculation-Suite):    Xi_A(x) = 1 - exp(-φ/x) = 1 - exp(-φ r_s/r)
-Sättigungsform (Unified-Results):   Xi_B(x) = 1 - exp(-φ x) = 1 - exp(-φ r/r_s)
+Sättigungsform (Unified-Results):   Xi_B(x) = 1 - exp(-φ x) = 1 - exp(-φ r_s / r)
 ```
 
 Beide stimmen exakt bei x = 1 (r = r_s) überein:

@@ -59,7 +59,7 @@ Das SSZ-Qubits Projekt ist **vollstaendig abgeschlossen** mit:
 | Regime | Bedingung | Formel |
 |--------|-----------|--------|
 | **Weak Field** | r/r_s > 100 | Xi = r_s/(2r) |
-| **Strong Field** | r/r_s < 100 | Xi = 1 - exp(-phi*r/r_s) |
+| **Strong Field** | r/r_s < 100 | Xi = 1 - exp(-phi*r_s / r) |
 
 ---
 
@@ -160,7 +160,7 @@ Pound-Rebka Experiment:
 
 ### 5.2 Kernaussagen
 
-1. **Zwei Regime:** Weak Field (Xi = r_s/2r) und Strong Field (Xi = 1 - exp(-phi*r/r_s))
+1. **Zwei Regime:** Weak Field (Xi = r_s/2r) und Strong Field (Xi = 1 - exp(-phi*r_s / r))
 2. **Time Dilation:** D_SSZ = 1/(1+Xi) - finite auch am Horizont!
 3. **Golden Ratio:** phi steuert Saettigungsrate im Strong Field
 4. **Qubit-Anwendungen:** Segment-kohaerente Zonen, Gate-Timing, QEC

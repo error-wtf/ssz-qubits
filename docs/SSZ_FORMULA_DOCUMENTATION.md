@@ -405,7 +405,7 @@ def xi_segment_density(r, M, regime='auto'):
     if regime == 'weak':
         return r_s / (2 * r)
     else:
-        return 1.0 - np.exp(-PHI * r / r_s)
+        return 1.0 - np.exp(-PHI * r_s / r)
 
 def ssz_time_dilation(r, M):
     """D_SSZ = 1/(1+Xi)"""

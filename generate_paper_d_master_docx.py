@@ -303,7 +303,7 @@ A null result in the current superconducting regime is SSZ-consistent -- the the
     
     p = doc.add_paragraph()
     p.add_run('Strong field (r ~ r_s): ').bold = True
-    p.add_run('Xi(r) = 1 - exp(-phi * r / r_s)')
+    p.add_run('Xi(r) = 1 - exp(-phi * r_s / r)')
     
     doc.add_heading('3.3 Time Dilation', level=2)
     

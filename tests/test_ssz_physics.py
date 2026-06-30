@@ -10,7 +10,7 @@ Tests for the SSZ framework with TWO REGIMES:
    D_SSZ(r) = 1 / (1 + Xi(r)) ~ 1 - Xi(r)
 
 2. STRONG FIELD (r ~ r_s, e.g. black holes):
-   Xi(r) = 1 - exp(-phi * r / r_s)
+   Xi(r) = 1 - exp(-phi * r_s / r)
    D_SSZ(r) = 1 / (1 + Xi(r))
 
 For qubit applications on Earth, we use the WEAK FIELD regime.
@@ -402,7 +402,7 @@ class TestGoldenRatio:
 class TestStrongFieldRegime:
     """Tests for SSZ in STRONG FIELD regime (r ~ r_s).
     
-    STRONG FIELD FORMULA: Xi(r) = 1 - exp(-phi * r / r_s)
+    STRONG FIELD FORMULA: Xi(r) = 1 - exp(-phi * r_s / r)
     
     Properties:
         - Xi(0) = 0 (singularity-free!)

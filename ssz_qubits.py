@@ -131,7 +131,7 @@ def xi_segment_density(r: float, M: float = M_EARTH, regime: str = 'auto') -> fl
         This is the Newtonian/weak-field limit, valid for r/r_s > 100
     
     2. STRONG FIELD (r ~ r_s, e.g. near black holes):
-        Xi(r) = 1 - exp(-phi * r / r_s)
+        Xi(r) = 1 - exp(-phi * r_s / r)
         This is the saturation form, valid for r/r_s < 10
     
     Parameters
@@ -179,9 +179,9 @@ def xi_segment_density(r: float, M: float = M_EARTH, regime: str = 'auto') -> fl
         # This gives measurable effects on Earth
         return r_s / (2 * r)
     else:
-        # STRONG FIELD (Saturation): Xi(r) = 1 - exp(-phi * r / r_s)
+        # STRONG FIELD (Saturation): Xi(r) = 1 - exp(-phi * r_s / r)
         # This is singularity-free for black holes
-        return 1.0 - np.exp(-PHI * r / r_s)
+        return 1.0 - np.exp(-PHI * r_s / r)
 
 
 def xi_gradient(r: float, M: float = M_EARTH, regime: str = 'auto') -> float:
@@ -193,7 +193,7 @@ def xi_gradient(r: float, M: float = M_EARTH, regime: str = 'auto') -> float:
     1. WEAK FIELD: dXi/dr = -r_s / (2r^2)
        Negative gradient (Xi decreases with r)
     
-    2. STRONG FIELD: dXi/dr = (phi / r_s) * exp(-phi * r / r_s)
+    2. STRONG FIELD: dXi/dr = (phi / r_s) * exp(-phi * r_s / r)
        Positive gradient (Xi increases with r in saturation form)
     
     Parameters
@@ -223,8 +223,8 @@ def xi_gradient(r: float, M: float = M_EARTH, regime: str = 'auto') -> float:
         # WEAK FIELD: dXi/dr = -r_s / (2r^2)
         return -r_s / (2 * r**2)
     else:
-        # STRONG FIELD: dXi/dr = (phi / r_s) * exp(-phi * r / r_s)
-        return (PHI / r_s) * np.exp(-PHI * r / r_s)
+        # STRONG FIELD: dXi/dr = (phi / r_s) * exp(-phi * r_s / r)
+        return (PHI / r_s) * np.exp(-PHI * r_s / r)
 
 
 def ssz_time_dilation(r: float, M: float = M_EARTH) -> float:

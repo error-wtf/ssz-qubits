@@ -43,7 +43,7 @@ SSZ behandelt Raumzeit als **diskrete Struktur** mit messbaren Effekten auf Qubi
 | Regime | Bedingung | Formel | Anwendung |
 |--------|-----------|--------|-----------|
 | **Weak Field** | r/r_s > 100 | Xi = r_s/(2r) | Erde, GPS, Atomuhren |
-| **Strong Field** | r/r_s < 100 | Xi = 1 - exp(-phi*r/r_s) | Schwarze Löcher |
+| **Strong Field** | r/r_s < 100 | Xi = 1 - exp(-phi*r_s / r) | Schwarze Löcher |
 
 ### 2.2 Fundamentale Formeln
 
@@ -60,8 +60,8 @@ dXi/dr = -r_s / (2r²)
 
 **Segment Density (Strong Field):**
 ```
-Xi(r) = 1 - exp(-phi * r / r_s)
-dXi/dr = (phi / r_s) * exp(-phi * r / r_s)
+Xi(r) = 1 - exp(-phi * r_s / r)
+dXi/dr = (phi / r_s) * exp(-phi * r_s / r)
 ```
 
 **SSZ Time Dilation:**

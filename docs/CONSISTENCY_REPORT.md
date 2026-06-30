@@ -188,7 +188,7 @@ z(ε) = 4ε × R² / r_s
 
 1. **External validation:** Optical clock experiments (Bothwell et al. 2022) confirm GR redshift at cm-scale. SSZ prediction at this scale is identical to GR—need strong-field or network-scale tests for distinction.
 
-2. **Strong-field regime:** Papers focus on weak-field. Strong-field (Ξ = 1 - exp(-φr/r_s)) mentioned but not experimentally testable with current technology.
+2. **Strong-field regime:** Papers focus on weak-field. Strong-field (Ξ = 1 - exp(-φr_s / r)) mentioned but not experimentally testable with current technology.
 
 3. **Simulation reproducibility:** All simulation parameters should be documented (seeds, noise models, circuit depths) if simulations are retained.
 

@@ -317,7 +317,7 @@ r_s = 2 * G * M / c^2
 Xi(r) = r_s / (2 * r)
 
 # Segment density (strong field, r ~ r_s)
-Xi(r) = 1 - exp(-phi * r / r_s)
+Xi(r) = 1 - exp(-phi * r_s / r)
 
 # Time dilation factor
 D_SSZ(r) = 1 / (1 + Xi(r))

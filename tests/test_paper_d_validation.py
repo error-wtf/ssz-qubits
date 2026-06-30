@@ -447,7 +447,7 @@ class TestStrongFieldPredictions:
     
     def test_strong_field_xi_at_horizon(self):
         """Xi(r_s) should saturate to ~0.8 in strong field."""
-        # Use strong field formula: Xi = 1 - exp(-phi * r/r_s)
+        # Use strong field formula: Xi = 1 - exp(-phi * r_s / r)
         r_ratio = 1.0  # r = r_s
         xi = 1 - np.exp(-PHI * r_ratio)
         

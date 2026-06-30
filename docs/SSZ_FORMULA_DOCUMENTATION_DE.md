@@ -140,18 +140,18 @@ r/r_s < 100
 
 **Segment Density (Saturation Form):**
 ```
-Xi(r) = 1 - exp(-phi * r / r_s)
+Xi(r) = 1 - exp(-phi * r_s / r)
 ```
 
 **Gradient:**
 ```
-dXi/dr = (phi / r_s) * exp(-phi * r / r_s)
+dXi/dr = (phi / r_s) * exp(-phi * r_s / r)
 ```
 
 **Time Dilation:**
 ```
 D_SSZ(r) = 1 / (1 + Xi(r))
-        = 1 / (2 - exp(-phi * r / r_s))
+        = 1 / (2 - exp(-phi * r_s / r))
 ```
 
 ### Eigenschaften
@@ -196,7 +196,7 @@ Das ist physikalisch sinnvoll, aber:
 
 **Strong Field Formel im Weak Field:**
 ```
-Xi = 1 - exp(-phi*r/r_s)  bei r = R_Earth  -->  Xi = 1.0
+Xi = 1 - exp(-phi*r_s / r)  bei r = R_Earth  -->  Xi = 1.0
 ```
 Das ist **falsch**! Die Erde ist nicht "vollständig segmentiert".
 
@@ -206,7 +206,7 @@ Das ist **falsch**! Die Erde ist nicht "vollständig segmentiert".
            Weak Field                    Strong Field
               |                              |
               |                              |
-    Xi = r_s/(2r)                   Xi = 1 - exp(-phi*r/r_s)
+    Xi = r_s/(2r)                   Xi = 1 - exp(-phi*r_s / r)
               |                              |
               |         r/r_s = 100          |
               +-------------+----------------+
@@ -327,7 +327,7 @@ g_tt = -D_SSZ² = -(1 + Xi)^(-2)
 --> Xi = r_s/(2r)
 ```
 
-### Strong Field: Warum Xi = 1 - exp(-phi*r/r_s)?
+### Strong Field: Warum Xi = 1 - exp(-phi*r_s / r)?
 
 **Anforderungen:**
 1. Xi(0) = 0 (keine Singularität)
@@ -348,7 +348,7 @@ Xi(r) = Xi_max * (1 - exp(-k*r/r_s))
 
 **Mit Xi_max = 1:**
 ```
-Xi(r) = 1 - exp(-phi * r / r_s)
+Xi(r) = 1 - exp(-phi * r_s / r)
 ```
 
 ### Time Dilation: Warum D = 1/(1+Xi)?
@@ -394,7 +394,7 @@ def xi_segment_density(r, M, regime='auto'):
     
     regime='auto': Automatische Auswahl basierend auf r/r_s
     regime='weak': Xi = r_s/(2r)
-    regime='strong': Xi = 1 - exp(-phi*r/r_s)
+    regime='strong': Xi = 1 - exp(-phi*r_s / r)
     """
     r_s = schwarzschild_radius(M)
     ratio = r / r_s
@@ -405,7 +405,7 @@ def xi_segment_density(r, M, regime='auto'):
     if regime == 'weak':
         return r_s / (2 * r)
     else:
-        return 1.0 - np.exp(-PHI * r / r_s)
+        return 1.0 - np.exp(-PHI * r_s / r)
 
 def ssz_time_dilation(r, M):
     """D_SSZ = 1/(1+Xi)"""
@@ -464,7 +464,7 @@ xi = xi_segment_density(r, M, regime='strong')
 | Aspekt | Weak Field | Strong Field |
 |--------|------------|--------------|
 | **Bedingung** | r/r_s > 100 | r/r_s < 100 |
-| **Formel** | Xi = r_s/(2r) | Xi = 1 - exp(-phi*r/r_s) |
+| **Formel** | Xi = r_s/(2r) | Xi = 1 - exp(-phi*r_s / r) |
 | **Gradient** | < 0 (abnehmend) | > 0 (zunehmend) |
 | **Xi-Bereich** | 0 < Xi << 1 | 0 <= Xi < 1 |
 | **Anwendung** | Erde, GPS, Atomuhren | Schwarze Löcher |
