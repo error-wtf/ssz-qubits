@@ -337,7 +337,7 @@ g_tt = -D_SSZ² = -(1 + Xi)^(-2)
 
 **Ansatz:** Exponentieller Sättigungsterm
 ```
-Xi(r) = Xi_max * (1 - exp(-k*r/r_s))
+Xi(r) = Xi_max * (1 - exp(-k*r_s / r))
 ```
 
 **Warum phi?**

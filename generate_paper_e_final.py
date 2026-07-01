@@ -283,7 +283,7 @@ What Would Falsify SSZ (in detection regime):
     doc.add_heading('Appendix A: Full Derivations', 1)
     doc.add_paragraph("""A.1 Segment Density
     Ξ(r) = r_s/(2r)  [weak field]
-    Ξ(r) = 1 - exp(-φ×r/r_s)  [strong field]
+    Ξ(r) = 1 - exp(-φ×r_s / r)  [strong field]
 
 A.2 Time Dilation
     D = 1/(1+Ξ) ≈ 1 - Ξ + O(Ξ²)

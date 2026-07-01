@@ -135,8 +135,8 @@ D_SSZ = 1 / (1 + Xi) ≈ 1 - Xi + O(Xi²)
 #### Strong Field (r/r_s < 100) - Near Black Holes
 
 ```
-Xi(r) = 1 - exp(-φ × r / r_s)
-dXi/dr = (φ / r_s) × exp(-φ × r / r_s)
+Xi(r) = 1 - exp(-φ × r_s / r)
+dXi/dr = (φ / r_s) × exp(-φ × r_s / r)
 ```
 
 **Important:** In the strong field, D_SSZ remains **finite** at the horizon (D_SSZ ≈ 0.555), while GR predicts a singularity.
@@ -779,7 +779,7 @@ A: GR treats spacetime as a continuous manifold. SSZ treats spacetime as a **dis
 
 **Q: Why is the Golden Ratio φ important?**
 
-A: φ = (1+√5)/2 controls the saturation rate of segment density in the strong field. The formula Xi = 1 - exp(-φ×r/r_s) ensures that Xi reaches a finite value (about 0.8) at r = r_s, instead of diverging.
+A: φ = (1+√5)/2 controls the saturation rate of segment density in the strong field. The formula Xi = 1 - exp(-φ×r_s / r) ensures that Xi reaches a finite value (about 0.8) at r = r_s, instead of diverging.
 
 **Q: Is SSZ experimentally confirmed?**
 

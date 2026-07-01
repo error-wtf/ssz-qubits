@@ -17,7 +17,7 @@ where r_s = 2GM/c² is the Schwarzschild radius.
 
 **Strong Field (r < 100 r_s):**
 ```
-Ξ(r) = 1 - exp(-φ × r / r_s)
+Ξ(r) = 1 - exp(-φ × r_s / r)
 ```
 
 where φ = 1.618... (golden ratio).

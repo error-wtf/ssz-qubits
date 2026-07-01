@@ -20,7 +20,7 @@ SSZ hat **ZWEI REGIME** mit unterschiedlichen Formeln:
 | Regime | Bedingung | Xi-Formel | Anwendung |
 |--------|-----------|-----------|-----------|
 | **Weak Field** | r/r_s > 100 | Xi = r_s/(2r) | Erde, GPS, Atomuhren |
-| **Strong Field** | r/r_s < 100 | Xi = 1 - exp(-φ·r/r_s) | Schwarze Löcher |
+| **Strong Field** | r/r_s < 100 | Xi = 1 - exp(-φ·r_s / r) | Schwarze Löcher |
 
 ---
 
@@ -40,12 +40,12 @@ Eigenschaften:
 
 **STRONG FIELD (Schwarze Löcher):**
 ```
-Xi(r) = 1 - exp(-φ · r / r_s)
+Xi(r) = 1 - exp(-φ · r_s / r)
 
 Eigenschaften:
 - Xi(0) = 0 (SINGULARITÄTSFREI!)
 - Xi(∞) → 1 (Sättigung)
-- Gradient: dXi/dr = (φ/r_s) · exp(-φ·r/r_s) > 0
+- Gradient: dXi/dr = (φ/r_s) · exp(-φ·r_s / r) > 0
 ```
 
 ### 2. SSZ Time Dilation D_SSZ(r)

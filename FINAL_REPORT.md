@@ -43,7 +43,7 @@ SSZ treats spacetime as a **discrete structure** with measurable effects on qubi
 | Regime | Condition | Formula | Application |
 |--------|-----------|---------|-------------|
 | **Weak Field** | r/r_s > 100 | Xi = r_s/(2r) | Earth, GPS, atomic clocks |
-| **Strong Field** | r/r_s < 100 | Xi = 1 - exp(-φ×r/r_s) | Black holes |
+| **Strong Field** | r/r_s < 100 | Xi = 1 - exp(-φ×r_s / r) | Black holes |
 
 ### 2.2 Fundamental Formulas
 
@@ -60,8 +60,8 @@ dXi/dr = -r_s / (2r²)
 
 **Segment Density (Strong Field):**
 ```
-Xi(r) = 1 - exp(-φ × r / r_s)
-dXi/dr = (φ / r_s) × exp(-φ × r / r_s)
+Xi(r) = 1 - exp(-φ × r_s / r)
+dXi/dr = (φ / r_s) × exp(-φ × r_s / r)
 ```
 
 **SSZ Time Dilation:**

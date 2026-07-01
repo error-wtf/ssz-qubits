@@ -112,7 +112,7 @@ dΞ/dr = -r_s / (2r²)
 
 **Definition:**
 ```
-Ξ(r) = 1 - exp(-φ · r / r_s)
+Ξ(r) = 1 - exp(-φ · r_s / r)
 ```
 
 **Derivation:**
@@ -125,12 +125,12 @@ Requirements for Ξ(r) in strong field:
 
 The general saturation approach:
 ```
-Ξ(r) = Ξ_max · (1 - exp(-k · r / r_s))
+Ξ(r) = Ξ_max · (1 - exp(-k · r_s / r))
 ```
 
 With Ξ_max = 1 and k = φ (Golden Ratio):
 ```
-Ξ(r) = 1 - exp(-φ · r / r_s)
+Ξ(r) = 1 - exp(-φ · r_s / r)
 ```
 
 **Properties:**
@@ -145,7 +145,7 @@ With Ξ_max = 1 and k = φ (Golden Ratio):
 
 **Gradient:**
 ```
-dΞ/dr = (φ / r_s) · exp(-φ · r / r_s)
+dΞ/dr = (φ / r_s) · exp(-φ · r_s / r)
 ```
 
 ---
@@ -181,7 +181,7 @@ D_GR = √(1 - r_s/r) ≈ 1 - r_s/(2r) + O((r_s/r)²)
 #### 3.3 Strong Field
 
 ```
-D_SSZ = 1 / (2 - exp(-φ · r / r_s))
+D_SSZ = 1 / (2 - exp(-φ · r_s / r))
 ```
 
 **At the horizon (r = r_s):**
@@ -345,9 +345,9 @@ Zone width ≈ 2 · ε · R_Earth² / r_s ≈ 4.6 mm
 
 | Quantity | Weak Field (r/r_s > 100) | Strong Field (r/r_s < 100) |
 |----------|--------------------------|---------------------------|
-| Ξ(r) | r_s/(2r) | 1 - exp(-φ·r/r_s) |
-| dΞ/dr | -r_s/(2r²) | (φ/r_s)·exp(-φ·r/r_s) |
-| D_SSZ | 2r/(2r+r_s) | 1/(2-exp(-φ·r/r_s)) |
+| Ξ(r) | r_s/(2r) | 1 - exp(-φ·r_s / r) |
+| dΞ/dr | -r_s/(2r²) | (φ/r_s)·exp(-φ·r_s / r) |
+| D_SSZ | 2r/(2r+r_s) | 1/(2-exp(-φ·r_s / r)) |
 
 **Key Results:**
 

@@ -140,18 +140,18 @@ r/r_s < 100
 
 **Segment Density (Saturation Form):**
 ```
-Xi(r) = 1 - exp(-φ × r / r_s)
+Xi(r) = 1 - exp(-φ × r_s / r)
 ```
 
 **Gradient:**
 ```
-dXi/dr = (φ / r_s) × exp(-φ × r / r_s)
+dXi/dr = (φ / r_s) × exp(-φ × r_s / r)
 ```
 
 **Time Dilation:**
 ```
 D_SSZ(r) = 1 / (1 + Xi(r))
-        = 1 / (2 - exp(-φ × r / r_s))
+        = 1 / (2 - exp(-φ × r_s / r))
 ```
 
 ### Properties
@@ -196,7 +196,7 @@ This is physically reasonable, but:
 
 **Strong Field Formula in Weak Field:**
 ```
-Xi = 1 - exp(-φ×r/r_s)  at r = R_Earth  -->  Xi = 1.0
+Xi = 1 - exp(-φ×r_s / r)  at r = R_Earth  -->  Xi = 1.0
 ```
 This is **wrong**! Earth is not "fully segmented".
 
@@ -206,7 +206,7 @@ This is **wrong**! Earth is not "fully segmented".
            Weak Field                    Strong Field
               |                              |
               |                              |
-    Xi = r_s/(2r)                   Xi = 1 - exp(-φ×r/r_s)
+    Xi = r_s/(2r)                   Xi = 1 - exp(-φ×r_s / r)
               |                              |
               |         r/r_s = 100          |
               +-------------+----------------+
@@ -327,7 +327,7 @@ g_tt = -D_SSZ² = -(1 + Xi)⁻²
 --> Xi = r_s/(2r)
 ```
 
-### Strong Field: Why Xi = 1 - exp(-φ×r/r_s)?
+### Strong Field: Why Xi = 1 - exp(-φ×r_s / r)?
 
 **Requirements:**
 1. Xi(0) = 0 (no singularity)
@@ -337,7 +337,7 @@ g_tt = -D_SSZ² = -(1 + Xi)⁻²
 
 **Approach:** Exponential saturation term
 ```
-Xi(r) = Xi_max × (1 - exp(-k×r/r_s))
+Xi(r) = Xi_max × (1 - exp(-k×r_s / r))
 ```
 
 **Why φ?**
@@ -348,7 +348,7 @@ Xi(r) = Xi_max × (1 - exp(-k×r/r_s))
 
 **With Xi_max = 1:**
 ```
-Xi(r) = 1 - exp(-φ × r / r_s)
+Xi(r) = 1 - exp(-φ × r_s / r)
 ```
 
 ### Time Dilation: Why D = 1/(1+Xi)?
@@ -394,7 +394,7 @@ def xi_segment_density(r, M, regime='auto'):
     
     regime='auto': Automatic selection based on r/r_s
     regime='weak': Xi = r_s/(2r)
-    regime='strong': Xi = 1 - exp(-φ×r/r_s)
+    regime='strong': Xi = 1 - exp(-φ×r_s / r)
     """
     r_s = schwarzschild_radius(M)
     ratio = r / r_s
@@ -464,7 +464,7 @@ xi = xi_segment_density(r, M, regime='strong')
 | Aspect | Weak Field | Strong Field |
 |--------|------------|--------------|
 | **Condition** | r/r_s > 100 | r/r_s < 100 |
-| **Formula** | Xi = r_s/(2r) | Xi = 1 - exp(-φ×r/r_s) |
+| **Formula** | Xi = r_s/(2r) | Xi = 1 - exp(-φ×r_s / r) |
 | **Gradient** | < 0 (decreasing) | > 0 (increasing) |
 | **Xi Range** | 0 < Xi << 1 | 0 ≤ Xi < 1 |
 | **Application** | Earth, GPS, atomic clocks | Black holes |

@@ -59,7 +59,7 @@ The SSZ-Qubits project is **fully completed** with:
 | Regime | Condition | Formula |
 |--------|-----------|---------|
 | **Weak Field** | r/r_s > 100 | Xi = r_s/(2r) |
-| **Strong Field** | r/r_s < 100 | Xi = 1 - exp(-φ×r/r_s) |
+| **Strong Field** | r/r_s < 100 | Xi = 1 - exp(-φ×r_s / r) |
 
 ---
 

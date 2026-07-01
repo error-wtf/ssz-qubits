@@ -112,7 +112,7 @@ dΞ/dr = -r_s / (2r²)
 
 **Definition:**
 ```
-Ξ(r) = 1 - exp(-φ · r / r_s)
+Ξ(r) = 1 - exp(-φ · r_s / r)
 ```
 
 **Herleitung:**
@@ -125,12 +125,12 @@ Anforderungen an Ξ(r) im Strong Field:
 
 Der allgemeine Sättigungsansatz:
 ```
-Ξ(r) = Ξ_max · (1 - exp(-k · r / r_s))
+Ξ(r) = Ξ_max · (1 - exp(-k · r_s / r))
 ```
 
 Mit Ξ_max = 1 und k = φ (Golden Ratio):
 ```
-Ξ(r) = 1 - exp(-φ · r / r_s)
+Ξ(r) = 1 - exp(-φ · r_s / r)
 ```
 
 **Eigenschaften:**
@@ -145,7 +145,7 @@ Mit Ξ_max = 1 und k = φ (Golden Ratio):
 
 **Gradient:**
 ```
-dΞ/dr = (φ / r_s) · exp(-φ · r / r_s)
+dΞ/dr = (φ / r_s) · exp(-φ · r_s / r)
 ```
 
 **Spezielle Werte:**
