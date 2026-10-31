@@ -168,3 +168,18 @@ Evidenzklassen: `proven_bug` | `documented_inconsistency` | `model_hypothesis` |
   6⊕2 = Drehimpulsalgebra. Offen präzisiert: nicht-diagonaler Paar-Segment-
   Operator wäre nötig (COMMON_ACTION_GAP/AX-M3). → SSZ_SYMMETRY_PROBE_Q.md.
 - **Tests:** 13 Fälle (tests/test_ssz_symmetry_probe.py), Suite 284 passed.
+
+## D8 — Mischterm S↔T0 (Carmens Folgefrage): Bell-Basis-projizierte Zeitdilatation
+- **Frage:** Liefert der D_A−D_B-Mischterm eine unabhängig messbare Größe
+  jenseits der Zeitdilatation?
+- **Befund:** Mischmatrixelement exakt = (ω_A D_A − ω_B D_B)/2 (S↔T0; T±
+  ungekoppelt) = paarweise Differenzuhr in der Bell-Basis. SSZ/GR-Verhältnis
+  Leading Order = 2φ ≈ 3.236 (auslöschungsfrei aus geschlossenen Formeln).
+  Der Mischterm existiert ohne Bus (Diagonalanteil); sein SSZ-Gehalt ist der
+  bereits falsifizierte 2φ-Koeffizient.
+- **Entscheidung:** Task A abgeschlossen (Negativresultat hält in exakter
+  Blockstruktur); Task B (nicht-scalare Kopplung) ist der einzige offene Weg,
+  Bedingung präzisiert (off-diagonaler Paar-Segment-Operator + Herleitung aus
+  Segmentprinzipien). → SSZ_SINGLET_MIXING_OBSERVABLE.md.
+- **Tests:** 6 Fälle (Mischmatrixelement, T±-Null, Rabi-Dynamik, 2φ-Verhältnis,
+  kein Bus-Anteil). Suite: 290 passed, Exit 0.
