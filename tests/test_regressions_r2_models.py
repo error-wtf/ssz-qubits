@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
+
 Audit-Regressions tests R2 — Regimeauswahl / Modelltrennung / glatte Brücke.
 
 ISSUE_MATRIX R2: Die legacy-'auto'-Umschaltung (x<=100: Xi_A, x>100: Xi_weak)
@@ -19,6 +20,9 @@ Konventionen:
 © 2025 Carmen Wrede, Lino Casu — ANTI-CAPITALIST SOFTWARE LICENSE v1.4
 """
 
+import sys
+import os
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import warnings
 
 import numpy as np

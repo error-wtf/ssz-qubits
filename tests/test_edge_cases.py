@@ -728,4 +728,4 @@ if __name__ == "__main__":
     print("Running edge case and boundary condition tests...")
     print("="*70 + "\n")
     
-    pytest.main([__file__, "-v", "-s", "--tb=short"])
+    sys.exit(pytest.main([__file__, "-v", "-s", "--tb=short"]))

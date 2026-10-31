@@ -158,10 +158,18 @@ D_SSZ(r) = 1 / (1 + Xi(r))
 
 | Eigenschaft | Wert | Bedeutung |
 |-------------|------|-----------|
-| Xi(0) | = 0 | Keine Singularität! |
-| Xi(inf) | --> 1 | Sättigung |
-| dXi/dr | > 0 | Xi steigt mit r |
-| D_SSZ(r_s) | = 0.555 | Finite am Horizont! |
+| Xi(0⁺) | → 1 | Modell A: endliche Dichte am Zentrum (NICHT 0) |
+| Xi(inf) | → 0 | Modell A zerfällt; Weak Field recovered |
+| dXi/dr | < 0 | Xi FÄLLT mit r (korrigiert 2026-10-31, Audit R1/R4) |
+| D_SSZ(0⁺) | → 1/2 | Minimum des Zeitfaktors |
+| D_SSZ(r_s) | = 0.555 | Finite am Schwarzschild-Radius |
+
+**Korrekturvermerk (2026-10-31, Audit R4):** Eine frühere Fassung dieser Tabelle
+behauptete `Xi(0) = 0`, `Xi(inf) → 1 (Sättigung)` und `dXi/dr > 0 (steigend)`.
+Das sind Eigenschaften des ANDEREN Ansatzes (`Xi_B = 1 − exp(−φ·x)`,
+x = r/r_s), nicht der hier dokumentierten Formel. Für Xi_A = 1 − exp(−φ/x):
+Xi_A(0⁺) = 1, Xi_A(∞) = 0, monoton FALLEND. Grenzwerte werden jetzt aus Code
+generiert: siehe `docs/research/MODEL_TABLES.md`.
 
 ### Beispiel: Schwarzschild-Radius
 
@@ -175,10 +183,21 @@ D_SSZ(r_s) = 1/(1 + 0.802) = 0.555
 
 ### Warum funktioniert diese Formel?
 
-1. **Singularitätsfrei**: Xi(0) = 0 --> D_SSZ(0) = 1 (flacher Raum im Zentrum!)
-2. **Sättigung**: Xi kann nicht > 1 werden (physikalische Grenze)
-3. **Golden Ratio**: phi steuert die natürliche Sättigungsrate
-4. **Finite am Horizont**: D_SSZ(r_s) = 0.555 != 0 (keine Singularität!)
+*(Korrigiert 2026-10-31, Audit R4/R5 — die frühere Liste behauptete
+„Singularitätsfrei: Xi(0) = 0 → D_SSZ(0) = 1 (flacher Raum im Zentrum)" und
+„Finite am Horizont … keine Singularität!". Beides war für diese Formel falsch
+und verwechselte einen beschränkten Uhrenfaktor mit bewiesener Raumzeit-Regularität.)*
+
+1. **Beschränkte Dichte**: Für Xi_A = 1 − exp(−φ/x) mit x = r/r_s ≥ 1 bleibt die
+   Dichte in (0, 0.802]. Für x → 0⁺: Xi_A → 1, D_A → 1/2 (endlich — ein LIMES
+   dieses einen Skalars, kein Regularitätsbeweis).
+2. **Monotoner Zerfall**: dXi_A/dr < 0 überall (mit Audit R1 behoben).
+3. **Golden Ratio**: φ setzt die Dichteskala bei x = 1.
+4. **Endliches D bei r_s**: D(r_s) = 0.555 ≠ 0 — Modelleigenschaft. Am
+   Schwarzschild-Horizont selbst liegt keine Krümmungssingularität vor
+   (Koordinateneffekt); ob eine SSZ-Metrik regulär ist, erfordert
+   Krümmungsinvarianten, Geodätenvollständigkeit und Energiebedingungen —
+   hier NICHT geleistet (siehe `scripts/metric_invariants.py`).
 
 ---
 
@@ -329,11 +348,16 @@ g_tt = -D_SSZ² = -(1 + Xi)^(-2)
 
 ### Strong Field: Warum Xi = 1 - exp(-phi*r_s / r)?
 
-**Anforderungen:**
-1. Xi(0) = 0 (keine Singularität)
-2. Xi(inf) --> Xi_max (Sättigung)
-3. Monoton steigend
-4. Glatt (C-unendlich)
+**Anforderungen** *(korrigiert 2026-10-31, Audit R4 — die frühere Liste nannte
+„Xi(0) = 0 … Xi(inf) → Xi_max … monoton steigend", was den ANDEREN Ansatz
+`1 − exp(−φ·x)` beschreibt, nicht die hier hergeleitete Formel)*:
+
+Für Xi_A = 1 − exp(−φ·r_s/r):
+1. Xi_A(0⁺) = 1 (endliche Dichte im Zentrumslimes)
+2. Xi_A(∞) = 0 (zerfällt; Weak Field r_s/(2r) asymptotisch — mit führendem
+   Koeffizienten φ vs. 1/2 in der ART, Faktor 2φ)
+3. Monoton FALLEND (dXi_A/dr < 0)
+4. Glatt (C-unendlich für r > 0)
 
 **Ansatz:** Exponentieller Sättigungsterm
 ```

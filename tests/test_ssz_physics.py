@@ -463,4 +463,4 @@ class TestStrongFieldRegime:
 # =============================================================================
 
 if __name__ == "__main__":
-    pytest.main([__file__, "-v", "-s", "--tb=short"])
+    sys.exit(pytest.main([__file__, "-v", "-s", "--tb=short"]))

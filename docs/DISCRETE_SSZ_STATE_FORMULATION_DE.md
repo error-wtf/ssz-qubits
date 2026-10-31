@@ -181,7 +181,7 @@ mit:
 ```
 
 Eigenschaften:
-- Ξ(0) = 0 — singularitätsfrei
+- Ξ(0⁺) → 0 (Modell-B-Limes; „singularitätsfrei" gestrichen 2026-10-31, Audit R5)
 - Ξ(r_s) = 1 - exp(-φ) = Ξ_max ≈ 0.8017
 - Monoton steigend für x > 0
 

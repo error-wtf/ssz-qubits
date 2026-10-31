@@ -127,10 +127,10 @@ D_SSZ = 1 / (1 + Xi) ≈ 1 - Xi + O(Xi^2)
 
 ```
 Xi(r) = 1 - exp(-phi * r_s / r)
-dXi/dr = (phi / r_s) * exp(-phi * r_s / r)
+dXi/dr = -(phi * r_s / r**2) * exp(-phi * r_s / r)
 ```
 
-**Wichtig:** Im Strong Field bleibt D_SSZ **finite** am Horizont (D_SSZ ≈ 0.555), waehrend die ART eine Singularitaet vorhersagt.
+**Wichtig:** Im Strong Field bleibt D_SSZ **finite** am Schwarzschild-Radius (D_SSZ ≈ 0.555). Hinweis (korrigiert 2026-10-31, Audit R5): Dass D in der ART am Horizont gegen 0 geht, ist eine *Koordinaten*-Singularität — reguläre Koordinaten existieren (Martel & Poisson, arXiv:gr-qc/0001069); die physikalische Krümmungssingularität der ART liegt bei r = 0. Ein endliches D allein BEWEIST keine Regularität: Krümmungsinvarianten, Geodätenvollständigkeit und Energiebedingungen sind hier nicht nachgewiesen (siehe `scripts/metric_invariants.py`).
 
 ### Fundamentale Konstanten
 
@@ -634,7 +634,7 @@ plt.savefig('my_plot.png')
 | Aspekt | ART | SSZ |
 |--------|-----|-----|
 | Raumzeit | Kontinuierlich | Diskret |
-| Am Horizont | D = 0 (Singularitaet) | D = 0.555 (Finite) |
+| Am Horizont | D = 0 (Koordinatenfaktor; kein Krümmungs-Singularität am Horizont) | D = 0.555 (finite; Modelleigenschaft, Regularität nicht bewiesen) |
 | Weak Field | D ≈ 1 - r_s/2r | D = 1/(1+Xi) ≈ gleich |
 | Quantisierung | Nein | Ja (phi-basiert) |
 
@@ -720,7 +720,7 @@ ssz-qubits/
 
 **Q: Was ist der Unterschied zwischen SSZ und der Allgemeinen Relativitaetstheorie?**
 
-A: Die ART behandelt Raumzeit als kontinuierliches Gebilde. SSZ behandelt Raumzeit als **diskrete Struktur** mit messbaren Segmenten. Im Weak Field (wie auf der Erde) liefern beide nahezu identische Ergebnisse. Der Unterschied zeigt sich in starken Feldern: SSZ vermeidet die Singularitaet am Schwarzschild-Horizont.
+A: Die ART behandelt Raumzeit als kontinuierliches Gebilde. SSZ behandelt Raumzeit als **diskrete Struktur** mit messbaren Segmenten. Im Weak Field (wie auf der Erde) liefern beide nahezu identische Ergebnisse. (Korrigiert 2026-10-31, Audit R5: Eine frühere Fassung behauptete „SSZ vermeidet die Singularität am Schwarzschild-Horizont". Diese Behauptung wird zurückgezogen: Am Schwarzschild-Horizont liegt keine Krümmungssingularität vor — D→0 ist ein Koordinateneffekt — und ein endliches D etabliert für sich genommen keine Regularität; siehe `scripts/metric_invariants.py`.)
 
 **Q: Warum ist der Golden Ratio phi wichtig?**
 

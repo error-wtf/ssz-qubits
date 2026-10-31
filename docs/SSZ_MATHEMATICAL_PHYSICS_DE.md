@@ -118,10 +118,10 @@ dΞ/dr = -r_s / (2r²)
 **Herleitung:**
 
 Anforderungen an Ξ(r) im Strong Field:
-1. Ξ(0) = 0 (keine Singularität im Zentrum)
-2. Ξ(∞) → Ξ_max (Sättigung)
-3. dΞ/dr > 0 (monoton steigend)
-4. C∞ (glatt)
+1. Ξ_A(0⁺) = 1 (endlicher Zentrumslimes; NICHT 0) *(korrigiert 2026-10-31, Audit R4)*
+2. Ξ_A(∞) = 0 (zerfällt; Weak-Field-Asymptotik)
+3. dΞ_A/dr < 0 (monoton fallend)
+4. C∞ (glatt für r > 0)
 
 Der allgemeine Sättigungsansatz:
 ```
@@ -133,19 +133,20 @@ Mit Ξ_max = 1 und k = φ (Golden Ratio):
 Ξ(r) = 1 - exp(-φ · r_s / r)
 ```
 
-**Eigenschaften:**
+**Eigenschaften** *(korrigiert 2026-10-31, Audit R4 — code-generierte Tabellen:
+`docs/research/MODEL_TABLES.md`)*:
 
 | Eigenschaft | Formel | Bedeutung |
 |-------------|--------|-----------|
-| Wertebereich | 0 ≤ Ξ < 1 | Begrenzte Segmentdichte |
-| Ξ(0) | = 0 | Singularitätsfrei! |
-| Ξ(r_s) | = 1 - e⁻φ ≈ 0.802 | Finite am Horizont |
-| Ξ(∞) | → 1 | Sättigung |
-| Monotonie | dΞ/dr > 0 | Steigt mit r |
+| Wertebereich (x ≥ 1) | 0 < Ξ ≤ 1 − e⁻φ ≈ 0.802 | Begrenzte Segmentdichte |
+| Ξ(0⁺) | → 1 | Endlicher Zentrumslimes (NICHT 0, NICHT „singularitätsfrei") |
+| Ξ(r_s) | = 1 − e⁻φ ≈ 0.802 | Wert am Schwarzschild-Radius |
+| Ξ(∞) | → 0 | Zerfällt; führender Term φ·r_s/r |
+| Monotonie | dΞ/dr < 0 | Fällt mit r |
 
-**Gradient:**
+**Gradient** *(korrigiert 2026-10-31, Audit R1: Vorzeichen und Radialfaktor)*:
 ```
-dΞ/dr = (φ / r_s) · exp(-φ · r_s / r)
+dΞ/dr = −(φ · r_s / r²) · exp(-φ · r_s / r)
 ```
 
 **Spezielle Werte:**

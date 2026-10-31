@@ -643,4 +643,4 @@ if __name__ == "__main__":
     print("Running cross-validation tests against known results...")
     print("="*70 + "\n")
     
-    pytest.main([__file__, "-v", "-s", "--tb=short"])
+    sys.exit(pytest.main([__file__, "-v", "-s", "--tb=short"]))

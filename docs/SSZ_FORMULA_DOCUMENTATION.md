@@ -158,10 +158,18 @@ D_SSZ(r) = 1 / (1 + Xi(r))
 
 | Property | Value | Meaning |
 |----------|-------|---------|
-| Xi(0) | = 0 | No singularity! |
-| Xi(∞) | → 1 | Saturation |
-| dXi/dr | > 0 | Xi increases with r |
-| D_SSZ(r_s) | = 0.555 | Finite at horizon! |
+| Xi(0⁺) | → 1 | Model A: finite density at center (NOT 0) |
+| Xi(∞) | → 0 | Model A decays; weak field recovered |
+| dXi/dr | < 0 | Xi DECREASES with r (corrected 2026-10-31, audit R1/R4) |
+| D_SSZ(0⁺) | → 1/2 | Minimum of the time factor |
+| D_SSZ(r_s) | = 0.555 | Finite at the Schwarzschild radius |
+
+**Correction note (2026-10-31, audit R4):** An earlier version of this table
+claimed `Xi(0) = 0`, `Xi(∞) → 1 (saturation)` and `dXi/dr > 0 (increasing)`.
+Those are properties of the OTHER ansatz (`Xi_B = 1 − exp(−φ·x)` with
+x = r/r_s), not of the formula documented here. For Xi_A = 1 − exp(−φ/x):
+Xi_A(0⁺) = 1, Xi_A(∞) = 0, monotonically DECREASING. Limits are now
+generated from code: see `docs/research/MODEL_TABLES.md`.
 
 ### Example: Schwarzschild Radius
 
@@ -175,10 +183,21 @@ D_SSZ(r_s) = 1/(1 + 0.802) = 0.555
 
 ### Why Does This Formula Work?
 
-1. **Singularity-free**: Xi(0) = 0 → D_SSZ(0) = 1 (flat space at center!)
-2. **Saturation**: Xi cannot exceed 1 (physical limit)
-3. **Golden Ratio**: φ controls the natural saturation rate
-4. **Finite at horizon**: D_SSZ(r_s) = 0.555 ≠ 0 (no singularity!)
+*(Corrected 2026-10-31, audit R4/R5 — the previous list claimed "Singularity-free:
+Xi(0) = 0 → D_SSZ(0) = 1 (flat space at center)" and "Finite at horizon … no
+singularity!". Both claims were wrong for this formula and conflated a bounded
+clock factor with proven spacetime regularity.)*
+
+1. **Bounded density**: For Xi_A = 1 − exp(−φ/x) with x = r/r_s ≥ 1 the density
+   stays in (0, 0.802]. At x → 0⁺: Xi_A → 1, D_A → 1/2 (both finite — a LIMIT
+   of this one scalar, not a proof of regularity).
+2. **Monotonic decay**: dXi_A/dr < 0 everywhere (fixed with audit R1).
+3. **Golden Ratio**: φ sets the density scale at x = 1.
+4. **Finite D at r_s**: D(r_s) = 0.555 ≠ 0 — a model property. The Schwarzschild
+   horizon itself carries no curvature singularity (coordinate effect); whether
+   any SSZ metric is regular requires curvature invariants, geodesic
+   completeness and energy conditions — NOT established here
+   (see `scripts/metric_invariants.py`).
 
 ---
 
@@ -329,11 +348,16 @@ g_tt = -D_SSZ² = -(1 + Xi)⁻²
 
 ### Strong Field: Why Xi = 1 - exp(-φ×r_s / r)?
 
-**Requirements:**
-1. Xi(0) = 0 (no singularity)
-2. Xi(∞) → Xi_max (saturation)
-3. Monotonically increasing
-4. Smooth (C-infinity)
+**Requirements** *(corrected 2026-10-31, audit R4 — the previous list stated
+"Xi(0) = 0 … Xi(∞) → Xi_max … monotonically increasing", which describes the
+OTHER ansatz `1 − exp(−φ·x)`, not the formula derived here)*:
+
+For Xi_A = 1 − exp(−φ·r_s/r):
+1. Xi_A(0⁺) = 1 (finite density at the center limit)
+2. Xi_A(∞) = 0 (decays; weak field r_s/(2r) recovered asymptotically — but note
+   the leading coefficient φ vs GR's 1/2, factor 2φ)
+3. Monotonically DECREASING (dXi_A/dr < 0)
+4. Smooth (C-infinity on r > 0)
 
 **Approach:** Exponential saturation term
 ```

@@ -69,7 +69,7 @@ wobei $r_s = \frac{2GM}{c^2}$ der Schwarzschild-Radius ist.
 |--------|------------------------|---------------------------|
 | Raumzeit | Kontinuierlich | Diskret/Segmentiert |
 | Zeitdilatation (r >> r_s) | √(1 - r_s/r) | 1/(1 + Ξ) ≈ gleich |
-| Am Horizont (r = r_s) | D = 0 (Singularität) | D = 0.555 (Finite!) |
+| Am Horizont (r = r_s) | D = 0 (Koordinatenfaktor; keine Krümmungssingularität am Horizont) | D = 0.555 (finite; Modelleigenschaft, Regularität nicht bewiesen — korrigiert 2026-10-31, Audit R5) |
 | Quantisierung | Nein | Ja (φ-basiert) |
 
 **Fazit:** Im Vergleich zur GR liefert SSZ ähnliche Zeitdilatation für große r, jedoch mit **diskretem Verhalten** in Nahfeldzonen (z.B. Qubit-Arrays).

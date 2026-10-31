@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
+
 Audit-Regressions tests für ssz-qubits — Reparaturauftrag 2026-10-31.
 
 Jeder Test referenziert einen Eintrag in docs/audit/ISSUE_MATRIX.md und war
@@ -14,6 +15,9 @@ aus dem Implementierungscode kopiert.
 © 2025 Carmen Wrede, Lino Casu — ANTI-CAPITALIST SOFTWARE LICENSE v1.4
 """
 
+import sys
+import os
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import numpy as np
 import pytest
 

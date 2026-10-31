@@ -136,10 +136,10 @@ D_SSZ = 1 / (1 + Xi) ≈ 1 - Xi + O(Xi²)
 
 ```
 Xi(r) = 1 - exp(-φ × r_s / r)
-dXi/dr = (φ / r_s) × exp(-φ × r_s / r)
+dXi/dr = -(φ × r_s / r²) × exp(-φ × r_s / r)
 ```
 
-**Important:** In the strong field, D_SSZ remains **finite** at the horizon (D_SSZ ≈ 0.555), while GR predicts a singularity.
+**Important:** In the strong field, D_SSZ remains **finite** at the Schwarzschild radius (D_SSZ ≈ 0.555). Note (corrected 2026-10-31, audit R5): GR's D → 0 at the horizon is a *coordinate* singularity — regular coordinate systems exist (Martel & Poisson, arXiv:gr-qc/0001069); GR's physical curvature singularity is at r = 0. A finite D alone does NOT prove regularity: curvature invariants, geodesic completeness and energy conditions are not established here (see `scripts/metric_invariants.py`).
 
 ### Fundamental Constants
 
@@ -663,7 +663,7 @@ plt.savefig('my_plot.png')
 | Aspect | GR | SSZ |
 |--------|-----|-----|
 | Spacetime | Continuous | Discrete |
-| At horizon | D = 0 (singularity) | D = 0.555 (finite) |
+| At horizon | D = 0 (coordinate factor; horizon is NOT a curvature singularity) | D = 0.555 (finite; model property, regularity not proven) |
 | Weak field | D ≈ 1 - r_s/2r | D = 1/(1+Xi) ≈ same |
 | Quantization | No | Yes (φ-based) |
 
@@ -775,7 +775,7 @@ Dedicated functions for Paper A claims:
 
 **Q: What is the difference between SSZ and General Relativity?**
 
-A: GR treats spacetime as a continuous manifold. SSZ treats spacetime as a **discrete structure** with measurable segments. In the weak field (like on Earth), both yield nearly identical results. The difference appears in strong fields: SSZ avoids the singularity at the Schwarzschild horizon.
+A: GR treats spacetime as a continuous manifold. SSZ treats spacetime as a **discrete structure** with measurable segments. In the weak field (like on Earth), both yield nearly identical results. (Corrected 2026-10-31, audit R5: an earlier version of this answer claimed "SSZ avoids the singularity at the Schwarzschild horizon". That claim is withdrawn: the Schwarzschild horizon carries no curvature singularity — its D → 0 is a coordinate effect — and SSZ's finite D does not by itself establish regularity anywhere; see `scripts/metric_invariants.py`.)
 
 **Q: Why is the Golden Ratio φ important?**
 

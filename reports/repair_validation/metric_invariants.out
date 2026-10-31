@@ -1,0 +1,20 @@
+==============================================================================
+R5 — Krümmungsinvarianten für ds² = −D²c²dt² + D^(-2)dr² + r²dΩ²
+==============================================================================
+
+[1] Kontrolle D ≡ 1 (flach):
+    R = 0   K = 0
+    → OK (R=0, K=0)
+
+[2] Kontrolle Schwarzschild D² = 1 − r_s/r (Orakel K = 12 r_s²/r⁶):
+    R (symbolisch vereinfacht) = 0
+    K vs 12 r_s²/r⁶ an 4 Radien: worst rel Abweichung = 0.000e+00
+    → OK (Orakel numerisch exakt getroffen an allen Stützstellen)
+    K(r = r_s) = 12 r_s²/r_s⁴ = 0.75 (ENDLICH — aus der
+    geschlossenen Form; die UNVEREINFACHTE symbolische K-Form darf vor
+    Substitution nicht direkt an r=r_s gesetzt werden (0/0-Artefakt).
+    Die 'Singularität' des Schwarzschild-Horizonts ist ein KOORDINATEN-
+    ARTEFAKT; die zentrale Krümmungssingularität liegt bei r→0:
+    K = 12 r_s²/r⁶ → ∞ (vgl. Martel & Poisson, arXiv:gr-qc/0001069).
+
+[3] Repo-Ansatz A: D_A = 1/(2 − exp(−φ r_s/r))  [Xi_A = 1 − exp(−φ/x)]:

@@ -69,7 +69,7 @@ where $r_s = \frac{2GM}{c^2}$ is the Schwarzschild radius.
 |--------|------------------------|---------------------------|
 | Spacetime | Continuous | Discrete/Segmented |
 | Time dilation (r >> r_s) | √(1 - r_s/r) | 1/(1 + Ξ) ≈ same |
-| At horizon (r = r_s) | D = 0 (singularity) | D = 0.555 (finite!) |
+| At horizon (r = r_s) | D = 0 (coordinate factor; no curvature singularity at the horizon) | D = 0.555 (finite; model property, regularity not proven — corrected 2026-10-31, audit R5) |
 | Quantization | No | Yes (φ-based) |
 
 **Conclusion:** Compared to GR, SSZ provides similar time dilation for large r, but with **discrete behavior** in near-field zones (e.g., qubit arrays).

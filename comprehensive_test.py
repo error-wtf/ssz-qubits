@@ -206,5 +206,6 @@ if errors:
         print(f'  - {module}: {error}')
     sys.exit(1)
 else:
-    print('ALL TESTS PASSED - REPOSITORY IS 100% CORRECT')
+    print('ALL TESTS PASSED (implementation self-consistency checks only —')
+    print('this is NOT a physics-validity claim; see docs/audit/CLAIM_REGISTER.csv)')
 print('=' * 70)

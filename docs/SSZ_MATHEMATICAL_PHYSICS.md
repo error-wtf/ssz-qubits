@@ -117,11 +117,13 @@ dΞ/dr = -r_s / (2r²)
 
 **Derivation:**
 
-Requirements for Ξ(r) in strong field:
-1. Ξ(0) = 0 (no singularity at center)
-2. Ξ(∞) → Ξ_max (saturation)
-3. dΞ/dr > 0 (monotonically increasing)
-4. C∞ (smooth)
+Requirements for Ξ(r) in strong field *(corrected 2026-10-31, audit R4 — the
+earlier list described the other ansatz `1 − exp(−φ·x)`; the formula derived
+here is Xi_A = 1 − exp(−φ·r_s/r))*:
+1. Ξ_A(0⁺) = 1 (finite center limit; NOT 0)
+2. Ξ_A(∞) = 0 (decays; weak field asymptotics)
+3. dΞ_A/dr < 0 (monotonically DECREASING)
+4. C∞ (smooth on r > 0)
 
 The general saturation approach:
 ```
@@ -133,15 +135,16 @@ With Ξ_max = 1 and k = φ (Golden Ratio):
 Ξ(r) = 1 - exp(-φ · r_s / r)
 ```
 
-**Properties:**
+**Properties** *(corrected 2026-10-31, audit R4 — see code-generated tables in
+`docs/research/MODEL_TABLES.md`)*:
 
 | Property | Formula | Meaning |
 |----------|---------|---------|
-| Range | 0 ≤ Ξ < 1 | Bounded segment density |
-| Ξ(0) | = 0 | Singularity-free! |
-| Ξ(r_s) | = 1 - e⁻φ ≈ 0.802 | Finite at horizon |
-| Ξ(∞) | → 1 | Saturation |
-| Monotonicity | dΞ/dr > 0 | Increases with r |
+| Range (x ≥ 1) | 0 < Ξ ≤ 1 − e⁻φ ≈ 0.802 | Bounded segment density |
+| Ξ(0⁺) | → 1 | Finite center limit (NOT 0, NOT "singularity-free") |
+| Ξ(r_s) | = 1 − e⁻φ ≈ 0.802 | Value at the Schwarzschild radius |
+| Ξ(∞) | → 0 | Decays; leading term φ·r_s/r |
+| Monotonicity | dΞ/dr < 0 | Decreases with r |
 
 **Gradient:**
 ```

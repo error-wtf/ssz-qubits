@@ -181,7 +181,8 @@ with:
 ```
 
 Properties:
-- Ξ(0) = 0 — singularity-free
+- Ξ(0⁺) → 0 (Modell-B-Limes; „singularity-free" gestrichen 2026-10-31, Audit R5:
+  ein Grenzwert eines Skalars belegt keine Regularität der Raumzeit)
 - Ξ(r_s) = 1 - exp(-φ) = Ξ_max ≈ 0.8017
 - Monotonically increasing for x > 0
 
@@ -398,7 +399,7 @@ The φ-level ν_k = ln(1 + Ξ_k)/ln(φ) is a **local classification quantity**, 
 - The *cumulative* segment counter along a long radial path can grow without bound.
 - The *local* segment density Ξ is bounded by Ξ_max ≤ 1 (saturation).
 
-This separation — locally bounded φ-level, unbounded cumulative counter — is the physical basis for SSZ being singularity-free: the field saturates at Ξ_max rather than diverging.
+This separation — locally bounded φ-level, unbounded cumulative counter — bounds the FIELD value. *(Corrected 2026-10-31, audit R5: an earlier version called this "the physical basis for SSZ being singularity-free". Withdrawn: a bounded scalar field does not establish regularity of a spacetime; that requires curvature invariants, geodesic completeness and field equations — see `scripts/metric_invariants.py`.)*
 
 ### Both recursions are self-similar
 

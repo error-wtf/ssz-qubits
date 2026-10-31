@@ -9,6 +9,7 @@ from ssz_qubits import (
     M_EARTH, R_EARTH
 )
 import numpy as np
+import pytest
 
 print('KORRIGIERTE WERTE - PHYSIKALISCH KORREKT')
 print('=' * 70)
@@ -57,3 +58,35 @@ print('=' * 70)
 print('FAZIT: SSZ-Effekte sind bei Earth-scale WINZIG (< 10^-6 %)')
 print('       Das ist physikalisch korrekt!')
 print('=' * 70)
+
+
+# =============================================================================
+# Echte pytest-Regressionen (Reparatur 2026-10-31, T2: das Skript war vorher
+# Print-only mit 0 Assertions; die Prints bleiben als Demo erhalten).
+# =============================================================================
+
+def test_phase_drift_per_gate_matches_manual_and_audit_value():
+    """Phase/Gate (1 mm, 5 GHz, 50 ns) ≈ 1.71628e−16 rad — Rechenvorhersage
+    unter Modellannahmen, KEINE Messung (Audit §5)."""
+    q1 = Qubit(id='Q1', x=0, y=0, z=0, gate_time=50e-9)
+    q2 = Qubit(id='Q2', x=0, y=0, z=0.001, gate_time=50e-9)
+    mismatch = qubit_pair_segment_mismatch(QubitPair(q1, q2), M_EARTH)
+    assert mismatch['delta_time_dilation'] == pytest.approx(1.0926195757e-19, rel=1e-4)
+    assert mismatch['phase_drift_per_gate'] == pytest.approx(1.71628e-16, rel=1e-3)
+
+
+def test_ssz_decoherence_contribution_tiny_at_earth_scale():
+    """SSZ-Anteil an der Dekohärenzrate auf der Erde < 1e-4 % (Print-Aussage
+    wird jetzt geprüft statt nur behauptet)."""
+    q = Qubit(id='Q1', x=0, y=0, z=0, coherence_time_T2=100e-6)
+    gamma = ssz_decoherence_rate(q, M_EARTH)
+    gamma_base = 1.0 / 100e-6
+    ssz_fraction = (gamma - gamma_base) / gamma_base * 100
+    assert 0.0 <= ssz_fraction < 1e-4
+
+
+def test_pair_decoherence_time_halves_T2():
+    pair = QubitPair(Qubit(id='Q1', x=0, y=0, z=0),
+                     Qubit(id='Q2', x=0, y=0, z=0.001))
+    T2_pair = pair_decoherence_time(pair, M_EARTH)
+    assert 45e-6 < T2_pair < 55e-6
