@@ -673,6 +673,11 @@ plt.savefig('my_plot.png')
 
 ### GPS System
 
+*(Einordnung, korrigiert 2026-10-31, Audit R5/Phase 7: Die folgenden
+Weak-Field-Daten bestätigen die GR-Schwachfeld-Näherung, die SSZ im Weak
+Field reproduziert — sie sind KEINE unabhängigen Tests neuartiger
+SSZ-Effekte. Quelle der Messwerte: Standardliteratur.)*
+
 | Parameter | SSZ Prediction | Measured | Status |
 |-----------|----------------|----------|--------|
 | Time drift | ~45 μs/day | ~45 μs/day | ✓ MATCH |

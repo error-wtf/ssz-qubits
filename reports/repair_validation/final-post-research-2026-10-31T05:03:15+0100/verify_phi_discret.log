@@ -1,0 +1,58 @@
+=== KONSTANTEN ===
+phi          = 1.618033988749895
+Xi_max       = 0.801711847137794
+D_min        = 0.555027709668782
+phi + e^-1   = 1.985913429921337  < 2: True
+phi + e^-ph2 = 1.690980123615761  < 2: True
+
+=== SATZ 1: D_GR(phi) = 1/phi ===
+D_GR(phi) = 0.618033988749895
+1/phi     = 0.618033988749895
+Diff      = 1.11e-16  PASS: True
+
+=== SATZ 2: a_{k+1} = (a_k + 1/phi) / phi ===
+k=0: a_k=0.000000  a_k1_direct=0.381966  recurse=0.381966  delta=1.11e-16  OK
+k=1: a_k=0.381966  a_k1_direct=0.618034  recurse=0.618034  delta=0.00e+00  OK
+k=2: a_k=0.618034  a_k1_direct=0.763932  recurse=0.763932  delta=2.22e-16  OK
+k=3: a_k=0.763932  a_k1_direct=0.854102  recurse=0.854102  delta=0.00e+00  OK
+k=4: a_k=0.854102  a_k1_direct=0.909830  recurse=0.909830  delta=3.33e-16  OK
+
+=== SATZ 3: q_{k+1} = q_k^{1/phi} (Abklingform) ===
+k=0: q_k=0.198288  direct=0.367879  recurse=0.367879  delta=0.00e+00  OK
+k=1: q_k=0.367879  direct=0.539003  recurse=0.539003  delta=0.00e+00  OK
+k=2: q_k=0.539003  direct=0.682518  recurse=0.682518  delta=0.00e+00  OK
+k=3: q_k=0.682518  direct=0.789727  recurse=0.789727  delta=0.00e+00  OK
+k=4: q_k=0.789727  direct=0.864246  recurse=0.864246  delta=0.00e+00  OK
+
+=== SATZ 4: p_{k+1} = p_k^phi (Saettigungsform) ===
+k=0: p_k=0.198288  direct=0.072946  recurse=0.072946  delta=1.39e-17  OK
+k=1: p_k=0.072946  direct=0.014464  recurse=0.014464  delta=1.73e-18  OK
+k=2: p_k=0.014464  direct=0.001055  recurse=0.001055  delta=8.67e-19  OK
+k=3: p_k=0.001055  direct=0.000015  recurse=0.000015  delta=3.39e-21  OK
+k=4: p_k=0.000015  direct=0.000000  recurse=0.000000  delta=0.00e+00  OK
+
+=== SATZ 5: Vorzeichenwechsel ===
+Delta^A_0 = +0.555028  > 0: True
+Delta^A_1 = -0.005334  < 0: True
+Delta^B_0 = +0.555028  > 0: True
+Delta^B_1 = -0.099107  < 0: True
+
+=== SCHNITTPUNKTE ===
+Abklingform:     r*/r_s = 1.594811  D* = 0.610710  in [1,phi]: True
+Saettigungsform: r*/r_s = 1.386562  D* = 0.528007  in [1,phi]: True
+Abklingform Verifikation:     PASS
+Saettigungsform Verifikation: PASS
+
+=== REALE OBJEKTE ===
+  Objekt                     x  k_brack     D_GR   D_SSZ_A   Delta%
+  -----------------------------------------------------------------
+  BH Horizont            1.000 [ -1,0]  0(sing.)   0.55503    ---
+  PSR J0740+6620           2.0 [  1,2]   0.71035   0.64459   -9.26%
+  NS kanonisch             2.4 [  1,2]   0.76585   0.67214  -12.24%
+  PSR J0030+0451           3.2 [  2,3]   0.82969   0.71632  -13.66%
+  Sirius B              1925.3 [ 15,16]   0.99974   0.99916   -0.06%
+  Sonne               235661.9 [ 25,26]   1.00000   0.99999   -0.00%
+
+============================================================
+GESAMT-ERGEBNIS: ALLE TESTS BESTANDEN
+============================================================

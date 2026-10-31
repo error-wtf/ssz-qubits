@@ -1,0 +1,63 @@
+/home/error/physics/ssz-qubits/verify_paper_a_formulas.py:26: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+  xi1 = xi_segment_density(r, M_EARTH)
+/home/error/physics/ssz-qubits/verify_paper_a_formulas.py:27: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+  xi2 = xi_segment_density(r + dr, M_EARTH)
+/home/error/physics/ssz-qubits/verify_paper_a_formulas.py:79: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+  xi_center = xi_segment_density(R_EARTH, M_EARTH)
+/home/error/physics/ssz-qubits/verify_paper_a_formulas.py:86: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+  xi_edge = xi_segment_density(R_EARTH + z_m, M_EARTH)
+REPOSITORY ANALYSIS: PAPER A FORMULAS
+======================================================================
+
+1. VERIFY GRADIENT FORMULA
+--------------------------------------------------
+  dXi/dr (formula) = -1.092619e-16
+  dXi/dr (numerical) = -1.092619e-16
+
+2. COHERENT ZONE WIDTH - MATHEMATICS
+--------------------------------------------------
+  epsilon = 1e-18
+  |dXi/dr| = r_s/(2R^2) = 1.092619e-16
+
+  z = eps / |dXi/dr| = 2*R^2*eps/r_s = 9.15 mm
+  z = 4*R^2*eps/r_s (Paper Eq.8) = 18.30 mm
+
+3. REPOSITORY FUNCTION segment_coherent_zone()
+--------------------------------------------------
+  Signature: segment_coherent_zone(center_height: float, max_xi_variation: float = 1e-16, M: float = 5.972e+24) -> Tuple[float, float]
+  Result for eps=1e-18:
+    (6370999.963390728, 6371000.036609272)
+
+4. NUMERICAL VERIFICATION OF ZONE
+--------------------------------------------------
+  Xi(R_Earth) = 6.961078e-10
+
+  z [mm]  | Delta_Xi        | Delta_Xi/eps
+  ---------------------------------------------
+    9.15 | 9.997468e-19 | 1.00
+   18.30 | 1.999493e-18 | 2.00
+   36.60 | 3.998987e-18 | 4.00
+
+5. DECOHERENCE ENHANCEMENT FACTOR
+--------------------------------------------------
+  qubit_pair_segment_mismatch() returns:
+    delta_xi: 1.092620e-19
+    delta_time_dilation: 1.092620e-19
+    phase_drift_per_gate: 1.716283e-16
+    decoherence_enhancement: 1.000000e+00
+    time_diff_per_microsecond: 1.092620e-25
+
+  decoherence_enhancement IS in repository output
+  Value: 1.000000
+
+======================================================================
+SUMMARY
+======================================================================
+
+1. Coherent Zone Formula:
+   Half-width: z = 2*R^2*eps/r_s = 9.15 mm
+   Total width (Paper Eq.8): z = 4*R^2*eps/r_s = 18.30 mm
+   -> Paper uses TOTAL width (correct)
+
+2. Decoherence Enhancement:
+   -> IS defined in repository
