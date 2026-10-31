@@ -120,6 +120,29 @@ def schwarzschild_radius(M: float) -> float:
     return 2 * G * M / (C**2)
 
 
+# =============================================================================
+# INPUT VALIDATION (repair 2026-10-31: explicit guards against division by
+# zero, NaN/Inf propagation, and undefined M=0 behavior — audit R1/R3)
+# =============================================================================
+
+def _validate_radius(r: float) -> float:
+    """Reject r <= 0 and non-finite radii (no silent NaN/Inf propagation)."""
+    if not np.isfinite(r):
+        raise ValueError(f"Radius must be finite, got r={r}")
+    if r <= 0:
+        raise ValueError(f"Radius must be positive, got r={r}")
+    return float(r)
+
+
+def _validate_mass(M: float) -> float:
+    """Reject non-finite or negative masses. M = 0 is allowed (flat spacetime)."""
+    if not np.isfinite(M):
+        raise ValueError(f"Mass must be finite, got M={M}")
+    if M < 0:
+        raise ValueError(f"Mass must be non-negative, got M={M}")
+    return float(M)
+
+
 def xi_segment_density(r: float, M: float = M_EARTH, regime: str = 'auto') -> float:
     """
     Calculate SSZ segment density Xi(r) at radius r from mass M.
@@ -160,11 +183,16 @@ def xi_segment_density(r: float, M: float = M_EARTH, regime: str = 'auto') -> fl
     For qubit applications on Earth (r/r_s ~ 10^9), use 'weak' regime.
     The weak-field formula gives measurable effects (GPS, atomic clocks).
     The saturation formula is for strong-field physics (black holes).
+
+    M = 0 is DEFINED as flat spacetime: Xi = 0 (documented repair
+    2026-10-31; previously raised ZeroDivisionError via r/r_s with r_s=0).
     """
-    if r <= 0:
-        raise ValueError(f"Radius must be positive, got r={r}")
-    
+    r = _validate_radius(r)
+    _validate_mass(M)
+
     r_s = schwarzschild_radius(M)
+    if r_s == 0.0:  # M = 0: flat spacetime by definition
+        return 0.0
     ratio = r / r_s
     
     # Auto-select regime based on r/r_s ratio
@@ -187,15 +215,70 @@ def xi_segment_density(r: float, M: float = M_EARTH, regime: str = 'auto') -> fl
 def xi_gradient(r: float, M: float = M_EARTH, regime: str = 'auto') -> float:
     """
     Calculate gradient of segment density dXi/dr.
-    
-    TWO REGIMES:
-    
-    1. WEAK FIELD: dXi/dr = -r_s / (2r^2)
+
+    TWO REGIMES (each derivative is the EXACT derivative of the density
+    formula selected by xi_segment_density for the same regime):
+
+    1. WEAK FIELD:  Xi(r)  = r_s / (2r)
+                    dXi/dr = -r_s / (2r^2)
        Negative gradient (Xi decreases with r)
-    
-    2. STRONG FIELD: dXi/dr = (phi / r_s) * exp(-phi * r_s / r)
-       Positive gradient (Xi increases with r in saturation form)
-    
+
+    2. STRONG FIELD (Ansatz A):  Xi_A(r)  = 1 - exp(-phi * r_s / r)
+                    dXi_A/dr = -(phi * r_s / r^2) * exp(-phi * r_s / r)
+       Negative gradient (Xi_A decreases monotonically with r).
+
+       REPAIR 2026-10-31 (audit R1, commit history of branch
+       audit/ssz-qubits-repair-8to6-20261031): the previous implementation
+       returned +(phi / r_s) * exp(-phi * r_s / r) — wrong sign AND wrong
+       radial factor. Verified against central finite differences and
+       mpmath; control value (Earth mass, r = 2 r_s): -20.3077552198 m^-1
+       (old buggy value was +81.2310208790 m^-1).
+
+    Parameters
+    ----------
+    r : float
+        Distance from center of mass [m]. Must be finite and > 0.
+    M : float
+        Central mass [kg]. M = 0 is DEFINED as flat spacetime
+        (Xi = 0, gradient = 0) — no division by r_s = 0.
+    regime : str
+        'weak', 'strong', or 'auto' (default)
+
+    Returns
+    -------
+    float
+        Segment density gradient [1/m]
+    """
+    r = _validate_radius(r)
+    _validate_mass(M)
+
+    r_s = schwarzschild_radius(M)
+    if r_s == 0.0:  # M = 0: flat spacetime by definition
+        return 0.0
+
+    ratio = r / r_s
+
+    if regime == 'auto':
+        regime = 'weak' if ratio > 100 else 'strong'
+
+    if regime == 'weak':
+        # WEAK FIELD: dXi/dr = -r_s / (2r^2)
+        return -r_s / (2 * r**2)
+    else:
+        # STRONG FIELD (Ansatz A): dXi/dr = -(phi*r_s/r^2) * exp(-phi*r_s/r)
+        # exp underflows to 0.0 for tiny r — gradient stays finite.
+        return -(PHI * r_s / r**2) * np.exp(-PHI * r_s / r)
+
+
+def ssz_time_dilation(r: float, M: float = M_EARTH, regime: str = 'auto') -> float:
+    """
+    Calculate SSZ time dilation factor D_SSZ.
+
+    D_SSZ = 1 / (1 + Xi(r))
+
+    This gives the ratio of local proper time to coordinate time.
+    D_SSZ < 1 means time runs slower (closer to mass).
+
     Parameters
     ----------
     r : float
@@ -203,85 +286,111 @@ def xi_gradient(r: float, M: float = M_EARTH, regime: str = 'auto') -> float:
     M : float
         Central mass [kg]
     regime : str
-        'weak', 'strong', or 'auto' (default)
-        
-    Returns
-    -------
-    float
-        Segment density gradient [1/m]
-    """
-    if r <= 0:
-        raise ValueError(f"Radius must be positive, got r={r}")
-    
-    r_s = schwarzschild_radius(M)
-    ratio = r / r_s
-    
-    if regime == 'auto':
-        regime = 'weak' if ratio > 100 else 'strong'
-    
-    if regime == 'weak':
-        # WEAK FIELD: dXi/dr = -r_s / (2r^2)
-        return -r_s / (2 * r**2)
-    else:
-        # STRONG FIELD: dXi/dr = (phi / r_s) * exp(-phi * r_s / r)
-        return (PHI / r_s) * np.exp(-PHI * r_s / r)
+        'weak', 'strong', or 'auto' (default). 'auto' selects per radius
+        exactly as xi_segment_density does, so this function and
+        ssz_time_dilation_difference (same regime argument) always refer
+        to the SAME model. (regime kwarg added in repair 2026-10-31, R3.)
 
-
-def ssz_time_dilation(r: float, M: float = M_EARTH) -> float:
-    """
-    Calculate SSZ time dilation factor D_SSZ.
-    
-    D_SSZ = 1 / (1 + Ξ(r))
-    
-    This gives the ratio of local proper time to coordinate time.
-    D_SSZ < 1 means time runs slower (closer to mass).
-    
-    Parameters
-    ----------
-    r : float
-        Distance from center of mass [m]
-    M : float
-        Central mass [kg]
-        
     Returns
     -------
     float
         Time dilation factor (dimensionless, 0 < D_SSZ <= 1)
     """
-    xi = xi_segment_density(r, M)
+    xi = xi_segment_density(r, M, regime=regime)
     return 1.0 / (1.0 + xi)
 
 
-def ssz_time_dilation_difference(r1: float, r2: float, M: float = M_EARTH) -> float:
+def ssz_time_dilation_difference(r1: float, r2: float, M: float = M_EARTH,
+                                 regime: str = 'auto') -> float:
     """
-    Calculate relative time dilation between two radii.
-    
+    Calculate relative time dilation between two radii — model-consistent
+    and numerically stable.
+
     ΔD = D_SSZ(r1) - D_SSZ(r2)
-    
+
     Positive means r1 has faster time flow than r2.
-    
-    Uses numerically stable closed-form to avoid float cancellation:
-        ΔD = 2 * r_s * (r1 - r2) / ((2*r1 + r_s) * (2*r2 + r_s))
-    
-    This is derived from D_SSZ = 2r/(2r + r_s) and algebraic simplification.
-    
+
+    REPAIR 2026-10-31 (audit R3/R5-mini): the previous implementation used
+    the weak-field closed form D_weak = 2r/(2r+r_s) for ALL radii, which is
+    inconsistent with ssz_time_dilation whenever the auto-selection picks
+    the strong-field branch (e.g. r1=r_s, r2=2r_s: old -0.13333333333 vs
+    true model difference -0.08818137022). The repair computes the
+    difference FOR THE SAME MODEL the single-radius function uses:
+
+    - weak model at both radii (explicit 'weak', or auto for r/r_s > 100):
+        exact rational form  ΔD = 2 r_s (r1-r2) / ((2r1+r_s)(2r2+r_s))
+        (identical to the previous behavior — no back-compat change).
+    - strong model (Ansatz A, Xi = 1 - exp(-phi r_s/r)) at one or both
+      radii: stable expm1-based evaluation
+        Xi_i     = -expm1(-u_i),  u_i = phi r_s / r_i
+        Xi2-Xi1  = -exp(-u_1) * expm1(u_1 - u_2)
+        ΔD       = (Xi2 - Xi1) / ((1+Xi_1)(1+Xi_2))
+      both facts avoid catastrophic cancellation; ΔD is exact to
+      machine precision even for Δr/r ~ 1e-10.
+
     Parameters
     ----------
     r1, r2 : float
-        Distances from center of mass [m]
+        Distances from center of mass [m] (finite, > 0)
     M : float
-        Central mass [kg]
-        
+        Central mass [kg]; M = 0 → ΔD = 0 (flat spacetime)
+    regime : str
+        'weak'/'strong' → BOTH radii evaluated in that model.
+        'auto' (default) → per-radius selection identical to
+        ssz_time_dilation (mixed regimes possible near r/r_s = 100;
+        each D uses its own branch, matching the single-radius semantics).
+
     Returns
     -------
     float
-        Time dilation difference (dimensionless)
+        Time dilation difference (dimensionless, signed)
     """
+    r1 = _validate_radius(r1)
+    r2 = _validate_radius(r2)
+    _validate_mass(M)
+
     r_s = schwarzschild_radius(M)
-    # Numerically stable formula avoids subtracting two nearly-equal floats
-    # D = 1/(1+Xi) = 2r/(2r+r_s)
-    # ΔD = D(r1) - D(r2) = 2*r_s*(r1-r2) / ((2*r1+r_s)*(2*r2+r_s))
-    return 2 * r_s * (r1 - r2) / ((2*r1 + r_s) * (2*r2 + r_s))
+    if r_s == 0.0:  # M = 0: flat spacetime
+        return 0.0
+
+    ratio1 = r1 / r_s
+    ratio2 = r2 / r_s
+    if regime == 'auto':
+        eff1 = 'weak' if ratio1 > 100 else 'strong'
+        eff2 = 'weak' if ratio2 > 100 else 'strong'
+    else:
+        eff1 = eff2 = regime
+
+    # Weak model at both radii: exact stable rational closed form
+    if eff1 == 'weak' and eff2 == 'weak':
+        return 2 * r_s * (r1 - r2) / ((2 * r1 + r_s) * (2 * r2 + r_s))
+
+    # Xi values per model (strong via expm1 — stable for small u)
+    def _xi(r, eff):
+        if eff == 'weak':
+            return r_s / (2.0 * r)
+        u = PHI * r_s / r
+        return -np.expm1(-u)
+
+    xi1 = _xi(r1, eff1)
+    xi2 = _xi(r2, eff2)
+
+    # Stable ΔΞ ≡ Xi2 − Xi1 (ΔD = D1 − D2 = ΔΞ / ((1+Xi1)(1+Xi2)) for BOTH
+    # branches, since D = 1/(1+Xi) there).
+    if eff1 == 'strong' and eff2 == 'strong':
+        u1 = PHI * r_s / r1
+        u2 = PHI * r_s / r2
+        # u1 − u2 = phi*r_s*(r2−r1)/(r1*r2)  (analytisch — keine Float-
+        #  Differenz zweier fast gleicher u; exakt für beliebig kleines Δr)
+        du = PHI * r_s * (r2 - r1) / (r1 * r2)
+        # Xi2 − Xi1 = exp(-u1) − exp(-u2) = -exp(-u1) * expm1(u1 − u2)
+        d_xi = -np.exp(-u1) * np.expm1(du)
+    else:
+        # mixed regimes: no harmful cancellation at the boundary scale
+        # (Xi ~ 5e-3, ΔXi ~ dXi/dr * Δr >> eps * Xi)
+        d_xi = xi2 - xi1
+
+    return d_xi / ((1.0 + xi1) * (1.0 + xi2))
 
 
 def time_difference_per_second(r1: float, r2: float, M: float = M_EARTH) -> float:
@@ -373,10 +482,11 @@ def qubit_pair_segment_mismatch(pair: QubitPair, M: float = M_EARTH) -> Dict[str
     xi_a = xi_segment_density(r_a, M)
     xi_b = xi_segment_density(r_b, M)
     delta_xi = abs(xi_a - xi_b)
-    
-    d_a = ssz_time_dilation(r_a, M)
-    d_b = ssz_time_dilation(r_b, M)
-    delta_d = abs(d_a - d_b)
+
+    # REPAIR 2026-10-31 (audit R3): direct subtraction of two nearly-equal
+    # D values cancels to 0.0 for small height differences (1 mm → 0.0).
+    # Use the model-consistent stable difference instead.
+    delta_d = abs(ssz_time_dilation_difference(r_a, r_b, M))
     
     # Phase drift per gate: Δφ = ω × ΔΞ × t_gate
     # where ω = 2π × f_qubit (typically 5 GHz for superconducting qubits)

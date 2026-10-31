@@ -55,3 +55,56 @@ Evidenzklassen: `proven_bug` | `documented_inconsistency` | `model_hypothesis` |
 
 ---
 (Einträge für R1–R5, φ, Schumann, Quantum-Bus folgen pro Reparatureinheit.)
+
+## D1.1 — R1: Strong-Field-Ableitung repariert (Commit: R1+R3-Einheit)
+- **Befund** (`proven_bug`): `xi_gradient` gab im Strong-Zweig
+  `+(phi/r_s)*exp(-phi*r_s/r)` zurück — falsches Vorzeichen UND falscher radialer
+  Faktor gegenüber dem exakt gewählten Modell A `Xi_A = 1−exp(−φ·r_s/r)`, dessen
+  Ableitung `−(φ·r_s/r²)·exp(−φ·r_s/r)` lautet.
+- **Evidenz:** Audit-Kontrollzahlen UNABHÄNGIG mit mpmath (dps=30) reproduziert,
+  mit der Modul-Konstanten G=6.67430e-11 exakt: alt +81.231020879 m⁻¹, analytisch
+  −20.3077552198 m⁻¹, FD −20.3077… m⁻¹ (Log: `ssz-qubits-audit-20261031/logs/
+  r1_independent_check.out`). Regressionstests VOR Fix: 13 failed (RED-Log
+  `r1r3_RED.log`), NACH Fix: 20 passed (`r1r3_GREEN2.log`).
+- **Alternativen:** (a) Ableitung nur numerisch anbieten — verworfen (die
+  analytische Form ist elementar und exakt); (b) Vorzeichen nur flippen —
+  verworfen (radialer Faktor war ebenfalls falsch, r_s/r² vs. 1/r_s).
+- **Entscheidung:** Analytische Ableitung des gewählten Modells implementiert;
+  gemeinsame Validatoren `_validate_radius`/`_validate_mass` (r>0, finite;
+  M≥0, finite); **M=0 ist DEFINIERT als flach** (Ξ=0, dΞ/dr=0, D=1) — vorher
+  ZeroDivisionError. Dokumentationstext im Docstring korrigiert (die alte
+  Behauptung „Positive gradient … increases with r" war falsch, R4-vorab).
+- **Tests:** tests/test_regressions_audit.py::TestR1StrongFieldGradient (10 Fälle:
+  FD-Orakel über log-Gitter 0.2–100 r_s, Audit-Kontrollwert, Monotonie, Alt-Wert
+  weg, Weak unverändert, Massenskalierung, Extremwerte, Unterlauf, Validation,
+  M=0). Gesamtsuite danach: **204 passed, Exit 0** (keine Alt-Test-Kollision).
+- **Offen:** Modell-Trennung A/B und `legacy_auto`-Deprecation = R2 (nächste Einheit).
+
+## D1.2 — R3: Zeitdifferenzen stabil UND modelltreu (gleicher Commit)
+- **Befund** (`proven_bug`): `ssz_time_dilation_difference` nutzte überall die
+  Weak-Identität `D=2r/(2r+r_s)`; im Strong-Regime inkonsistent zur
+  `ssz_time_dilation`-Auswahl (r_s/2r_s: alt −0.13333333333, korrekt
+  −0.08818137022 — mpmath-bestätigt). Zusätzlich `qubit_pair_segment_mismatch`:
+  direkte D-Subtraktion → 0.0 bei 1 mm Höhendifferenz (Auslöschung; stabil
+  1.0926195757e−19).
+- **Evidenz:** RED: test_strongfield_matches_direct_model_difference u.a.
+  (13 failed inkl. TypeError-Beleg für fehlenden regime-Parameter); GREEN:
+  20/20; Gesamtsuite 204/204.
+- **Entscheidung:** 
+  (a) `ssz_time_dilation_difference(r1, r2, M, regime='auto')`: Weak/Weak
+  behält die exakte rationale Form (Back-Kompatibilität bit-genau); Strong/Strong
+  über expm1 mit ANALYTISCHER u-Differenz `u1−u2 = φ·r_s·(r2−r1)/(r1·r2)` (keine
+  Float-Differenz fast gleicher u); ΔD = (Ξ₂−Ξ₁)/((1+Ξ₁)(1+Ξ₂)) — identisch zum
+  Single-Radius-Modell; Mixed (auto an der 100·r_s-Grenze) pro Radius wie
+  `ssz_time_dilation`.
+  (b) `ssz_time_dilation` erhält `regime`-Parameter (Default 'auto' — keine
+  Verhaltensänderung für Alt-Callers), damit Test/Code dasselbe Modell adressieren.
+  (c) `qubit_pair_segment_mismatch` nutzt die stabile Differenzfunktion.
+- **Ehrlichkeitsvermerk:** Beim ersten Implementierungsentwurf wurde ΔD mit
+  Ξ₁−Ξ₂ statt Ξ₂−Ξ₁ zurückgegeben — der Vorzeichenfehler wurde DURCH DEN
+  REGRESSIONSTEST (Audit-Kontrollwert −0.08818137022) gefangen und korrigiert.
+  Das ist der beabsichtigte Mechanismus „Test beißt vor Freigabe".
+- **Grenze:** Das 1 mm/5 GHz/50 ns-Signal (≈1.71628e−16 rad/Gate) ist eine
+  RECHENVORHERSAGE unter Modellannahmen — kein experimenteller Nachweis
+  (Audit §5; gelabelt im Test-Docstring).
+
