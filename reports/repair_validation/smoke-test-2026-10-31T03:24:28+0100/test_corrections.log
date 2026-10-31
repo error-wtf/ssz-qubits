@@ -1,0 +1,24 @@
+KORRIGIERTE WERTE - PHYSIKALISCH KORREKT
+======================================================================
+
+1. Phase Drift per Gate (1 mm Hoehendifferenz):
+   Delta_Xi = 1.093e-19
+   Phase/Gate = 1.716e-16 rad
+   Decoherence Enhancement = 1.000000
+
+   Manual check: omega*delta_xi*t_gate = 1.712e-16 rad
+
+2. SSZ Decoherence Rate:
+   Base rate (1/T2) = 1.000e+04 /s
+   Total rate = 1.000e+04 /s
+   SSZ contribution = 0.000000 %
+   Effective T2 = 100.000 us (vs 100 us intrinsic)
+
+3. Pair Decoherence (1 mm height diff):
+   Pair T2 = 50.000 us
+   (Expected: ~50 us since 2 qubits add rates)
+
+======================================================================
+FAZIT: SSZ-Effekte sind bei Earth-scale WINZIG (< 10^-6 %)
+       Das ist physikalisch korrekt!
+======================================================================

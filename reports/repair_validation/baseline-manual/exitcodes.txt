@@ -1,0 +1,8 @@
+pytest-full EXIT=0
+run_tests EXIT=0
+phi_no_scipy EXIT=1
+paper_a_form EXIT=0
+comprehensive EXIT=0
+corrections EXIT=0
+paper_consist EXIT=0
+demo EXIT=0

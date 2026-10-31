@@ -1,0 +1,101 @@
+======================================================================
+SSZ QUBIT PAPERS - REPOSITORY CONSISTENCY TEST
+======================================================================
+
+PAPER A: Gate-Timing & Segment-Coherent Zones
+======================================================================
+
+1. PHYSICAL CONSTANTS
+--------------------------------------------------
+  r_s (Earth) = 8.87 mm
+  R_Earth = 6.371 x 10^6 m
+  -> OK
+
+2. SEGMENT DENSITY (Eq. 1)
+--------------------------------------------------
+  Xi(R_Earth) = 6.96e-10
+  Xi = r_s/(2R) = 6.96e-10
+  -> OK
+
+3. TIME DILATION FACTOR (Eq. 2)
+--------------------------------------------------
+  D(R_Earth) = 0.999999999303892
+  D = 1/(1+Xi) = 0.999999999303892
+  -> OK
+
+4. GRADIENT (Eq. 3)
+--------------------------------------------------
+  dXi/dr = -1.092619e-16
+  dXi/dr = -r_s/(2R^2) = -1.092619e-16
+  -> OK
+
+5. TIME DILATION DIFFERENCE (Eq. 4)
+--------------------------------------------------
+  Delta_D (1 mm) = -1.092620e-19
+  Closed form = -1.092620e-19
+  -> OK
+
+6. PHASE DRIFT PER GATE (Eq. 5-6)
+--------------------------------------------------
+  Phase drift/gate (1 mm) = 1.716283e-16 rad
+  Expected: 1.72e-16 rad
+  -> OK
+
+7. COHERENT ZONE WIDTH (Eq. 8)
+--------------------------------------------------
+  Zone width (eps=1e-18) = 18.30 mm
+  Formula z = 4*eps*R^2/r_s = 18.30 mm
+  -> OK
+
+8. DECOHERENCE ENHANCEMENT FACTOR
+--------------------------------------------------
+  Decoherence enhancement = 1.0000000000
+  Formula = 1 + (Delta_Xi/Xi_ref)^2 = 1.0000000000
+  -> OK
+
+PAPER B: Entanglement & Deterministic Phase Drift
+======================================================================
+
+9. BELL STATE FIDELITY (Eq. 9-10)
+--------------------------------------------------
+  Delta_Phi = 1.72e-07 rad
+  F = cos^2(Delta_Phi/2) = 0.999999999999993
+  F_approx = 1 - Delta_Phi^2/4 = 0.999999999999993
+  1 - F = 7.33e-15
+  Expected 1-F: 7.4e-15
+  -> OK
+
+10. CHSH PARAMETER (Eq. 11)
+--------------------------------------------------
+  S_max = 2*sqrt(2) = 2.828427
+  S(Delta_Phi) = 2.828427124746149
+  S/S_max = 0.999999999999985
+  1 - S/S_max = 1.48e-14
+  Expected (phi^2/2): 1.48e-14
+  -> OK
+
+11. T_SSZ CHARACTERISTIC TIME (Eq. 13)
+--------------------------------------------------
+  omega = 2*pi*5GHz = 3.141593e+10 rad/s
+  |Delta_D| (1 mm) = 1.092620e-19
+  T_SSZ = pi/(omega*|Delta_D|) = 9.152316e+08 s
+  T_SSZ = 29.0 years
+  Expected: ~29 years
+  -> OK
+
+12. CORRECTION INTERVAL (Eq. 15)
+--------------------------------------------------
+  Phase tolerance = 1e-06 rad
+  Phase drift/gate = 1.72e-16 rad
+  N_corr = eps/|Delta_Phi_gate| = 5.83e+09 gates
+  Expected: ~5.8e+09 gates
+  -> OK
+
+======================================================================
+ALL TESTS PASSED
+======================================================================
+
+Paper A equations verified: 1, 2, 3, 4, 5, 6, 8
+Paper B equations verified: 9, 10, 11, 13, 15
+
+Repository is CONSISTENT with both papers.

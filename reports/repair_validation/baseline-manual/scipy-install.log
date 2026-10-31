@@ -1,0 +1,6 @@
+Collecting scipy
+  Using cached scipy-1.18.1-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+Requirement already satisfied: numpy<2.8,>=2.0.0 in /home/error/physics/ssz-qubits-audit-20261031/venv314/lib/python3.14/site-packages (from scipy) (2.5.4)
+Using cached scipy-1.18.1-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
+Installing collected packages: scipy
+Successfully installed scipy-1.18.1
