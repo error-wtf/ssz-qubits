@@ -1,4 +1,4 @@
-# TEST_BEWEISWERT_REGISTER.md — Klassifikation aller 307 Tests nach Aussagekraft
+# TEST_BEWEISWERT_REGISTER.md — Klassifikation aller 322 Tests nach Aussagekraft
 (Carmen, 31.10.: „Anzahl allein misst nicht die physikalische Tragweite."
 Dieses Register klassifiziert jede Testdatei nach dem Beweiswert ihrer
 bestandenen Fälle. Inventar: pytest --collect-only, 307/307, Stand HEAD
@@ -39,6 +39,7 @@ KEIN direkter Physikgehalt — aber Voraussetzung für Vertrauen in A–D.
 
 | Datei | n | Tier | Inhalt / Anmerkung |
 |---|---|---|---|
+| research/…/test_doppeltest_8tox.py | 14 | **A** (B 3, C 3, E 1) | DOPPELTEST: Constraint-Check, Leakage, Nicht-Injektivität, Rang 2/64, Zeitkonversion, Faking-Demo, Abschlussfrage (31.10.) |
 | research/…/test_ssz_symmetry_probe.py | 13 | **A** (teils B) | Q_SSZ-Negativsuite; D-Gitterscan (Invarianz nur bei D_A=D_B); Kommutant dim 8 (B); Positivkontrolle Permutationsalgebra |
 | research/…/test_ssz_mixing_analysis.py | 6 | **A** (B, C) | Mischmatrixelement exakt (B); Rabi C; **2φ-Fernfeldausschluss = Tier-A-Falsifikation** (bereits durch Cassini/LLR gedeckt); kein-Bus-Negativkontrolle |
 | research/…/test_photon_channel_demo.py | 4 | **A** (C) | Identifizierbarkeit: gleiche M-Statistik bei verschiedenen Zuständen; Negativkontrollen in beide Ontologie-Richtungen; Verlustdynamik C |
@@ -59,9 +60,10 @@ KEIN direkter Physikgehalt — aber Voraussetzung für Vertrauen in A–D.
 | tests/test_standalone_scripts.py | 4 | E | T1–T3: sys.exit-Fix, echte Assertions |
 | test_corrections.py | 3 | E | T2: Print-only → echte Assertions |
 
-Summe: 23 + 13 + 79 + 56 + 136 = **307** ✓
+Summe (Stand 31.10. nach Doppeltest, 322 Tests): A 31 + B 16 + C 82 + D 56 + E 137 = **322** ✓
+(Stand davor, 308: A 24 + B 13 + C 79 + D 56 + E 136.)
 
-## Was die 307 insgesamt BEWEISEN — und was nicht
+## Was die 322 insgesamt BEWEISEN — und was nicht
 
 **Belegt:** (i) die dokumentierten Audit-Fehler sind repariert (Tier D mit
 RED/GREEN-Evidenz); (ii) im Q1-Modell existiert kein skalares Q_SSZ, und die
