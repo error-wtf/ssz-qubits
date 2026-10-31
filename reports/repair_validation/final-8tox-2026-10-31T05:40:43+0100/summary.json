@@ -1,0 +1,57 @@
+{
+  "total_runs": 8,
+  "passed": 8,
+  "expected_fail": 0,
+  "failed": 0,
+  "overall": "PASS",
+  "runs": [
+    {
+      "run": "pytest-full",
+      "exitcode": 0,
+      "classification": "PASS",
+      "log": "pytest-full.log"
+    },
+    {
+      "run": "run_tests",
+      "exitcode": 0,
+      "classification": "PASS",
+      "log": "run_tests.log"
+    },
+    {
+      "run": "verify_phi_discret",
+      "exitcode": 0,
+      "classification": "PASS",
+      "log": "verify_phi_discret.log"
+    },
+    {
+      "run": "verify_paper_a_form",
+      "exitcode": 0,
+      "classification": "PASS",
+      "log": "verify_paper_a_form.log"
+    },
+    {
+      "run": "comprehensive_test",
+      "exitcode": 0,
+      "classification": "PASS",
+      "log": "comprehensive_test.log"
+    },
+    {
+      "run": "test_corrections",
+      "exitcode": 0,
+      "classification": "PASS",
+      "log": "test_corrections.log"
+    },
+    {
+      "run": "test_paper_consist",
+      "exitcode": 0,
+      "classification": "PASS",
+      "log": "test_paper_consist.log"
+    },
+    {
+      "run": "demo",
+      "exitcode": 0,
+      "classification": "PASS",
+      "log": "demo.log"
+    }
+  ]
+}

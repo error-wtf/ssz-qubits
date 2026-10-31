@@ -1,0 +1,831 @@
+============================= test session starts ==============================
+platform linux -- Python 3.14.8, pytest-9.2.0, pluggy-1.7.0 -- /home/error/physics/ssz-qubits-audit-20261031/venv314/bin/python
+rootdir: /home/error/physics/ssz-qubits
+collecting ... collected 307 items
+
+research/quantum_bus/tests/test_photon_channel_demo.py::TestPhotonChannelBlindness::test_pair_states_share_all_m_statistics PASSED [  0%]
+research/quantum_bus/tests/test_photon_channel_demo.py::TestPhotonChannelBlindness::test_states_are_genuinely_different PASSED [  0%]
+research/quantum_bus/tests/test_photon_channel_demo.py::TestPhotonChannelBlindness::test_AB_probe_distinguishes PASSED [  0%]
+research/quantum_bus/tests/test_photon_channel_demo.py::TestPhotonChannelBlindness::test_photon_loss_dark_and_invisible PASSED [  1%]
+research/quantum_bus/tests/test_quantum_bus.py::TestQ0NoBus::test_local_z_phases_create_no_entanglement PASSED [  1%]
+research/quantum_bus/tests/test_quantum_bus.py::TestQ1ThreeQubitBus::test_hermitian PASSED [  1%]
+research/quantum_bus/tests/test_quantum_bus.py::TestQ1ThreeQubitBus::test_unitary_and_norm_and_energy PASSED [  2%]
+research/quantum_bus/tests/test_quantum_bus.py::TestQ1ThreeQubitBus::test_total_sz_conserved PASSED [  2%]
+research/quantum_bus/tests/test_quantum_bus.py::TestQ1ThreeQubitBus::test_spectrum_real PASSED [  2%]
+research/quantum_bus/tests/test_quantum_bus.py::TestExplicit6Plus2::test_unitary_is_unitary PASSED [  3%]
+research/quantum_bus/tests/test_quantum_bus.py::TestExplicit6Plus2::test_bell_definition PASSED [  3%]
+research/quantum_bus/tests/test_quantum_bus.py::TestExplicit6Plus2::test_singlet_row PASSED [  3%]
+research/quantum_bus/tests/test_quantum_bus.py::TestExplicit6Plus2::test_generic_h_not_block_diagonal PASSED [  4%]
+research/quantum_bus/tests/test_quantum_bus.py::TestExplicit6Plus2::test_symmetric_ising_IS_block_diagonal PASSED [  4%]
+research/quantum_bus/tests/test_quantum_bus.py::TestSchurComplement::test_exact_eigenvalues_satisfy_schur_condition PASSED [  4%]
+research/quantum_bus/tests/test_quantum_bus.py::TestSchurComplement::test_schur_residual_nonzero_away_from_spectrum PASSED [  5%]
+research/quantum_bus/tests/test_quantum_bus.py::TestSchurComplement::test_static_sw_error_scales_quadratically PASSED [  5%]
+research/quantum_bus/tests/test_quantum_bus.py::TestSchurComplement::test_static_sw_fails_near_resonance PASSED [  5%]
+research/quantum_bus/tests/test_quantum_bus.py::TestQ2Resonator::test_dimension_and_hermiticity PASSED [  6%]
+research/quantum_bus/tests/test_quantum_bus.py::TestQ2Resonator::test_excitation_conservation PASSED [  6%]
+research/quantum_bus/tests/test_quantum_bus.py::TestQ2Resonator::test_truncation_convergence PASSED [  6%]
+research/quantum_bus/tests/test_quantum_bus.py::TestQ2Resonator::test_dispersive_shift_present PASSED [  7%]
+research/quantum_bus/tests/test_quantum_bus.py::TestQ3DephasingChannel::test_trace_and_positivity_preserved PASSED [  7%]
+research/quantum_bus/tests/test_quantum_bus.py::TestQ3DephasingChannel::test_coherence_decay_factor PASSED [  7%]
+research/quantum_bus/tests/test_quantum_bus.py::TestMetricsAndCHSH::test_concurrence_bell_vs_product PASSED [  8%]
+research/quantum_bus/tests/test_quantum_bus.py::TestMetricsAndCHSH::test_bell_fidelity_separate_from_entanglement PASSED [  8%]
+research/quantum_bus/tests/test_quantum_bus.py::TestMetricsAndCHSH::test_chsh_bounds_and_rotation_invariance PASSED [  8%]
+research/quantum_bus/tests/test_quantum_bus.py::TestMetricsAndCHSH::test_projection_leakage PASSED [  9%]
+research/quantum_bus/tests/test_ssz_mixing_analysis.py::TestMixingElementFormula::test_matrix_element_is_differential_clock PASSED [  9%]
+research/quantum_bus/tests/test_ssz_mixing_analysis.py::TestMixingElementFormula::test_equal_D_gives_zero_mixing PASSED [  9%]
+research/quantum_bus/tests/test_ssz_mixing_analysis.py::TestMixingElementFormula::test_Tpm_not_mixed PASSED [ 10%]
+research/quantum_bus/tests/test_ssz_mixing_analysis.py::TestRabiDynamics::test_s_to_t0_oscillation_frequency PASSED [ 10%]
+research/quantum_bus/tests/test_ssz_mixing_analysis.py::TestSSZvsGRContent::test_ratio_leading_order_is_2phi PASSED [ 10%]
+research/quantum_bus/tests/test_ssz_mixing_analysis.py::TestSSZvsGRContent::test_no_bus_required_for_mixing PASSED [ 11%]
+research/quantum_bus/tests/test_ssz_symmetry_probe.py::TestCommutantStructure::test_generic_exchange_bus_commutant_is_polynomials_in_H PASSED [ 11%]
+research/quantum_bus/tests/test_ssz_symmetry_probe.py::TestCommutantStructure::test_therefore_no_6plus2_eigenspace_split PASSED [ 11%]
+research/quantum_bus/tests/test_ssz_symmetry_probe.py::TestSSZDScan::test_invariance_only_on_the_DA_equals_DB_diagonal PASSED [ 12%]
+research/quantum_bus/tests/test_ssz_symmetry_probe.py::TestSSZDScan::test_differential_segmentation_breaks_invariance PASSED [ 12%]
+research/quantum_bus/tests/test_ssz_symmetry_probe.py::TestSSZDScan::test_leakage_independent_of_D_at_fixed_coupling PASSED [ 12%]
+research/quantum_bus/tests/test_ssz_symmetry_probe.py::TestDiagonalQFamilyCannotCommute::test_UNEQUAL_ssz_diagonal_vs_exchange PASSED [ 13%]
+research/quantum_bus/tests/test_ssz_symmetry_probe.py::TestDiagonalQFamilyCannotCommute::test_EQUAL_coefficients_is_excitation_conservation_not_ssz PASSED [ 13%]
+research/quantum_bus/tests/test_ssz_symmetry_probe.py::TestDiagonalQFamilyCannotCommute::test_full_h_diagonal_part_trivial PASSED [ 13%]
+research/quantum_bus/tests/test_ssz_symmetry_probe.py::TestKnownConservedQuantitiesAreNot6plus2::test_excitation_number_eigenspaces PASSED [ 14%]
+research/quantum_bus/tests/test_ssz_symmetry_probe.py::TestKnownConservedQuantitiesAreNot6plus2::test_singlet_projector_mirror_symmetric_case PASSED [ 14%]
+research/quantum_bus/tests/test_ssz_symmetry_probe.py::TestKnownConservedQuantitiesAreNot6plus2::test_singlet_projector_broken_by_ssz_differential PASSED [ 14%]
+research/quantum_bus/tests/test_ssz_symmetry_probe.py::TestPositiveControlAngularMomentumAlgebra::test_pair_symmetric_ising_conserves_singlet PASSED [ 14%]
+research/quantum_bus/tests/test_ssz_symmetry_probe.py::TestPositiveControlAngularMomentumAlgebra::test_singlet_projector_definition PASSED [ 15%]
+research/quantum_bus/tests/test_symbolic_and_schur.py::TestSymbolicSingletProjector::test_trace_ranks_eigenvalues PASSED [ 15%]
+research/quantum_bus/tests/test_symbolic_and_schur.py::TestSymbolicSingletProjector::test_idempotent PASSED [ 15%]
+research/quantum_bus/tests/test_symbolic_and_schur.py::TestSymbolicSingletProjector::test_matches_numeric_probe_projector PASSED [ 16%]
+research/quantum_bus/tests/test_symbolic_and_schur.py::TestSymbolicCommutator::test_commutator_vanishes_at_mirror_symmetry PASSED [ 16%]
+research/quantum_bus/tests/test_symbolic_and_schur.py::TestSymbolicCommutator::test_commutator_generic_nonzero PASSED [ 16%]
+research/quantum_bus/tests/test_symbolic_and_schur.py::TestSymbolicCommutator::test_symmetric_drive_preserves PASSED [ 17%]
+research/quantum_bus/tests/test_symbolic_and_schur.py::TestSymbolicCommutator::test_asymmetric_drive_breaks PASSED [ 17%]
+research/quantum_bus/tests/test_symbolic_and_schur.py::TestSectorMixing::test_Ps_H_Pt_vanishes_at_symmetry PASSED [ 17%]
+research/quantum_bus/tests/test_symbolic_and_schur.py::TestSectorMixing::test_Ps_H_Pt_generic_nonzero PASSED [ 18%]
+research/quantum_bus/tests/test_symbolic_and_schur.py::TestSchurVsSW_S_Sector::test_schur_residual_zero_at_exact_eigenvalues PASSED [ 18%]
+research/quantum_bus/tests/test_symbolic_and_schur.py::TestSchurVsSW_S_Sector::test_sw_error_scales_quadratically_in_g PASSED [ 18%]
+research/quantum_bus/tests/test_symbolic_and_schur.py::TestLocalFactorization::test_diagonal_ssz_evolution_is_product PASSED [ 19%]
+research/quantum_bus/tests/test_symbolic_and_schur.py::TestLocalFactorization::test_no_entanglement_from_scalar_D_plus_exchange_control PASSED [ 19%]
+test_corrections.py::test_phase_drift_per_gate_matches_manual_and_audit_value PASSED [ 19%]
+test_corrections.py::test_ssz_decoherence_contribution_tiny_at_earth_scale PASSED [ 20%]
+test_corrections.py::test_pair_decoherence_time_halves_T2 PASSED         [ 20%]
+tests/test_edge_cases.py::TestExtremeRadii::test_very_small_radius PASSED [ 20%]
+tests/test_edge_cases.py::TestExtremeRadii::test_very_large_radius PASSED [ 21%]
+tests/test_edge_cases.py::TestExtremeRadii::test_radius_at_schwarzschild PASSED [ 21%]
+tests/test_edge_cases.py::TestExtremeMasses::test_zero_mass PASSED       [ 21%]
+tests/test_edge_cases.py::TestExtremeMasses::test_solar_mass PASSED      [ 22%]
+tests/test_edge_cases.py::TestExtremeMasses::test_black_hole_mass PASSED [ 22%]
+tests/test_edge_cases.py::TestQubitConfigurations::test_identical_qubits PASSED [ 22%]
+tests/test_edge_cases.py::TestQubitConfigurations::test_very_distant_qubits PASSED [ 23%]
+tests/test_edge_cases.py::TestQubitConfigurations::test_negative_coordinates PASSED [ 23%]
+tests/test_edge_cases.py::TestQubitConfigurations::test_underground_qubit PASSED [ 23%]
+tests/test_edge_cases.py::TestNumericalPrecision::test_float_precision_xi PASSED [ 24%]
+tests/test_edge_cases.py::TestNumericalPrecision::test_time_dilation_precision PASSED [ 24%]
+tests/test_edge_cases.py::TestNumericalPrecision::test_gradient_numerical_vs_analytical PASSED [ 24%]
+tests/test_edge_cases.py::TestErrorHandling::test_zero_radius_error PASSED [ 25%]
+tests/test_edge_cases.py::TestErrorHandling::test_negative_radius_error PASSED [ 25%]
+tests/test_edge_cases.py::TestErrorHandling::test_optimal_height_zero_xi PASSED [ 25%]
+tests/test_edge_cases.py::TestErrorHandling::test_optimal_height_negative_xi PASSED [ 26%]
+tests/test_edge_cases.py::TestSpecialQubitProperties::test_zero_coherence_time PASSED [ 26%]
+tests/test_edge_cases.py::TestSpecialQubitProperties::test_very_long_coherence_time PASSED [ 26%]
+tests/test_edge_cases.py::TestSpecialQubitProperties::test_very_short_gate_time PASSED [ 27%]
+tests/test_edge_cases.py::TestQECEdgeCases::test_syndrome_weight_bounds PASSED [ 27%]
+tests/test_edge_cases.py::TestQECEdgeCases::test_logical_error_rate_bounds PASSED [ 27%]
+tests/test_edge_cases.py::TestQECEdgeCases::test_single_qubit_array PASSED [ 28%]
+tests/test_edge_cases.py::TestSegmentCoherentZone::test_coherent_zone_contains_center PASSED [ 28%]
+tests/test_edge_cases.py::TestSegmentCoherentZone::test_coherent_zone_width_scales PASSED [ 28%]
+tests/test_edge_cases.py::TestPhaseDriftBoundary::test_zero_height_difference PASSED [ 28%]
+tests/test_edge_cases.py::TestPhaseDriftBoundary::test_zero_frequency_phase_drift PASSED [ 29%]
+tests/test_entanglement.py::TestPhaseDrift::test_phase_drift_1mm PASSED  [ 29%]
+tests/test_entanglement.py::TestPhaseDrift::test_phase_drift_linear_scaling PASSED [ 29%]
+tests/test_entanglement.py::TestPhaseDrift::test_signed_delta_D PASSED   [ 30%]
+tests/test_entanglement.py::TestBellStateFidelity::test_fidelity_zero_phase PASSED [ 30%]
+tests/test_entanglement.py::TestBellStateFidelity::test_fidelity_pi_phase PASSED [ 30%]
+tests/test_entanglement.py::TestBellStateFidelity::test_fidelity_formula PASSED [ 31%]
+tests/test_entanglement.py::TestBellStateFidelity::test_fidelity_paper_value PASSED [ 31%]
+tests/test_entanglement.py::TestBellStateFidelity::test_small_angle_approximation PASSED [ 31%]
+tests/test_entanglement.py::TestCHSHParameter::test_chsh_max PASSED      [ 32%]
+tests/test_entanglement.py::TestCHSHParameter::test_chsh_zero PASSED     [ 32%]
+tests/test_entanglement.py::TestCHSHParameter::test_chsh_classical_bound PASSED [ 32%]
+tests/test_entanglement.py::TestCHSHParameter::test_chsh_formula PASSED  [ 33%]
+tests/test_entanglement.py::TestCharacteristicTime::test_T_SSZ_1mm PASSED [ 33%]
+tests/test_entanglement.py::TestCharacteristicTime::test_T_SSZ_scaling PASSED [ 33%]
+tests/test_entanglement.py::TestCharacteristicTime::test_T_SSZ_zero_height PASSED [ 34%]
+tests/test_entanglement.py::TestCorrectionInterval::test_correction_interval_paper_value PASSED [ 34%]
+tests/test_entanglement.py::TestCorrectionInterval::test_correction_interval_zero_drift PASSED [ 34%]
+tests/test_entanglement.py::TestCorrectionGate::test_correction_higher_A PASSED [ 35%]
+tests/test_entanglement.py::TestCorrectionGate::test_correction_higher_B PASSED [ 35%]
+tests/test_entanglement.py::TestCoherentZone::test_same_height_in_zone PASSED [ 35%]
+tests/test_entanglement.py::TestCoherentZone::test_small_separation_in_zone PASSED [ 36%]
+tests/test_entanglement.py::TestCoherentZone::test_large_separation_out_of_zone PASSED [ 36%]
+tests/test_entanglement.py::TestFullAnalysis::test_analysis_1mm PASSED   [ 36%]
+tests/test_paper_a_support.py::TestGRComparison::test_ssz_equals_gr_weak_field PASSED [ 37%]
+tests/test_paper_a_support.py::TestGRComparison::test_weak_field_detection PASSED [ 37%]
+tests/test_paper_a_support.py::TestGRComparison::test_gr_formula PASSED  [ 37%]
+tests/test_paper_a_support.py::TestFidelityReduction::test_small_angle_formula PASSED [ 38%]
+tests/test_paper_a_support.py::TestFidelityReduction::test_paper_value PASSED [ 38%]
+tests/test_paper_a_support.py::TestFidelityReduction::test_approximation_validity PASSED [ 38%]
+tests/test_paper_a_support.py::TestLinearScaling::test_is_linear PASSED  [ 39%]
+tests/test_paper_a_support.py::TestLinearScaling::test_scaling_constant PASSED [ 39%]
+tests/test_paper_a_support.py::TestNumericalStability::test_closed_form_works PASSED [ 39%]
+tests/test_paper_a_support.py::TestNumericalStability::test_direct_fails PASSED [ 40%]
+tests/test_paper_a_support.py::TestNumericalStability::test_stability_demonstrated PASSED [ 40%]
+tests/test_paper_a_support.py::TestCoherentZone::test_zone_width_formula PASSED [ 40%]
+tests/test_paper_a_support.py::TestCoherentZone::test_zone_width_value PASSED [ 41%]
+tests/test_paper_a_support.py::TestCoherentZone::test_half_width PASSED  [ 41%]
+tests/test_paper_a_support.py::TestDecoherenceEnhancement::test_unity_for_small_delta_xi PASSED [ 41%]
+tests/test_paper_a_support.py::TestDecoherenceEnhancement::test_formula PASSED [ 42%]
+tests/test_paper_c_support.py::TestPrediction1PhaseDrift::test_phase_drift_value PASSED [ 42%]
+tests/test_paper_c_support.py::TestPrediction1PhaseDrift::test_phase_drift_above_falsification_threshold PASSED [ 42%]
+tests/test_paper_c_support.py::TestPrediction2CoherentZone::test_zone_width_at_1e18 PASSED [ 42%]
+tests/test_paper_c_support.py::TestPrediction2CoherentZone::test_zone_width_formula PASSED [ 43%]
+tests/test_paper_c_support.py::TestPrediction3FrequencyScaling::test_frequency_ratio PASSED [ 43%]
+tests/test_paper_c_support.py::TestPrediction3FrequencyScaling::test_ratio_above_falsification_threshold PASSED [ 43%]
+tests/test_paper_c_support.py::TestPrediction4Compensation::test_compensation_possible PASSED [ 44%]
+tests/test_paper_c_support.py::TestPrediction4Compensation::test_deterministic_compensation PASSED [ 44%]
+tests/test_paper_c_support.py::TestPrediction5CrossZoneDrift::test_cross_zone_drift_value PASSED [ 44%]
+tests/test_paper_c_support.py::TestPrediction5CrossZoneDrift::test_drift_above_falsification_threshold PASSED [ 45%]
+tests/test_paper_c_support.py::TestScalingAnalysis::test_height_linearity PASSED [ 45%]
+tests/test_paper_c_support.py::TestScalingAnalysis::test_frequency_linearity PASSED [ 45%]
+tests/test_paper_c_support.py::TestScalingAnalysis::test_time_linearity PASSED [ 46%]
+tests/test_paper_c_support.py::TestConfoundDiscrimination::test_ssz_is_deterministic PASSED [ 46%]
+tests/test_paper_c_support.py::TestConfoundDiscrimination::test_ssz_is_monotonic_in_height PASSED [ 46%]
+tests/test_paper_c_support.py::TestConfoundDiscrimination::test_ssz_scales_with_omega PASSED [ 47%]
+tests/test_paper_c_support.py::TestMeasurementRequirements::test_phase_precision_achievable PASSED [ 47%]
+tests/test_paper_c_support.py::TestMeasurementRequirements::test_height_precision_achievable PASSED [ 47%]
+tests/test_paper_c_support.py::TestIntegration::test_paper_c_module_imports PASSED [ 48%]
+tests/test_paper_d_validation.py::TestSection3Theory::test_schwarzschild_radius_earth PASSED [ 48%]
+tests/test_paper_d_validation.py::TestSection3Theory::test_xi_formula_weak_field PASSED [ 48%]
+tests/test_paper_d_validation.py::TestSection3Theory::test_xi_at_earth_surface PASSED [ 49%]
+tests/test_paper_d_validation.py::TestSection3Theory::test_xi_dimensionless PASSED [ 49%]
+tests/test_paper_d_validation.py::TestSection3Theory::test_d_ssz_formula PASSED [ 49%]
+tests/test_paper_d_validation.py::TestSection3Theory::test_d_ssz_at_earth_surface PASSED [ 50%]
+tests/test_paper_d_validation.py::TestSection3Theory::test_gr_consistency_weak_field PASSED [ 50%]
+tests/test_paper_d_validation.py::TestSection3Theory::test_gr_taylor_expansion PASSED [ 50%]
+tests/test_paper_d_validation.py::TestSection3Theory::test_delta_d_formula PASSED [ 51%]
+tests/test_paper_d_validation.py::TestSection3Theory::test_phase_drift_formula PASSED [ 51%]
+tests/test_paper_d_validation.py::TestSection3Theory::test_phase_drift_units PASSED [ 51%]
+tests/test_paper_d_validation.py::TestSection3Theory::test_numerical_example_transmon_1mm PASSED [ 52%]
+tests/test_paper_d_validation.py::TestSection3Theory::test_numerical_example_transmon_1m PASSED [ 52%]
+tests/test_paper_d_validation.py::TestSection3Theory::test_numerical_example_optical_1m PASSED [ 52%]
+tests/test_paper_d_validation.py::TestSection4Compensation::test_compensation_formula PASSED [ 53%]
+tests/test_paper_d_validation.py::TestSection4Compensation::test_compensation_is_deterministic PASSED [ 53%]
+tests/test_paper_d_validation.py::TestSection5Experiments::test_chip_tilt_geometry PASSED [ 53%]
+tests/test_paper_d_validation.py::TestSection5Experiments::test_upper_bound_calculation PASSED [ 54%]
+tests/test_paper_d_validation.py::TestSection6Statistics::test_power_analysis_optical PASSED [ 54%]
+tests/test_paper_d_validation.py::TestSection6Statistics::test_slope_fitting_concept PASSED [ 54%]
+tests/test_paper_d_validation.py::TestSection7Feasibility::test_12_oom_gap PASSED [ 55%]
+tests/test_paper_d_validation.py::TestSection7Feasibility::test_platform_comparison_frequency_ratio PASSED [ 55%]
+tests/test_paper_d_validation.py::TestSection7Feasibility::test_platform_comparison_coherence_ratio PASSED [ 55%]
+tests/test_paper_d_validation.py::TestSection7Feasibility::test_platform_comparison_phase_ratio PASSED [ 56%]
+tests/test_paper_d_validation.py::TestStrongFieldPredictions::test_strong_field_xi_at_horizon PASSED [ 56%]
+tests/test_paper_d_validation.py::TestStrongFieldPredictions::test_strong_field_d_ssz_finite_at_horizon PASSED [ 56%]
+tests/test_paper_d_validation.py::TestStrongFieldPredictions::test_gr_diverges_at_horizon PASSED [ 57%]
+tests/test_paper_d_validation.py::TestHistoricalValidation::test_gps_time_drift PASSED [ 57%]
+tests/test_paper_d_validation.py::TestHistoricalValidation::test_pound_rebka_prediction PASSED [ 57%]
+tests/test_paper_d_validation.py::TestLinearScaling::test_linear_in_height PASSED [ 57%]
+tests/test_paper_d_validation.py::TestLinearScaling::test_linear_in_omega PASSED [ 58%]
+tests/test_paper_d_validation.py::TestLinearScaling::test_linear_in_time PASSED [ 58%]
+tests/test_regressions_audit.py::TestR1StrongFieldGradient::test_matches_finite_difference_over_log_grid PASSED [ 58%]
+tests/test_regressions_audit.py::TestR1StrongFieldGradient::test_audit_control_value_earth_2rs PASSED [ 59%]
+tests/test_regressions_audit.py::TestR1StrongFieldGradient::test_gradient_is_negative_in_strong_field PASSED [ 59%]
+tests/test_regressions_audit.py::TestR1StrongFieldGradient::test_old_buggy_value_is_gone PASSED [ 59%]
+tests/test_regressions_audit.py::TestR1StrongFieldGradient::test_weak_gradient_unaffected PASSED [ 60%]
+tests/test_regressions_audit.py::TestR1StrongFieldGradient::test_gradient_dimension_is_inverse_length PASSED [ 60%]
+tests/test_regressions_audit.py::TestR1StrongFieldGradient::test_extreme_radii_no_overflow PASSED [ 60%]
+tests/test_regressions_audit.py::TestR1StrongFieldGradient::test_underflow_gives_tiny_gradient_not_garbage PASSED [ 61%]
+tests/test_regressions_audit.py::TestR1StrongFieldGradient::test_invalid_inputs_raise PASSED [ 61%]
+tests/test_regressions_audit.py::TestR1StrongFieldGradient::test_m_zero_is_flat_by_definition PASSED [ 61%]
+tests/test_regressions_audit.py::TestR3TimeDifferenceModelConsistency::test_strongfield_matches_direct_model_difference PASSED [ 62%]
+tests/test_regressions_audit.py::TestR3TimeDifferenceModelConsistency::test_strongfield_not_the_weak_closed_form PASSED [ 62%]
+tests/test_regressions_audit.py::TestR3TimeDifferenceModelConsistency::test_weakfield_unchanged_closed_form PASSED [ 62%]
+tests/test_regressions_audit.py::TestR3TimeDifferenceModelConsistency::test_antisymmetric PASSED [ 63%]
+tests/test_regressions_audit.py::TestR3TimeDifferenceModelConsistency::test_equal_radii_is_exactly_zero PASSED [ 63%]
+tests/test_regressions_audit.py::TestR3TimeDifferenceModelConsistency::test_one_mm_height_not_zero PASSED [ 63%]
+tests/test_regressions_audit.py::TestR3TimeDifferenceModelConsistency::test_height_range_1um_to_1m_monotone PASSED [ 64%]
+tests/test_regressions_audit.py::TestR3TimeDifferenceModelConsistency::test_mismatch_uses_stable_difference PASSED [ 64%]
+tests/test_regressions_audit.py::TestR3TimeDifferenceModelConsistency::test_phase_drift_per_gate_magnitude PASSED [ 64%]
+tests/test_regressions_audit.py::TestR3HighPrecisionOracle::test_high_precision_across_regimes PASSED [ 65%]
+tests/test_regressions_r2_models.py::TestR2LegacyAutoDeprecation::test_auto_warns_deprecation PASSED [ 65%]
+tests/test_regressions_r2_models.py::TestR2LegacyAutoDeprecation::test_legacy_auto_warns_deprecation PASSED [ 65%]
+tests/test_regressions_r2_models.py::TestR2LegacyAutoDeprecation::test_legacy_auto_semantics_unchanged PASSED [ 66%]
+tests/test_regressions_r2_models.py::TestR2LegacyAutoDeprecation::test_legacy_auto_jump_is_real_and_quantified PASSED [ 66%]
+tests/test_regressions_r2_models.py::TestR2ExplicitModelsNoHiddenSwitching::test_single_formula_across_full_range[weak] PASSED [ 66%]
+tests/test_regressions_r2_models.py::TestR2ExplicitModelsNoHiddenSwitching::test_single_formula_across_full_range[strong_A] PASSED [ 67%]
+tests/test_regressions_r2_models.py::TestR2ExplicitModelsNoHiddenSwitching::test_single_formula_across_full_range[strong] PASSED [ 67%]
+tests/test_regressions_r2_models.py::TestR2ExplicitModelsNoHiddenSwitching::test_single_formula_across_full_range[strong_B] PASSED [ 67%]
+tests/test_regressions_r2_models.py::TestR2ExplicitModelsNoHiddenSwitching::test_strong_alias_equals_strong_A PASSED [ 68%]
+tests/test_regressions_r2_models.py::TestR2ExplicitModelsNoHiddenSwitching::test_unknown_model_raises PASSED [ 68%]
+tests/test_regressions_r2_models.py::TestR2StrongBDocumentedLimits::test_B_limits PASSED [ 68%]
+tests/test_regressions_r2_models.py::TestR2StrongBDocumentedLimits::test_A_and_B_differ_away_from_x1 PASSED [ 69%]
+tests/test_regressions_r2_models.py::TestR2SmoothBridgeHypothesis::test_matches_A_below_and_weak_above PASSED [ 69%]
+tests/test_regressions_r2_models.py::TestR2SmoothBridgeHypothesis::test_weak_leading_coefficient_preserved PASSED [ 69%]
+tests/test_regressions_r2_models.py::TestR2SmoothBridgeHypothesis::test_c1_smoothness_across_blend PASSED [ 70%]
+tests/test_regressions_r2_models.py::TestR2SmoothBridgeHypothesis::test_c2_smoothstep_join_values PASSED [ 70%]
+tests/test_regressions_r2_models.py::TestR2SmoothBridgeHypothesis::test_monotonically_decreasing PASSED [ 70%]
+tests/test_regressions_r2_models.py::TestR2SmoothBridgeHypothesis::test_difference_function_supports_bridge PASSED [ 71%]
+tests/test_regressions_r2_models.py::TestR2GradientModelConsistency::test_gradient_matches_finite_difference[weak] PASSED [ 71%]
+tests/test_regressions_r2_models.py::TestR2GradientModelConsistency::test_gradient_matches_finite_difference[strong_A] PASSED [ 71%]
+tests/test_regressions_r2_models.py::TestR2GradientModelConsistency::test_gradient_matches_finite_difference[strong_B] PASSED [ 71%]
+tests/test_regressions_r2_models.py::TestR2GradientModelConsistency::test_gradient_matches_finite_difference[smooth_bridge_hypothesis] PASSED [ 72%]
+tests/test_regressions_r2_models.py::TestR2GradientModelConsistency::test_strong_B_gradient_formula PASSED [ 72%]
+tests/test_regressions_r4r5_limits.py::TestR4LimitsModelA::test_A_limits PASSED [ 72%]
+tests/test_regressions_r4r5_limits.py::TestR4LimitsModelA::test_B_limits PASSED [ 73%]
+tests/test_regressions_r4r5_limits.py::TestR4AsymptoticSeries::test_Xi_A_series PASSED [ 73%]
+tests/test_regressions_r4r5_limits.py::TestR4AsymptoticSeries::test_D_A_series PASSED [ 73%]
+tests/test_regressions_r4r5_limits.py::TestR4AsymptoticSeries::test_leading_coefficient_factor_2phi_vs_GR PASSED [ 74%]
+tests/test_regressions_r4r5_limits.py::TestR4Monotonicity::test_A_strictly_decreasing PASSED [ 74%]
+tests/test_regressions_r4r5_limits.py::TestR4Monotonicity::test_generated_tables_exist_and_match_code PASSED [ 74%]
+tests/test_regressions_r4r5_limits.py::TestR5SingularityClaimsRemoved::test_no_100_percent_correct_print PASSED [ 75%]
+tests/test_regressions_r4r5_limits.py::TestR5SingularityClaimsRemoved::test_README_horizon_claims_corrected PASSED [ 75%]
+tests/test_regressions_r4r5_limits.py::TestR5SingularityClaimsRemoved::test_formula_doc_limits_corrected PASSED [ 75%]
+tests/test_regressions_r4r5_limits.py::TestR5SingularityClaimsRemoved::test_discrete_doc_no_singularity_free PASSED [ 76%]
+tests/test_regressions_r4r5_limits.py::TestR5SingularityClaimsRemoved::test_metric_invariants_script_and_evidence_exist PASSED [ 76%]
+tests/test_regressions_r4r5_limits.py::TestR5SingularityClaimsRemoved::test_flat_space_control_via_curvature_module PASSED [ 76%]
+tests/test_roadmap_validation.py::TestH1DeterministicPhaseBias::test_phase_drift_formula PASSED [ 77%]
+tests/test_roadmap_validation.py::TestH1DeterministicPhaseBias::test_effect_is_deterministic PASSED [ 77%]
+tests/test_roadmap_validation.py::TestH1DeterministicPhaseBias::test_phase_drift_scales_with_height PASSED [ 77%]
+tests/test_roadmap_validation.py::TestH1DeterministicPhaseBias::test_phase_drift_scales_with_time PASSED [ 78%]
+tests/test_roadmap_validation.py::TestH1DeterministicPhaseBias::test_compensation_is_possible PASSED [ 78%]
+tests/test_roadmap_validation.py::TestH2CoherentZones::test_zone_width_formula PASSED [ 78%]
+tests/test_roadmap_validation.py::TestH2CoherentZones::test_zone_width_scales_with_epsilon PASSED [ 79%]
+tests/test_roadmap_validation.py::TestH2CoherentZones::test_cross_zone_bias PASSED [ 79%]
+tests/test_roadmap_validation.py::TestH3Scaling::test_accumulated_drift_grows_with_coherence PASSED [ 79%]
+tests/test_roadmap_validation.py::TestH3Scaling::test_effect_grows_with_height_difference PASSED [ 80%]
+tests/test_roadmap_validation.py::TestH3Scaling::test_macroscopic_height_measurable PASSED [ 80%]
+tests/test_roadmap_validation.py::TestWP1Simulation::test_baseline_has_unity_fidelity PASSED [ 80%]
+tests/test_roadmap_validation.py::TestWP1Simulation::test_ssz_drift_reduces_fidelity PASSED [ 81%]
+tests/test_roadmap_validation.py::TestWP1Simulation::test_compensation_recovers_fidelity PASSED [ 81%]
+tests/test_roadmap_validation.py::TestFalsifiability::test_height_dependence_exists PASSED [ 81%]
+tests/test_roadmap_validation.py::TestFalsifiability::test_correct_omega_scaling PASSED [ 82%]
+tests/test_roadmap_validation.py::TestFalsifiability::test_monotonic_in_height PASSED [ 82%]
+tests/test_roadmap_validation.py::TestIntegration::test_roadmap_validation_runs PASSED [ 82%]
+tests/test_ssz_physics.py::TestSchwarzschildRadius::test_earth_schwarzschild_radius PASSED [ 83%]
+tests/test_ssz_physics.py::TestSchwarzschildRadius::test_sun_schwarzschild_radius PASSED [ 83%]
+tests/test_ssz_physics.py::TestSegmentDensityWeakField::test_xi_at_earth_surface PASSED [ 83%]
+tests/test_ssz_physics.py::TestSegmentDensityWeakField::test_xi_decreases_with_radius PASSED [ 84%]
+tests/test_ssz_physics.py::TestSegmentDensityWeakField::test_xi_positive_definite PASSED [ 84%]
+tests/test_ssz_physics.py::TestSegmentDensityWeakField::test_xi_formula_weak_field PASSED [ 84%]
+tests/test_ssz_physics.py::TestSegmentGradientWeakField::test_gradient_negative PASSED [ 85%]
+tests/test_ssz_physics.py::TestSegmentGradientWeakField::test_gradient_scales_as_1_over_r_squared PASSED [ 85%]
+tests/test_ssz_physics.py::TestSSZTimeDilationWeakField::test_time_dilation_at_earth_surface PASSED [ 85%]
+tests/test_ssz_physics.py::TestSSZTimeDilationWeakField::test_time_dilation_formula PASSED [ 85%]
+tests/test_ssz_physics.py::TestSSZTimeDilationWeakField::test_time_dilation_increases_with_altitude PASSED [ 86%]
+tests/test_ssz_physics.py::TestQubitAnalysisWeakField::test_qubit_at_earth_surface PASSED [ 86%]
+tests/test_ssz_physics.py::TestQubitAnalysisWeakField::test_qubit_pair_mismatch PASSED [ 86%]
+tests/test_ssz_physics.py::TestGoldenRatio::test_phi_value PASSED        [ 87%]
+tests/test_ssz_physics.py::TestGoldenRatio::test_phi_property PASSED     [ 87%]
+tests/test_ssz_physics.py::TestStrongFieldRegime::test_strong_field_xi_at_schwarzschild PASSED [ 87%]
+tests/test_ssz_physics.py::TestStrongFieldRegime::test_strong_field_d_ssz_finite_at_horizon PASSED [ 88%]
+tests/test_ssz_qubit_applications.py::TestSegmentedTimeClock::test_local_segment_time_as_reference PASSED [ 88%]
+tests/test_ssz_qubit_applications.py::TestSegmentedTimeClock::test_geometric_timing_for_gates PASSED [ 88%]
+tests/test_ssz_qubit_applications.py::TestSegmentedTimeClock::test_two_qubit_gate_sync PASSED [ 89%]
+tests/test_ssz_qubit_applications.py::TestDecoherenceGeometry::test_segment_mismatch_causes_decoherence PASSED [ 89%]
+tests/test_ssz_qubit_applications.py::TestDecoherenceGeometry::test_coherent_segment_zone PASSED [ 89%]
+tests/test_ssz_qubit_applications.py::TestDecoherenceGeometry::test_decoherence_rate_from_gradient PASSED [ 90%]
+tests/test_ssz_qubit_applications.py::TestGravitationalDrift::test_nanometer_height_difference PASSED [ 90%]
+tests/test_ssz_qubit_applications.py::TestGravitationalDrift::test_qubit_array_drift_map PASSED [ 90%]
+tests/test_ssz_qubit_applications.py::TestGravitationalDrift::test_predict_gate_error_from_position PASSED [ 91%]
+tests/test_ssz_qubit_applications.py::TestSegmentAwareQEC::test_segment_aware_syndrome_weights PASSED [ 91%]
+tests/test_ssz_qubit_applications.py::TestSegmentAwareQEC::test_segment_boundary_detection PASSED [ 91%]
+tests/test_ssz_qubit_applications.py::TestQuantumCommunicationSSZ::test_distributed_qubits_sync PASSED [ 92%]
+tests/test_ssz_qubit_applications.py::TestQuantumCommunicationSSZ::test_teleportation_timing_correction PASSED [ 92%]
+tests/test_ssz_qubit_applications.py::TestQuantumCommunicationSSZ::test_quantum_repeater_chain PASSED [ 92%]
+tests/test_ssz_qubit_applications.py::TestFullQubitSystem::test_complete_ssz_qubit_workflow PASSED [ 93%]
+tests/test_standalone_scripts.py::test_paper_consistency_script_exit_0 PASSED [ 93%]
+tests/test_standalone_scripts.py::test_comprehensive_script_exit_0 PASSED [ 93%]
+tests/test_standalone_scripts.py::test_verify_paper_a_formulas_exit_0 PASSED [ 94%]
+tests/test_standalone_scripts.py::test_verify_phi_discretization_exit_0 PASSED [ 94%]
+tests/test_validation.py::TestGRWeakFieldComparison::test_time_dilation_matches_gr_weak_field PASSED [ 94%]
+tests/test_validation.py::TestGRWeakFieldComparison::test_gravitational_redshift_formula PASSED [ 95%]
+tests/test_validation.py::TestGRWeakFieldComparison::test_pound_rebka_experiment PASSED [ 95%]
+tests/test_validation.py::TestGPSValidation::test_gps_satellite_time_dilation PASSED [ 95%]
+tests/test_validation.py::TestGPSValidation::test_gps_position_error_without_correction PASSED [ 96%]
+tests/test_validation.py::TestAtomicClockValidation::test_nist_optical_clock_experiment PASSED [ 96%]
+tests/test_validation.py::TestAtomicClockValidation::test_tokyo_skytree_experiment PASSED [ 96%]
+tests/test_validation.py::TestTheoreticalConsistency::test_xi_and_time_dilation_consistency PASSED [ 97%]
+tests/test_validation.py::TestTheoreticalConsistency::test_gradient_consistency PASSED [ 97%]
+tests/test_validation.py::TestTheoreticalConsistency::test_energy_conservation_proxy PASSED [ 97%]
+tests/test_validation.py::TestTheoreticalConsistency::test_schwarzschild_limit PASSED [ 98%]
+tests/test_validation.py::TestQubitValidation::test_qubit_height_sensitivity PASSED [ 98%]
+tests/test_validation.py::TestQubitValidation::test_pair_mismatch_scaling PASSED [ 98%]
+tests/test_validation.py::TestQubitValidation::test_decoherence_physical_bounds PASSED [ 99%]
+tests/test_validation.py::TestDimensionalAnalysis::test_xi_dimensionless PASSED [ 99%]
+tests/test_validation.py::TestDimensionalAnalysis::test_gradient_has_correct_units PASSED [ 99%]
+tests/test_validation.py::TestDimensionalAnalysis::test_time_offset_has_correct_units PASSED [100%]
+
+=============================== warnings summary ===============================
+comprehensive_test.py:28
+  /home/error/physics/ssz-qubits/comprehensive_test.py:28: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi = xi_segment_density(R_EARTH)
+
+comprehensive_test.py:29
+  /home/error/physics/ssz-qubits/comprehensive_test.py:29: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    grad = xi_gradient(R_EARTH)
+
+ssz_qubits.py:410: 33 warnings
+tests/test_edge_cases.py: 22 warnings
+tests/test_paper_a_support.py: 44 warnings
+tests/test_paper_d_validation.py: 6 warnings
+tests/test_ssz_physics.py: 8 warnings
+tests/test_ssz_qubit_applications.py: 34 warnings
+tests/test_validation.py: 31 warnings
+  /home/error/physics/ssz-qubits/ssz_qubits.py:410: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi = xi_segment_density(r, M, regime=regime)
+
+comprehensive_test.py:31
+  /home/error/physics/ssz-qubits/comprehensive_test.py:31: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    dD = ssz_time_dilation_difference(R_EARTH, R_EARTH + 1)
+
+ssz_qubits.py:587: 16 warnings
+test_corrections.py: 2 warnings
+tests/test_edge_cases.py: 4 warnings
+tests/test_paper_a_support.py: 13 warnings
+tests/test_paper_c_support.py: 2 warnings
+tests/test_regressions_audit.py: 2 warnings
+tests/test_roadmap_validation.py: 1 warning
+tests/test_ssz_physics.py: 1 warning
+tests/test_ssz_qubit_applications.py: 7 warnings
+tests/test_validation.py: 4 warnings
+  /home/error/physics/ssz-qubits/ssz_qubits.py:587: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi_a = xi_segment_density(r_a, M)
+
+ssz_qubits.py:588: 16 warnings
+test_corrections.py: 2 warnings
+tests/test_edge_cases.py: 4 warnings
+tests/test_paper_a_support.py: 13 warnings
+tests/test_paper_c_support.py: 2 warnings
+tests/test_regressions_audit.py: 2 warnings
+tests/test_roadmap_validation.py: 1 warning
+tests/test_ssz_physics.py: 1 warning
+tests/test_ssz_qubit_applications.py: 7 warnings
+tests/test_validation.py: 4 warnings
+  /home/error/physics/ssz-qubits/ssz_qubits.py:588: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi_b = xi_segment_density(r_b, M)
+
+ssz_qubits.py:594: 16 warnings
+test_corrections.py: 2 warnings
+tests/test_edge_cases.py: 4 warnings
+tests/test_paper_a_support.py: 13 warnings
+tests/test_paper_c_support.py: 2 warnings
+tests/test_regressions_audit.py: 2 warnings
+tests/test_roadmap_validation.py: 1 warning
+tests/test_ssz_physics.py: 1 warning
+tests/test_ssz_qubit_applications.py: 7 warnings
+tests/test_validation.py: 4 warnings
+  /home/error/physics/ssz-qubits/ssz_qubits.py:594: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    delta_d = abs(ssz_time_dilation_difference(r_a, r_b, M))
+
+ssz_qubits.py:544: 1 warning
+tests/test_edge_cases.py: 14 warnings
+tests/test_ssz_physics.py: 1 warning
+tests/test_ssz_qubit_applications.py: 14 warnings
+tests/test_validation.py: 1 warning
+  /home/error/physics/ssz-qubits/ssz_qubits.py:544: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi = xi_segment_density(r, M)
+
+ssz_qubits.py:546: 1 warning
+tests/test_edge_cases.py: 14 warnings
+tests/test_ssz_physics.py: 1 warning
+tests/test_ssz_qubit_applications.py: 14 warnings
+tests/test_validation.py: 1 warning
+  /home/error/physics/ssz-qubits/ssz_qubits.py:546: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    gradient = xi_gradient(r, M)
+
+ssz_paper_a_support.py:263: 14 warnings
+tests/test_paper_a_support.py: 21 warnings
+  /home/error/physics/ssz-qubits/ssz_paper_a_support.py:263: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    delta_D_closed = ssz_time_dilation_difference(r1, r2, M_EARTH)
+
+ssz_entanglement.py:75: 3 warnings
+tests/test_entanglement.py: 8 warnings
+  /home/error/physics/ssz-qubits/ssz_entanglement.py:75: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    delta_D = ssz_time_dilation_difference(r_a, r_b, M)
+
+ssz_entanglement.py:188
+ssz_entanglement.py:188
+ssz_entanglement.py:188
+tests/test_entanglement.py::TestCharacteristicTime::test_T_SSZ_1mm
+tests/test_entanglement.py::TestCharacteristicTime::test_T_SSZ_scaling
+tests/test_entanglement.py::TestCharacteristicTime::test_T_SSZ_scaling
+tests/test_entanglement.py::TestCharacteristicTime::test_T_SSZ_zero_height
+tests/test_entanglement.py::TestFullAnalysis::test_analysis_1mm
+  /home/error/physics/ssz-qubits/ssz_entanglement.py:188: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    delta_D = abs(ssz_time_dilation_difference(r1, r2, M))
+
+ssz_qubits.py:818: 4 warnings
+test_corrections.py: 3 warnings
+tests/test_edge_cases.py: 2 warnings
+tests/test_ssz_qubit_applications.py: 6 warnings
+  /home/error/physics/ssz-qubits/ssz_qubits.py:818: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi = xi_segment_density(r, M)
+
+ssz_qubits.py:826: 4 warnings
+test_corrections.py: 3 warnings
+tests/test_edge_cases.py: 2 warnings
+tests/test_ssz_qubit_applications.py: 6 warnings
+  /home/error/physics/ssz-qubits/ssz_qubits.py:826: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    grad = abs(xi_gradient(r, M))
+
+test_paper_consistency.py:38
+  /home/error/physics/ssz-qubits/test_paper_consistency.py:38: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi_surface = xi_segment_density(R_EARTH, M_EARTH)
+
+test_paper_consistency.py:63
+  /home/error/physics/ssz-qubits/test_paper_consistency.py:63: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    grad = xi_gradient(R_EARTH, M_EARTH)
+
+test_paper_consistency.py:78
+  /home/error/physics/ssz-qubits/test_paper_consistency.py:78: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    delta_D = ssz_time_dilation_difference(r1, r2, M_EARTH)
+
+test_paper_consistency.py:177
+  /home/error/physics/ssz-qubits/test_paper_consistency.py:177: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    delta_D_1mm = abs(ssz_time_dilation_difference(R_EARTH, R_EARTH + 1e-3, M_EARTH))
+
+tests/test_edge_cases.py::TestExtremeRadii::test_very_small_radius
+  /home/error/physics/ssz-qubits/tests/test_edge_cases.py:48: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi = xi_segment_density(r, M_EARTH)
+
+tests/test_edge_cases.py::TestExtremeRadii::test_very_large_radius
+  /home/error/physics/ssz-qubits/tests/test_edge_cases.py:77: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi = xi_segment_density(AU, M_EARTH)
+
+tests/test_edge_cases.py::TestExtremeRadii::test_radius_at_schwarzschild
+  /home/error/physics/ssz-qubits/tests/test_edge_cases.py:102: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi = xi_segment_density(r_s, M_EARTH)
+
+tests/test_edge_cases.py::TestExtremeMasses::test_solar_mass
+  /home/error/physics/ssz-qubits/tests/test_edge_cases.py:169: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi = xi_segment_density(r, M_SUN)
+
+tests/test_edge_cases.py::TestExtremeMasses::test_black_hole_mass
+  /home/error/physics/ssz-qubits/tests/test_edge_cases.py:198: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi = xi_segment_density(r, M_BH)
+
+tests/test_edge_cases.py::TestNumericalPrecision::test_float_precision_xi
+  /home/error/physics/ssz-qubits/tests/test_edge_cases.py:347: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi1 = xi_segment_density(r1, M_EARTH)
+
+tests/test_edge_cases.py::TestNumericalPrecision::test_float_precision_xi
+  /home/error/physics/ssz-qubits/tests/test_edge_cases.py:348: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi2 = xi_segment_density(r2, M_EARTH)
+
+tests/test_edge_cases.py::TestNumericalPrecision::test_gradient_numerical_vs_analytical
+  /home/error/physics/ssz-qubits/tests/test_edge_cases.py:397: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    grad_analytical = xi_gradient(r, M_EARTH)
+
+tests/test_edge_cases.py::TestNumericalPrecision::test_gradient_numerical_vs_analytical
+  /home/error/physics/ssz-qubits/tests/test_edge_cases.py:400: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi_plus = xi_segment_density(r + dr, M_EARTH)
+
+tests/test_edge_cases.py::TestNumericalPrecision::test_gradient_numerical_vs_analytical
+  /home/error/physics/ssz-qubits/tests/test_edge_cases.py:401: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi_minus = xi_segment_density(r - dr, M_EARTH)
+
+tests/test_edge_cases.py: 109 warnings
+tests/test_ssz_qubit_applications.py: 13 warnings
+  /home/error/physics/ssz-qubits/ssz_qubits.py:970: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi_values.append(xi_segment_density(r, M))
+
+tests/test_paper_c_support.py::TestPrediction1PhaseDrift::test_phase_drift_value
+  /home/error/physics/ssz-qubits/tests/test_paper_c_support.py:43: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    delta_d = abs(ssz_time_dilation_difference(R_EARTH + delta_h, R_EARTH, M_EARTH))
+
+tests/test_paper_c_support.py::TestPrediction1PhaseDrift::test_phase_drift_above_falsification_threshold
+  /home/error/physics/ssz-qubits/tests/test_paper_c_support.py:52: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    delta_d = abs(ssz_time_dilation_difference(R_EARTH + delta_h, R_EARTH, M_EARTH))
+
+tests/test_paper_c_support.py::TestPrediction3FrequencyScaling::test_frequency_ratio
+  /home/error/physics/ssz-qubits/tests/test_paper_c_support.py:85: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    delta_d = abs(ssz_time_dilation_difference(R_EARTH + delta_h, R_EARTH, M_EARTH))
+
+tests/test_paper_c_support.py::TestPrediction3FrequencyScaling::test_ratio_above_falsification_threshold
+  /home/error/physics/ssz-qubits/tests/test_paper_c_support.py:96: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    delta_d = abs(ssz_time_dilation_difference(R_EARTH + delta_h, R_EARTH, M_EARTH))
+
+tests/test_paper_c_support.py::TestPrediction4Compensation::test_compensation_possible
+  /home/error/physics/ssz-qubits/tests/test_paper_c_support.py:111: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    delta_d = abs(ssz_time_dilation_difference(R_EARTH + delta_h, R_EARTH, M_EARTH))
+
+tests/test_paper_c_support.py: 10 warnings
+  /home/error/physics/ssz-qubits/tests/test_paper_c_support.py:126: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    delta_d = abs(ssz_time_dilation_difference(R_EARTH + delta_h, R_EARTH, M_EARTH))
+
+tests/test_paper_c_support.py::TestScalingAnalysis::test_height_linearity
+  /home/error/physics/ssz-qubits/tests/test_paper_c_support.py:175: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    d1 = abs(ssz_time_dilation_difference(R_EARTH + h1, R_EARTH, M_EARTH))
+
+tests/test_paper_c_support.py::TestScalingAnalysis::test_height_linearity
+  /home/error/physics/ssz-qubits/tests/test_paper_c_support.py:176: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    d2 = abs(ssz_time_dilation_difference(R_EARTH + h2, R_EARTH, M_EARTH))
+
+tests/test_paper_c_support.py::TestScalingAnalysis::test_frequency_linearity
+  /home/error/physics/ssz-qubits/tests/test_paper_c_support.py:184: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    delta_d = abs(ssz_time_dilation_difference(R_EARTH + delta_h, R_EARTH, M_EARTH))
+
+tests/test_paper_c_support.py::TestScalingAnalysis::test_time_linearity
+  /home/error/physics/ssz-qubits/tests/test_paper_c_support.py:198: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    delta_d = abs(ssz_time_dilation_difference(R_EARTH + delta_h, R_EARTH, M_EARTH))
+
+tests/test_paper_c_support.py: 100 warnings
+  /home/error/physics/ssz-qubits/tests/test_paper_c_support.py:218: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    ssz_time_dilation_difference(R_EARTH + delta_h, R_EARTH, M_EARTH)
+
+tests/test_paper_c_support.py: 50 warnings
+  /home/error/physics/ssz-qubits/tests/test_paper_c_support.py:230: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    abs(ssz_time_dilation_difference(R_EARTH + h, R_EARTH, M_EARTH))
+
+tests/test_paper_c_support.py::TestConfoundDiscrimination::test_ssz_scales_with_omega
+  /home/error/physics/ssz-qubits/tests/test_paper_c_support.py:241: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    delta_d = abs(ssz_time_dilation_difference(R_EARTH + delta_h, R_EARTH, M_EARTH))
+
+tests/test_paper_c_support.py::TestMeasurementRequirements::test_phase_precision_achievable
+  /home/error/physics/ssz-qubits/tests/test_paper_c_support.py:259: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    delta_d = abs(ssz_time_dilation_difference(R_EARTH + delta_h, R_EARTH, M_EARTH))
+
+tests/test_paper_d_validation.py::TestSection3Theory::test_delta_d_formula
+  /home/error/physics/ssz-qubits/tests/test_paper_d_validation.py:176: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    delta_d_impl = abs(ssz_time_dilation_difference(
+
+tests/test_paper_d_validation.py::TestSection3Theory::test_phase_drift_formula
+  /home/error/physics/ssz-qubits/tests/test_paper_d_validation.py:196: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    delta_d = abs(ssz_time_dilation_difference(R_EARTH + delta_h, R_EARTH, M_EARTH))
+
+tests/test_regressions_audit.py::TestR3TimeDifferenceModelConsistency::test_antisymmetric
+tests/test_regressions_audit.py::TestR3TimeDifferenceModelConsistency::test_antisymmetric
+tests/test_regressions_audit.py::TestR3TimeDifferenceModelConsistency::test_antisymmetric
+tests/test_regressions_audit.py::TestR3TimeDifferenceModelConsistency::test_antisymmetric
+  /home/error/physics/ssz-qubits/tests/test_regressions_audit.py:179: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    f12 = ssz_time_dilation_difference(r1, r2, M_EARTH)
+
+tests/test_regressions_audit.py::TestR3TimeDifferenceModelConsistency::test_antisymmetric
+tests/test_regressions_audit.py::TestR3TimeDifferenceModelConsistency::test_antisymmetric
+tests/test_regressions_audit.py::TestR3TimeDifferenceModelConsistency::test_antisymmetric
+tests/test_regressions_audit.py::TestR3TimeDifferenceModelConsistency::test_antisymmetric
+  /home/error/physics/ssz-qubits/tests/test_regressions_audit.py:180: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    f21 = ssz_time_dilation_difference(r2, r1, M_EARTH)
+
+tests/test_regressions_audit.py::TestR3TimeDifferenceModelConsistency::test_equal_radii_is_exactly_zero
+tests/test_regressions_audit.py::TestR3TimeDifferenceModelConsistency::test_equal_radii_is_exactly_zero
+tests/test_regressions_audit.py::TestR3TimeDifferenceModelConsistency::test_equal_radii_is_exactly_zero
+  /home/error/physics/ssz-qubits/tests/test_regressions_audit.py:186: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    assert ssz_time_dilation_difference(r, r, M_EARTH) == 0.0
+
+tests/test_regressions_audit.py::TestR3TimeDifferenceModelConsistency::test_one_mm_height_not_zero
+  /home/error/physics/ssz-qubits/tests/test_regressions_audit.py:190: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    delta = abs(ssz_time_dilation_difference(R_EARTH + 1e-3, R_EARTH, M_EARTH))
+
+tests/test_regressions_audit.py::TestR3TimeDifferenceModelConsistency::test_height_range_1um_to_1m_monotone
+tests/test_regressions_audit.py::TestR3TimeDifferenceModelConsistency::test_height_range_1um_to_1m_monotone
+tests/test_regressions_audit.py::TestR3TimeDifferenceModelConsistency::test_height_range_1um_to_1m_monotone
+tests/test_regressions_audit.py::TestR3TimeDifferenceModelConsistency::test_height_range_1um_to_1m_monotone
+tests/test_regressions_audit.py::TestR3TimeDifferenceModelConsistency::test_height_range_1um_to_1m_monotone
+tests/test_regressions_audit.py::TestR3TimeDifferenceModelConsistency::test_height_range_1um_to_1m_monotone
+tests/test_regressions_audit.py::TestR3TimeDifferenceModelConsistency::test_height_range_1um_to_1m_monotone
+  /home/error/physics/ssz-qubits/tests/test_regressions_audit.py:198: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    d = abs(ssz_time_dilation_difference(R_EARTH + h, R_EARTH, M_EARTH))
+
+tests/test_roadmap_validation.py::TestH1DeterministicPhaseBias::test_phase_drift_formula
+  /home/error/physics/ssz-qubits/tests/test_roadmap_validation.py:54: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    delta_d = ssz_time_dilation_difference(R_EARTH + delta_h, R_EARTH, M_EARTH)
+
+tests/test_roadmap_validation.py: 10 warnings
+  /home/error/physics/ssz-qubits/tests/test_roadmap_validation.py:66: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    ssz_time_dilation_difference(R_EARTH + delta_h, R_EARTH, M_EARTH)
+
+tests/test_roadmap_validation.py::TestH1DeterministicPhaseBias::test_phase_drift_scales_with_height
+  /home/error/physics/ssz-qubits/tests/test_roadmap_validation.py:78: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    d1 = abs(ssz_time_dilation_difference(R_EARTH + h1, R_EARTH, M_EARTH))
+
+tests/test_roadmap_validation.py::TestH1DeterministicPhaseBias::test_phase_drift_scales_with_height
+  /home/error/physics/ssz-qubits/tests/test_roadmap_validation.py:79: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    d2 = abs(ssz_time_dilation_difference(R_EARTH + h2, R_EARTH, M_EARTH))
+
+tests/test_roadmap_validation.py::TestH1DeterministicPhaseBias::test_phase_drift_scales_with_time
+  /home/error/physics/ssz-qubits/tests/test_roadmap_validation.py:87: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    delta_d = abs(ssz_time_dilation_difference(R_EARTH + delta_h, R_EARTH, M_EARTH))
+
+tests/test_roadmap_validation.py::TestH1DeterministicPhaseBias::test_compensation_is_possible
+  /home/error/physics/ssz-qubits/tests/test_roadmap_validation.py:102: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    delta_d = ssz_time_dilation_difference(R_EARTH + delta_h, R_EARTH, M_EARTH)
+
+tests/test_roadmap_validation.py::TestH3Scaling::test_accumulated_drift_grows_with_coherence
+  /home/error/physics/ssz-qubits/tests/test_roadmap_validation.py:169: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    delta_d = abs(ssz_time_dilation_difference(R_EARTH + delta_h, R_EARTH, M_EARTH))
+
+tests/test_roadmap_validation.py::TestH3Scaling::test_effect_grows_with_height_difference
+tests/test_roadmap_validation.py::TestH3Scaling::test_effect_grows_with_height_difference
+tests/test_roadmap_validation.py::TestH3Scaling::test_effect_grows_with_height_difference
+tests/test_roadmap_validation.py::TestH3Scaling::test_effect_grows_with_height_difference
+tests/test_roadmap_validation.py::TestH3Scaling::test_effect_grows_with_height_difference
+tests/test_roadmap_validation.py::TestH3Scaling::test_effect_grows_with_height_difference
+tests/test_roadmap_validation.py::TestH3Scaling::test_effect_grows_with_height_difference
+  /home/error/physics/ssz-qubits/tests/test_roadmap_validation.py:185: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    abs(ssz_time_dilation_difference(R_EARTH + h, R_EARTH, M_EARTH))
+
+tests/test_roadmap_validation.py::TestH3Scaling::test_macroscopic_height_measurable
+  /home/error/physics/ssz-qubits/tests/test_roadmap_validation.py:199: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    delta_d = abs(ssz_time_dilation_difference(R_EARTH + delta_h, R_EARTH, M_EARTH))
+
+tests/test_roadmap_validation.py::TestH3Scaling::test_macroscopic_height_measurable
+  /home/error/physics/ssz-qubits/tests/test_roadmap_validation.py:204: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    delta_d_small = abs(ssz_time_dilation_difference(R_EARTH + delta_h_small, R_EARTH, M_EARTH))
+
+tests/test_roadmap_validation.py::TestWP1Simulation::test_ssz_drift_reduces_fidelity
+  /home/error/physics/ssz-qubits/tests/test_roadmap_validation.py:230: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    delta_d = abs(ssz_time_dilation_difference(R_EARTH + delta_h, R_EARTH, M_EARTH))
+
+tests/test_roadmap_validation.py::TestWP1Simulation::test_compensation_recovers_fidelity
+  /home/error/physics/ssz-qubits/tests/test_roadmap_validation.py:246: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    delta_d = abs(ssz_time_dilation_difference(R_EARTH + delta_h, R_EARTH, M_EARTH))
+
+tests/test_roadmap_validation.py::TestFalsifiability::test_height_dependence_exists
+  /home/error/physics/ssz-qubits/tests/test_roadmap_validation.py:275: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    d1 = ssz_time_dilation_difference(R_EARTH + h1, R_EARTH, M_EARTH)
+
+tests/test_roadmap_validation.py::TestFalsifiability::test_height_dependence_exists
+  /home/error/physics/ssz-qubits/tests/test_roadmap_validation.py:276: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    d2 = ssz_time_dilation_difference(R_EARTH + h2, R_EARTH, M_EARTH)
+
+tests/test_roadmap_validation.py::TestFalsifiability::test_correct_omega_scaling
+  /home/error/physics/ssz-qubits/tests/test_roadmap_validation.py:285: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    delta_d = abs(ssz_time_dilation_difference(R_EARTH + delta_h, R_EARTH, M_EARTH))
+
+tests/test_roadmap_validation.py: 100 warnings
+  /home/error/physics/ssz-qubits/tests/test_roadmap_validation.py:300: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    abs(ssz_time_dilation_difference(R_EARTH + h, R_EARTH, M_EARTH))
+
+tests/test_ssz_physics.py::TestSegmentDensityWeakField::test_xi_at_earth_surface
+  /home/error/physics/ssz-qubits/tests/test_ssz_physics.py:105: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi = xi_segment_density(R_EARTH, M_EARTH)
+
+tests/test_ssz_physics.py::TestSegmentDensityWeakField::test_xi_decreases_with_radius
+  /home/error/physics/ssz-qubits/tests/test_ssz_physics.py:127: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi1 = xi_segment_density(r1, M_EARTH)
+
+tests/test_ssz_physics.py::TestSegmentDensityWeakField::test_xi_decreases_with_radius
+  /home/error/physics/ssz-qubits/tests/test_ssz_physics.py:128: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi2 = xi_segment_density(r2, M_EARTH)
+
+tests/test_ssz_physics.py::TestSegmentDensityWeakField::test_xi_positive_definite
+tests/test_ssz_physics.py::TestSegmentDensityWeakField::test_xi_positive_definite
+tests/test_ssz_physics.py::TestSegmentDensityWeakField::test_xi_positive_definite
+tests/test_ssz_physics.py::TestSegmentDensityWeakField::test_xi_positive_definite
+tests/test_ssz_physics.py::TestSegmentDensityWeakField::test_xi_positive_definite
+  /home/error/physics/ssz-qubits/tests/test_ssz_physics.py:154: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi = xi_segment_density(r, M_EARTH)
+
+tests/test_ssz_physics.py::TestSegmentDensityWeakField::test_xi_formula_weak_field
+  /home/error/physics/ssz-qubits/tests/test_ssz_physics.py:169: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi_calculated = xi_segment_density(r, M_EARTH)
+
+tests/test_ssz_physics.py::TestSegmentGradientWeakField::test_gradient_negative
+  /home/error/physics/ssz-qubits/tests/test_ssz_physics.py:196: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    grad = xi_gradient(R_EARTH, M_EARTH)
+
+tests/test_ssz_physics.py::TestSegmentGradientWeakField::test_gradient_scales_as_1_over_r_squared
+  /home/error/physics/ssz-qubits/tests/test_ssz_physics.py:216: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    grad1 = abs(xi_gradient(r1, M_EARTH))
+
+tests/test_ssz_physics.py::TestSegmentGradientWeakField::test_gradient_scales_as_1_over_r_squared
+  /home/error/physics/ssz-qubits/tests/test_ssz_physics.py:217: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    grad2 = abs(xi_gradient(r2, M_EARTH))
+
+tests/test_ssz_physics.py::TestSSZTimeDilationWeakField::test_time_dilation_formula
+  /home/error/physics/ssz-qubits/tests/test_ssz_physics.py:265: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi = xi_segment_density(r, M_EARTH)
+
+tests/test_ssz_qubit_applications.py::TestSegmentedTimeClock::test_local_segment_time_as_reference
+  /home/error/physics/ssz-qubits/tests/test_ssz_qubit_applications.py:71: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi1 = xi_segment_density(r1, M_EARTH)
+
+tests/test_ssz_qubit_applications.py::TestSegmentedTimeClock::test_local_segment_time_as_reference
+  /home/error/physics/ssz-qubits/tests/test_ssz_qubit_applications.py:72: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi2 = xi_segment_density(r2, M_EARTH)
+
+tests/test_ssz_qubit_applications.py::TestDecoherenceGeometry::test_coherent_segment_zone
+  /home/error/physics/ssz-qubits/tests/test_ssz_qubit_applications.py:209: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    target_xi = xi_segment_density(R_EARTH + reference_height, M_EARTH)
+
+tests/test_ssz_qubit_applications.py::TestDecoherenceGeometry::test_decoherence_rate_from_gradient
+  /home/error/physics/ssz-qubits/tests/test_ssz_qubit_applications.py:241: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    grad = abs(xi_gradient(R_EARTH, M_EARTH))
+
+tests/test_ssz_qubit_applications.py::TestGravitationalDrift::test_nanometer_height_difference
+  /home/error/physics/ssz-qubits/tests/test_ssz_qubit_applications.py:290: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi_base = xi_segment_density(r_base, M_EARTH)
+
+tests/test_ssz_qubit_applications.py::TestGravitationalDrift::test_nanometer_height_difference
+tests/test_ssz_qubit_applications.py::TestGravitationalDrift::test_nanometer_height_difference
+tests/test_ssz_qubit_applications.py::TestGravitationalDrift::test_nanometer_height_difference
+tests/test_ssz_qubit_applications.py::TestGravitationalDrift::test_nanometer_height_difference
+  /home/error/physics/ssz-qubits/tests/test_ssz_qubit_applications.py:297: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi = xi_segment_density(r, M_EARTH)
+
+tests/test_ssz_qubit_applications.py::TestSegmentAwareQEC::test_segment_aware_syndrome_weights
+tests/test_ssz_qubit_applications.py::TestSegmentAwareQEC::test_segment_aware_syndrome_weights
+tests/test_ssz_qubit_applications.py::TestSegmentAwareQEC::test_segment_aware_syndrome_weights
+tests/test_ssz_qubit_applications.py::TestSegmentAwareQEC::test_segment_aware_syndrome_weights
+tests/test_ssz_qubit_applications.py::TestSegmentAwareQEC::test_segment_aware_syndrome_weights
+  /home/error/physics/ssz-qubits/tests/test_ssz_qubit_applications.py:414: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi = xi_segment_density(r, M_EARTH)
+
+tests/test_ssz_qubit_applications.py: 100 warnings
+  /home/error/physics/ssz-qubits/tests/test_ssz_qubit_applications.py:461: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    grad = abs(xi_gradient(r, M_EARTH))
+
+tests/test_ssz_qubit_applications.py::TestQuantumCommunicationSSZ::test_distributed_qubits_sync
+  /home/error/physics/ssz-qubits/tests/test_ssz_qubit_applications.py:512: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi1 = xi_segment_density(r1, M_EARTH)
+
+tests/test_ssz_qubit_applications.py::TestQuantumCommunicationSSZ::test_distributed_qubits_sync
+  /home/error/physics/ssz-qubits/tests/test_ssz_qubit_applications.py:513: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi2 = xi_segment_density(r2, M_EARTH)
+
+tests/test_ssz_qubit_applications.py::TestQuantumCommunicationSSZ::test_quantum_repeater_chain
+tests/test_ssz_qubit_applications.py::TestQuantumCommunicationSSZ::test_quantum_repeater_chain
+tests/test_ssz_qubit_applications.py::TestQuantumCommunicationSSZ::test_quantum_repeater_chain
+tests/test_ssz_qubit_applications.py::TestQuantumCommunicationSSZ::test_quantum_repeater_chain
+tests/test_ssz_qubit_applications.py::TestQuantumCommunicationSSZ::test_quantum_repeater_chain
+  /home/error/physics/ssz-qubits/tests/test_ssz_qubit_applications.py:610: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi = xi_segment_density(r, M_EARTH)
+
+tests/test_validation.py::TestGRWeakFieldComparison::test_time_dilation_matches_gr_weak_field
+  /home/error/physics/ssz-qubits/tests/test_validation.py:47: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi = xi_segment_density(r, M_EARTH)
+
+tests/test_validation.py::TestTheoreticalConsistency::test_xi_and_time_dilation_consistency
+tests/test_validation.py::TestTheoreticalConsistency::test_xi_and_time_dilation_consistency
+tests/test_validation.py::TestTheoreticalConsistency::test_xi_and_time_dilation_consistency
+tests/test_validation.py::TestTheoreticalConsistency::test_xi_and_time_dilation_consistency
+tests/test_validation.py::TestTheoreticalConsistency::test_xi_and_time_dilation_consistency
+  /home/error/physics/ssz-qubits/tests/test_validation.py:340: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi = xi_segment_density(r, M_EARTH)
+
+tests/test_validation.py::TestTheoreticalConsistency::test_gradient_consistency
+  /home/error/physics/ssz-qubits/tests/test_validation.py:365: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    grad_analytical = xi_gradient(r, M_EARTH)
+
+tests/test_validation.py::TestTheoreticalConsistency::test_gradient_consistency
+  /home/error/physics/ssz-qubits/tests/test_validation.py:368: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi_m2 = xi_segment_density(r - 2*dr, M_EARTH)
+
+tests/test_validation.py::TestTheoreticalConsistency::test_gradient_consistency
+  /home/error/physics/ssz-qubits/tests/test_validation.py:369: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi_m1 = xi_segment_density(r - dr, M_EARTH)
+
+tests/test_validation.py::TestTheoreticalConsistency::test_gradient_consistency
+  /home/error/physics/ssz-qubits/tests/test_validation.py:370: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi_p1 = xi_segment_density(r + dr, M_EARTH)
+
+tests/test_validation.py::TestTheoreticalConsistency::test_gradient_consistency
+  /home/error/physics/ssz-qubits/tests/test_validation.py:371: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi_p2 = xi_segment_density(r + 2*dr, M_EARTH)
+
+tests/test_validation.py::TestTheoreticalConsistency::test_energy_conservation_proxy
+tests/test_validation.py::TestTheoreticalConsistency::test_energy_conservation_proxy
+tests/test_validation.py::TestTheoreticalConsistency::test_energy_conservation_proxy
+tests/test_validation.py::TestTheoreticalConsistency::test_energy_conservation_proxy
+tests/test_validation.py::TestTheoreticalConsistency::test_energy_conservation_proxy
+  /home/error/physics/ssz-qubits/tests/test_validation.py:402: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi = xi_segment_density(r, M_EARTH)
+
+tests/test_validation.py::TestTheoreticalConsistency::test_schwarzschild_limit
+tests/test_validation.py::TestTheoreticalConsistency::test_schwarzschild_limit
+tests/test_validation.py::TestTheoreticalConsistency::test_schwarzschild_limit
+tests/test_validation.py::TestTheoreticalConsistency::test_schwarzschild_limit
+tests/test_validation.py::TestTheoreticalConsistency::test_schwarzschild_limit
+tests/test_validation.py::TestTheoreticalConsistency::test_schwarzschild_limit
+tests/test_validation.py::TestTheoreticalConsistency::test_schwarzschild_limit
+  /home/error/physics/ssz-qubits/tests/test_validation.py:432: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi = xi_segment_density(r, M_EARTH)
+
+tests/test_validation.py::TestQubitValidation::test_qubit_height_sensitivity
+  /home/error/physics/ssz-qubits/tests/test_validation.py:462: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi_ref = xi_segment_density(q_ref.radius_from_earth_center, M_EARTH)
+
+tests/test_validation.py::TestQubitValidation::test_qubit_height_sensitivity
+tests/test_validation.py::TestQubitValidation::test_qubit_height_sensitivity
+tests/test_validation.py::TestQubitValidation::test_qubit_height_sensitivity
+tests/test_validation.py::TestQubitValidation::test_qubit_height_sensitivity
+tests/test_validation.py::TestQubitValidation::test_qubit_height_sensitivity
+  /home/error/physics/ssz-qubits/tests/test_validation.py:472: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi = xi_segment_density(q.radius_from_earth_center, M_EARTH)
+
+tests/test_validation.py::TestDimensionalAnalysis::test_xi_dimensionless
+  /home/error/physics/ssz-qubits/tests/test_validation.py:564: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi = xi_segment_density(r, M_EARTH)
+
+tests/test_validation.py::TestDimensionalAnalysis::test_gradient_has_correct_units
+  /home/error/physics/ssz-qubits/tests/test_validation.py:589: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    grad = xi_gradient(r, M_EARTH)
+
+tests/test_validation.py::TestDimensionalAnalysis::test_gradient_has_correct_units
+  /home/error/physics/ssz-qubits/tests/test_validation.py:598: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    expected_magnitude = xi_segment_density(r, M_EARTH) / R_EARTH
+
+tests/test_validation.py::TestDimensionalAnalysis::test_time_offset_has_correct_units
+  /home/error/physics/ssz-qubits/ssz_qubits.py:1095: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    delta_d = ssz_time_dilation_difference(r_height, r_sea, M)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: /home/error/physics/ssz-qubits/reports/repair_validation/final-8tox-2026-10-31T05:40:43+0100/pytest-results.xml -
+====================== 307 passed, 1108 warnings in 3.32s ======================

@@ -1,0 +1,15 @@
+[05:40:43] RUN  pytest-full
+[05:40:47] RUN  run_tests
+[05:40:50] EXIT run_tests rc=0 (PASS)
+[05:40:50] RUN  verify_phi_discret
+[05:40:51] EXIT verify_phi_discret rc=0 (PASS)
+[05:40:51] RUN  verify_paper_a_form
+[05:40:51] EXIT verify_paper_a_form rc=0 (PASS)
+[05:40:51] RUN  comprehensive_test
+[05:40:51] EXIT comprehensive_test rc=0 (PASS)
+[05:40:51] RUN  test_corrections
+[05:40:51] EXIT test_corrections rc=0 (PASS)
+[05:40:51] RUN  test_paper_consist
+[05:40:51] EXIT test_paper_consist rc=0 (PASS)
+[05:40:51] RUN  demo
+[05:40:52] EXIT demo rc=0 (PASS)

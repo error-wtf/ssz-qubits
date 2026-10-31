@@ -1,0 +1,376 @@
+research/quantum_bus/tests/test_quantum_bus.py::TestQ0NoBus::test_local_z_phases_create_no_entanglement
+research/quantum_bus/tests/test_quantum_bus.py::TestQ1ThreeQubitBus::test_hermitian
+research/quantum_bus/tests/test_quantum_bus.py::TestQ1ThreeQubitBus::test_unitary_and_norm_and_energy
+research/quantum_bus/tests/test_quantum_bus.py::TestQ1ThreeQubitBus::test_total_sz_conserved
+research/quantum_bus/tests/test_quantum_bus.py::TestQ1ThreeQubitBus::test_spectrum_real
+research/quantum_bus/tests/test_quantum_bus.py::TestExplicit6Plus2::test_unitary_is_unitary
+research/quantum_bus/tests/test_quantum_bus.py::TestExplicit6Plus2::test_bell_definition
+research/quantum_bus/tests/test_quantum_bus.py::TestExplicit6Plus2::test_singlet_row
+research/quantum_bus/tests/test_quantum_bus.py::TestExplicit6Plus2::test_generic_h_not_block_diagonal
+research/quantum_bus/tests/test_quantum_bus.py::TestExplicit6Plus2::test_symmetric_ising_IS_block_diagonal
+research/quantum_bus/tests/test_quantum_bus.py::TestSchurComplement::test_exact_eigenvalues_satisfy_schur_condition
+research/quantum_bus/tests/test_quantum_bus.py::TestSchurComplement::test_schur_residual_nonzero_away_from_spectrum
+research/quantum_bus/tests/test_quantum_bus.py::TestSchurComplement::test_static_sw_error_scales_quadratically
+research/quantum_bus/tests/test_quantum_bus.py::TestSchurComplement::test_static_sw_fails_near_resonance
+research/quantum_bus/tests/test_quantum_bus.py::TestQ2Resonator::test_dimension_and_hermiticity
+research/quantum_bus/tests/test_quantum_bus.py::TestQ2Resonator::test_excitation_conservation
+research/quantum_bus/tests/test_quantum_bus.py::TestQ2Resonator::test_truncation_convergence
+research/quantum_bus/tests/test_quantum_bus.py::TestQ2Resonator::test_dispersive_shift_present
+research/quantum_bus/tests/test_quantum_bus.py::TestQ3DephasingChannel::test_trace_and_positivity_preserved
+research/quantum_bus/tests/test_quantum_bus.py::TestQ3DephasingChannel::test_coherence_decay_factor
+research/quantum_bus/tests/test_quantum_bus.py::TestMetricsAndCHSH::test_concurrence_bell_vs_product
+research/quantum_bus/tests/test_quantum_bus.py::TestMetricsAndCHSH::test_bell_fidelity_separate_from_entanglement
+research/quantum_bus/tests/test_quantum_bus.py::TestMetricsAndCHSH::test_chsh_bounds_and_rotation_invariance
+research/quantum_bus/tests/test_quantum_bus.py::TestMetricsAndCHSH::test_projection_leakage
+research/quantum_bus/tests/test_ssz_mixing_analysis.py::TestMixingElementFormula::test_matrix_element_is_differential_clock
+research/quantum_bus/tests/test_ssz_mixing_analysis.py::TestMixingElementFormula::test_equal_D_gives_zero_mixing
+research/quantum_bus/tests/test_ssz_mixing_analysis.py::TestMixingElementFormula::test_Tpm_not_mixed
+research/quantum_bus/tests/test_ssz_mixing_analysis.py::TestRabiDynamics::test_s_to_t0_oscillation_frequency
+research/quantum_bus/tests/test_ssz_mixing_analysis.py::TestSSZvsGRContent::test_ratio_leading_order_is_2phi
+research/quantum_bus/tests/test_ssz_mixing_analysis.py::TestSSZvsGRContent::test_no_bus_required_for_mixing
+research/quantum_bus/tests/test_ssz_symmetry_probe.py::TestCommutantStructure::test_generic_exchange_bus_commutant_is_polynomials_in_H
+research/quantum_bus/tests/test_ssz_symmetry_probe.py::TestCommutantStructure::test_therefore_no_6plus2_eigenspace_split
+research/quantum_bus/tests/test_ssz_symmetry_probe.py::TestSSZDScan::test_invariance_only_on_the_DA_equals_DB_diagonal
+research/quantum_bus/tests/test_ssz_symmetry_probe.py::TestSSZDScan::test_differential_segmentation_breaks_invariance
+research/quantum_bus/tests/test_ssz_symmetry_probe.py::TestSSZDScan::test_leakage_independent_of_D_at_fixed_coupling
+research/quantum_bus/tests/test_ssz_symmetry_probe.py::TestDiagonalQFamilyCannotCommute::test_UNEQUAL_ssz_diagonal_vs_exchange
+research/quantum_bus/tests/test_ssz_symmetry_probe.py::TestDiagonalQFamilyCannotCommute::test_EQUAL_coefficients_is_excitation_conservation_not_ssz
+research/quantum_bus/tests/test_ssz_symmetry_probe.py::TestDiagonalQFamilyCannotCommute::test_full_h_diagonal_part_trivial
+research/quantum_bus/tests/test_ssz_symmetry_probe.py::TestKnownConservedQuantitiesAreNot6plus2::test_excitation_number_eigenspaces
+research/quantum_bus/tests/test_ssz_symmetry_probe.py::TestKnownConservedQuantitiesAreNot6plus2::test_singlet_projector_mirror_symmetric_case
+research/quantum_bus/tests/test_ssz_symmetry_probe.py::TestKnownConservedQuantitiesAreNot6plus2::test_singlet_projector_broken_by_ssz_differential
+research/quantum_bus/tests/test_ssz_symmetry_probe.py::TestPositiveControlAngularMomentumAlgebra::test_pair_symmetric_ising_conserves_singlet
+research/quantum_bus/tests/test_ssz_symmetry_probe.py::TestPositiveControlAngularMomentumAlgebra::test_singlet_projector_definition
+test_corrections.py::test_phase_drift_per_gate_matches_manual_and_audit_value
+test_corrections.py::test_ssz_decoherence_contribution_tiny_at_earth_scale
+test_corrections.py::test_pair_decoherence_time_halves_T2
+tests/test_edge_cases.py::TestExtremeRadii::test_very_small_radius
+tests/test_edge_cases.py::TestExtremeRadii::test_very_large_radius
+tests/test_edge_cases.py::TestExtremeRadii::test_radius_at_schwarzschild
+tests/test_edge_cases.py::TestExtremeMasses::test_zero_mass
+tests/test_edge_cases.py::TestExtremeMasses::test_solar_mass
+tests/test_edge_cases.py::TestExtremeMasses::test_black_hole_mass
+tests/test_edge_cases.py::TestQubitConfigurations::test_identical_qubits
+tests/test_edge_cases.py::TestQubitConfigurations::test_very_distant_qubits
+tests/test_edge_cases.py::TestQubitConfigurations::test_negative_coordinates
+tests/test_edge_cases.py::TestQubitConfigurations::test_underground_qubit
+tests/test_edge_cases.py::TestNumericalPrecision::test_float_precision_xi
+tests/test_edge_cases.py::TestNumericalPrecision::test_time_dilation_precision
+tests/test_edge_cases.py::TestNumericalPrecision::test_gradient_numerical_vs_analytical
+tests/test_edge_cases.py::TestErrorHandling::test_zero_radius_error
+tests/test_edge_cases.py::TestErrorHandling::test_negative_radius_error
+tests/test_edge_cases.py::TestErrorHandling::test_optimal_height_zero_xi
+tests/test_edge_cases.py::TestErrorHandling::test_optimal_height_negative_xi
+tests/test_edge_cases.py::TestSpecialQubitProperties::test_zero_coherence_time
+tests/test_edge_cases.py::TestSpecialQubitProperties::test_very_long_coherence_time
+tests/test_edge_cases.py::TestSpecialQubitProperties::test_very_short_gate_time
+tests/test_edge_cases.py::TestQECEdgeCases::test_syndrome_weight_bounds
+tests/test_edge_cases.py::TestQECEdgeCases::test_logical_error_rate_bounds
+tests/test_edge_cases.py::TestQECEdgeCases::test_single_qubit_array
+tests/test_edge_cases.py::TestSegmentCoherentZone::test_coherent_zone_contains_center
+tests/test_edge_cases.py::TestSegmentCoherentZone::test_coherent_zone_width_scales
+tests/test_edge_cases.py::TestPhaseDriftBoundary::test_zero_height_difference
+tests/test_edge_cases.py::TestPhaseDriftBoundary::test_zero_frequency_phase_drift
+tests/test_entanglement.py::TestPhaseDrift::test_phase_drift_1mm
+tests/test_entanglement.py::TestPhaseDrift::test_phase_drift_linear_scaling
+tests/test_entanglement.py::TestPhaseDrift::test_signed_delta_D
+tests/test_entanglement.py::TestBellStateFidelity::test_fidelity_zero_phase
+tests/test_entanglement.py::TestBellStateFidelity::test_fidelity_pi_phase
+tests/test_entanglement.py::TestBellStateFidelity::test_fidelity_formula
+tests/test_entanglement.py::TestBellStateFidelity::test_fidelity_paper_value
+tests/test_entanglement.py::TestBellStateFidelity::test_small_angle_approximation
+tests/test_entanglement.py::TestCHSHParameter::test_chsh_max
+tests/test_entanglement.py::TestCHSHParameter::test_chsh_zero
+tests/test_entanglement.py::TestCHSHParameter::test_chsh_classical_bound
+tests/test_entanglement.py::TestCHSHParameter::test_chsh_formula
+tests/test_entanglement.py::TestCharacteristicTime::test_T_SSZ_1mm
+tests/test_entanglement.py::TestCharacteristicTime::test_T_SSZ_scaling
+tests/test_entanglement.py::TestCharacteristicTime::test_T_SSZ_zero_height
+tests/test_entanglement.py::TestCorrectionInterval::test_correction_interval_paper_value
+tests/test_entanglement.py::TestCorrectionInterval::test_correction_interval_zero_drift
+tests/test_entanglement.py::TestCorrectionGate::test_correction_higher_A
+tests/test_entanglement.py::TestCorrectionGate::test_correction_higher_B
+tests/test_entanglement.py::TestCoherentZone::test_same_height_in_zone
+tests/test_entanglement.py::TestCoherentZone::test_small_separation_in_zone
+tests/test_entanglement.py::TestCoherentZone::test_large_separation_out_of_zone
+tests/test_entanglement.py::TestFullAnalysis::test_analysis_1mm
+tests/test_paper_a_support.py::TestGRComparison::test_ssz_equals_gr_weak_field
+tests/test_paper_a_support.py::TestGRComparison::test_weak_field_detection
+tests/test_paper_a_support.py::TestGRComparison::test_gr_formula
+tests/test_paper_a_support.py::TestFidelityReduction::test_small_angle_formula
+tests/test_paper_a_support.py::TestFidelityReduction::test_paper_value
+tests/test_paper_a_support.py::TestFidelityReduction::test_approximation_validity
+tests/test_paper_a_support.py::TestLinearScaling::test_is_linear
+tests/test_paper_a_support.py::TestLinearScaling::test_scaling_constant
+tests/test_paper_a_support.py::TestNumericalStability::test_closed_form_works
+tests/test_paper_a_support.py::TestNumericalStability::test_direct_fails
+tests/test_paper_a_support.py::TestNumericalStability::test_stability_demonstrated
+tests/test_paper_a_support.py::TestCoherentZone::test_zone_width_formula
+tests/test_paper_a_support.py::TestCoherentZone::test_zone_width_value
+tests/test_paper_a_support.py::TestCoherentZone::test_half_width
+tests/test_paper_a_support.py::TestDecoherenceEnhancement::test_unity_for_small_delta_xi
+tests/test_paper_a_support.py::TestDecoherenceEnhancement::test_formula
+tests/test_paper_c_support.py::TestPrediction1PhaseDrift::test_phase_drift_value
+tests/test_paper_c_support.py::TestPrediction1PhaseDrift::test_phase_drift_above_falsification_threshold
+tests/test_paper_c_support.py::TestPrediction2CoherentZone::test_zone_width_at_1e18
+tests/test_paper_c_support.py::TestPrediction2CoherentZone::test_zone_width_formula
+tests/test_paper_c_support.py::TestPrediction3FrequencyScaling::test_frequency_ratio
+tests/test_paper_c_support.py::TestPrediction3FrequencyScaling::test_ratio_above_falsification_threshold
+tests/test_paper_c_support.py::TestPrediction4Compensation::test_compensation_possible
+tests/test_paper_c_support.py::TestPrediction4Compensation::test_deterministic_compensation
+tests/test_paper_c_support.py::TestPrediction5CrossZoneDrift::test_cross_zone_drift_value
+tests/test_paper_c_support.py::TestPrediction5CrossZoneDrift::test_drift_above_falsification_threshold
+tests/test_paper_c_support.py::TestScalingAnalysis::test_height_linearity
+tests/test_paper_c_support.py::TestScalingAnalysis::test_frequency_linearity
+tests/test_paper_c_support.py::TestScalingAnalysis::test_time_linearity
+tests/test_paper_c_support.py::TestConfoundDiscrimination::test_ssz_is_deterministic
+tests/test_paper_c_support.py::TestConfoundDiscrimination::test_ssz_is_monotonic_in_height
+tests/test_paper_c_support.py::TestConfoundDiscrimination::test_ssz_scales_with_omega
+tests/test_paper_c_support.py::TestMeasurementRequirements::test_phase_precision_achievable
+tests/test_paper_c_support.py::TestMeasurementRequirements::test_height_precision_achievable
+tests/test_paper_c_support.py::TestIntegration::test_paper_c_module_imports
+tests/test_paper_d_validation.py::TestSection3Theory::test_schwarzschild_radius_earth
+tests/test_paper_d_validation.py::TestSection3Theory::test_xi_formula_weak_field
+tests/test_paper_d_validation.py::TestSection3Theory::test_xi_at_earth_surface
+tests/test_paper_d_validation.py::TestSection3Theory::test_xi_dimensionless
+tests/test_paper_d_validation.py::TestSection3Theory::test_d_ssz_formula
+tests/test_paper_d_validation.py::TestSection3Theory::test_d_ssz_at_earth_surface
+tests/test_paper_d_validation.py::TestSection3Theory::test_gr_consistency_weak_field
+tests/test_paper_d_validation.py::TestSection3Theory::test_gr_taylor_expansion
+tests/test_paper_d_validation.py::TestSection3Theory::test_delta_d_formula
+tests/test_paper_d_validation.py::TestSection3Theory::test_phase_drift_formula
+tests/test_paper_d_validation.py::TestSection3Theory::test_phase_drift_units
+tests/test_paper_d_validation.py::TestSection3Theory::test_numerical_example_transmon_1mm
+tests/test_paper_d_validation.py::TestSection3Theory::test_numerical_example_transmon_1m
+tests/test_paper_d_validation.py::TestSection3Theory::test_numerical_example_optical_1m
+tests/test_paper_d_validation.py::TestSection4Compensation::test_compensation_formula
+tests/test_paper_d_validation.py::TestSection4Compensation::test_compensation_is_deterministic
+tests/test_paper_d_validation.py::TestSection5Experiments::test_chip_tilt_geometry
+tests/test_paper_d_validation.py::TestSection5Experiments::test_upper_bound_calculation
+tests/test_paper_d_validation.py::TestSection6Statistics::test_power_analysis_optical
+tests/test_paper_d_validation.py::TestSection6Statistics::test_slope_fitting_concept
+tests/test_paper_d_validation.py::TestSection7Feasibility::test_12_oom_gap
+tests/test_paper_d_validation.py::TestSection7Feasibility::test_platform_comparison_frequency_ratio
+tests/test_paper_d_validation.py::TestSection7Feasibility::test_platform_comparison_coherence_ratio
+tests/test_paper_d_validation.py::TestSection7Feasibility::test_platform_comparison_phase_ratio
+tests/test_paper_d_validation.py::TestStrongFieldPredictions::test_strong_field_xi_at_horizon
+tests/test_paper_d_validation.py::TestStrongFieldPredictions::test_strong_field_d_ssz_finite_at_horizon
+tests/test_paper_d_validation.py::TestStrongFieldPredictions::test_gr_diverges_at_horizon
+tests/test_paper_d_validation.py::TestHistoricalValidation::test_gps_time_drift
+tests/test_paper_d_validation.py::TestHistoricalValidation::test_pound_rebka_prediction
+tests/test_paper_d_validation.py::TestLinearScaling::test_linear_in_height
+tests/test_paper_d_validation.py::TestLinearScaling::test_linear_in_omega
+tests/test_paper_d_validation.py::TestLinearScaling::test_linear_in_time
+tests/test_regressions_audit.py::TestR1StrongFieldGradient::test_matches_finite_difference_over_log_grid
+tests/test_regressions_audit.py::TestR1StrongFieldGradient::test_audit_control_value_earth_2rs
+tests/test_regressions_audit.py::TestR1StrongFieldGradient::test_gradient_is_negative_in_strong_field
+tests/test_regressions_audit.py::TestR1StrongFieldGradient::test_old_buggy_value_is_gone
+tests/test_regressions_audit.py::TestR1StrongFieldGradient::test_weak_gradient_unaffected
+tests/test_regressions_audit.py::TestR1StrongFieldGradient::test_gradient_dimension_is_inverse_length
+tests/test_regressions_audit.py::TestR1StrongFieldGradient::test_extreme_radii_no_overflow
+tests/test_regressions_audit.py::TestR1StrongFieldGradient::test_underflow_gives_tiny_gradient_not_garbage
+tests/test_regressions_audit.py::TestR1StrongFieldGradient::test_invalid_inputs_raise
+tests/test_regressions_audit.py::TestR1StrongFieldGradient::test_m_zero_is_flat_by_definition
+tests/test_regressions_audit.py::TestR3TimeDifferenceModelConsistency::test_strongfield_matches_direct_model_difference
+tests/test_regressions_audit.py::TestR3TimeDifferenceModelConsistency::test_strongfield_not_the_weak_closed_form
+tests/test_regressions_audit.py::TestR3TimeDifferenceModelConsistency::test_weakfield_unchanged_closed_form
+tests/test_regressions_audit.py::TestR3TimeDifferenceModelConsistency::test_antisymmetric
+tests/test_regressions_audit.py::TestR3TimeDifferenceModelConsistency::test_equal_radii_is_exactly_zero
+tests/test_regressions_audit.py::TestR3TimeDifferenceModelConsistency::test_one_mm_height_not_zero
+tests/test_regressions_audit.py::TestR3TimeDifferenceModelConsistency::test_height_range_1um_to_1m_monotone
+tests/test_regressions_audit.py::TestR3TimeDifferenceModelConsistency::test_mismatch_uses_stable_difference
+tests/test_regressions_audit.py::TestR3TimeDifferenceModelConsistency::test_phase_drift_per_gate_magnitude
+tests/test_regressions_audit.py::TestR3HighPrecisionOracle::test_high_precision_across_regimes
+tests/test_regressions_r2_models.py::TestR2LegacyAutoDeprecation::test_auto_warns_deprecation
+tests/test_regressions_r2_models.py::TestR2LegacyAutoDeprecation::test_legacy_auto_warns_deprecation
+tests/test_regressions_r2_models.py::TestR2LegacyAutoDeprecation::test_legacy_auto_semantics_unchanged
+tests/test_regressions_r2_models.py::TestR2LegacyAutoDeprecation::test_legacy_auto_jump_is_real_and_quantified
+tests/test_regressions_r2_models.py::TestR2ExplicitModelsNoHiddenSwitching::test_single_formula_across_full_range[weak]
+tests/test_regressions_r2_models.py::TestR2ExplicitModelsNoHiddenSwitching::test_single_formula_across_full_range[strong_A]
+tests/test_regressions_r2_models.py::TestR2ExplicitModelsNoHiddenSwitching::test_single_formula_across_full_range[strong]
+tests/test_regressions_r2_models.py::TestR2ExplicitModelsNoHiddenSwitching::test_single_formula_across_full_range[strong_B]
+tests/test_regressions_r2_models.py::TestR2ExplicitModelsNoHiddenSwitching::test_strong_alias_equals_strong_A
+tests/test_regressions_r2_models.py::TestR2ExplicitModelsNoHiddenSwitching::test_unknown_model_raises
+tests/test_regressions_r2_models.py::TestR2StrongBDocumentedLimits::test_B_limits
+tests/test_regressions_r2_models.py::TestR2StrongBDocumentedLimits::test_A_and_B_differ_away_from_x1
+tests/test_regressions_r2_models.py::TestR2SmoothBridgeHypothesis::test_matches_A_below_and_weak_above
+tests/test_regressions_r2_models.py::TestR2SmoothBridgeHypothesis::test_weak_leading_coefficient_preserved
+tests/test_regressions_r2_models.py::TestR2SmoothBridgeHypothesis::test_c1_smoothness_across_blend
+tests/test_regressions_r2_models.py::TestR2SmoothBridgeHypothesis::test_c2_smoothstep_join_values
+tests/test_regressions_r2_models.py::TestR2SmoothBridgeHypothesis::test_monotonically_decreasing
+tests/test_regressions_r2_models.py::TestR2SmoothBridgeHypothesis::test_difference_function_supports_bridge
+tests/test_regressions_r2_models.py::TestR2GradientModelConsistency::test_gradient_matches_finite_difference[weak]
+tests/test_regressions_r2_models.py::TestR2GradientModelConsistency::test_gradient_matches_finite_difference[strong_A]
+tests/test_regressions_r2_models.py::TestR2GradientModelConsistency::test_gradient_matches_finite_difference[strong_B]
+tests/test_regressions_r2_models.py::TestR2GradientModelConsistency::test_gradient_matches_finite_difference[smooth_bridge_hypothesis]
+tests/test_regressions_r2_models.py::TestR2GradientModelConsistency::test_strong_B_gradient_formula
+tests/test_regressions_r4r5_limits.py::TestR4LimitsModelA::test_A_limits
+tests/test_regressions_r4r5_limits.py::TestR4LimitsModelA::test_B_limits
+tests/test_regressions_r4r5_limits.py::TestR4AsymptoticSeries::test_Xi_A_series
+tests/test_regressions_r4r5_limits.py::TestR4AsymptoticSeries::test_D_A_series
+tests/test_regressions_r4r5_limits.py::TestR4AsymptoticSeries::test_leading_coefficient_factor_2phi_vs_GR
+tests/test_regressions_r4r5_limits.py::TestR4Monotonicity::test_A_strictly_decreasing
+tests/test_regressions_r4r5_limits.py::TestR4Monotonicity::test_generated_tables_exist_and_match_code
+tests/test_regressions_r4r5_limits.py::TestR5SingularityClaimsRemoved::test_no_100_percent_correct_print
+tests/test_regressions_r4r5_limits.py::TestR5SingularityClaimsRemoved::test_README_horizon_claims_corrected
+tests/test_regressions_r4r5_limits.py::TestR5SingularityClaimsRemoved::test_formula_doc_limits_corrected
+tests/test_regressions_r4r5_limits.py::TestR5SingularityClaimsRemoved::test_discrete_doc_no_singularity_free
+tests/test_regressions_r4r5_limits.py::TestR5SingularityClaimsRemoved::test_metric_invariants_script_and_evidence_exist
+tests/test_regressions_r4r5_limits.py::TestR5SingularityClaimsRemoved::test_flat_space_control_via_curvature_module
+tests/test_roadmap_validation.py::TestH1DeterministicPhaseBias::test_phase_drift_formula
+tests/test_roadmap_validation.py::TestH1DeterministicPhaseBias::test_effect_is_deterministic
+tests/test_roadmap_validation.py::TestH1DeterministicPhaseBias::test_phase_drift_scales_with_height
+tests/test_roadmap_validation.py::TestH1DeterministicPhaseBias::test_phase_drift_scales_with_time
+tests/test_roadmap_validation.py::TestH1DeterministicPhaseBias::test_compensation_is_possible
+tests/test_roadmap_validation.py::TestH2CoherentZones::test_zone_width_formula
+tests/test_roadmap_validation.py::TestH2CoherentZones::test_zone_width_scales_with_epsilon
+tests/test_roadmap_validation.py::TestH2CoherentZones::test_cross_zone_bias
+tests/test_roadmap_validation.py::TestH3Scaling::test_accumulated_drift_grows_with_coherence
+tests/test_roadmap_validation.py::TestH3Scaling::test_effect_grows_with_height_difference
+tests/test_roadmap_validation.py::TestH3Scaling::test_macroscopic_height_measurable
+tests/test_roadmap_validation.py::TestWP1Simulation::test_baseline_has_unity_fidelity
+tests/test_roadmap_validation.py::TestWP1Simulation::test_ssz_drift_reduces_fidelity
+tests/test_roadmap_validation.py::TestWP1Simulation::test_compensation_recovers_fidelity
+tests/test_roadmap_validation.py::TestFalsifiability::test_height_dependence_exists
+tests/test_roadmap_validation.py::TestFalsifiability::test_correct_omega_scaling
+tests/test_roadmap_validation.py::TestFalsifiability::test_monotonic_in_height
+tests/test_roadmap_validation.py::TestIntegration::test_roadmap_validation_runs
+tests/test_ssz_physics.py::TestSchwarzschildRadius::test_earth_schwarzschild_radius
+tests/test_ssz_physics.py::TestSchwarzschildRadius::test_sun_schwarzschild_radius
+tests/test_ssz_physics.py::TestSegmentDensityWeakField::test_xi_at_earth_surface
+tests/test_ssz_physics.py::TestSegmentDensityWeakField::test_xi_decreases_with_radius
+tests/test_ssz_physics.py::TestSegmentDensityWeakField::test_xi_positive_definite
+tests/test_ssz_physics.py::TestSegmentDensityWeakField::test_xi_formula_weak_field
+tests/test_ssz_physics.py::TestSegmentGradientWeakField::test_gradient_negative
+tests/test_ssz_physics.py::TestSegmentGradientWeakField::test_gradient_scales_as_1_over_r_squared
+tests/test_ssz_physics.py::TestSSZTimeDilationWeakField::test_time_dilation_at_earth_surface
+tests/test_ssz_physics.py::TestSSZTimeDilationWeakField::test_time_dilation_formula
+tests/test_ssz_physics.py::TestSSZTimeDilationWeakField::test_time_dilation_increases_with_altitude
+tests/test_ssz_physics.py::TestQubitAnalysisWeakField::test_qubit_at_earth_surface
+tests/test_ssz_physics.py::TestQubitAnalysisWeakField::test_qubit_pair_mismatch
+tests/test_ssz_physics.py::TestGoldenRatio::test_phi_value
+tests/test_ssz_physics.py::TestGoldenRatio::test_phi_property
+tests/test_ssz_physics.py::TestStrongFieldRegime::test_strong_field_xi_at_schwarzschild
+tests/test_ssz_physics.py::TestStrongFieldRegime::test_strong_field_d_ssz_finite_at_horizon
+tests/test_ssz_qubit_applications.py::TestSegmentedTimeClock::test_local_segment_time_as_reference
+tests/test_ssz_qubit_applications.py::TestSegmentedTimeClock::test_geometric_timing_for_gates
+tests/test_ssz_qubit_applications.py::TestSegmentedTimeClock::test_two_qubit_gate_sync
+tests/test_ssz_qubit_applications.py::TestDecoherenceGeometry::test_segment_mismatch_causes_decoherence
+tests/test_ssz_qubit_applications.py::TestDecoherenceGeometry::test_coherent_segment_zone
+tests/test_ssz_qubit_applications.py::TestDecoherenceGeometry::test_decoherence_rate_from_gradient
+tests/test_ssz_qubit_applications.py::TestGravitationalDrift::test_nanometer_height_difference
+tests/test_ssz_qubit_applications.py::TestGravitationalDrift::test_qubit_array_drift_map
+tests/test_ssz_qubit_applications.py::TestGravitationalDrift::test_predict_gate_error_from_position
+tests/test_ssz_qubit_applications.py::TestSegmentAwareQEC::test_segment_aware_syndrome_weights
+tests/test_ssz_qubit_applications.py::TestSegmentAwareQEC::test_segment_boundary_detection
+tests/test_ssz_qubit_applications.py::TestQuantumCommunicationSSZ::test_distributed_qubits_sync
+tests/test_ssz_qubit_applications.py::TestQuantumCommunicationSSZ::test_teleportation_timing_correction
+tests/test_ssz_qubit_applications.py::TestQuantumCommunicationSSZ::test_quantum_repeater_chain
+tests/test_ssz_qubit_applications.py::TestFullQubitSystem::test_complete_ssz_qubit_workflow
+tests/test_standalone_scripts.py::test_paper_consistency_script_exit_0
+tests/test_standalone_scripts.py::test_comprehensive_script_exit_0
+tests/test_standalone_scripts.py::test_verify_paper_a_formulas_exit_0
+tests/test_standalone_scripts.py::test_verify_phi_discretization_exit_0
+tests/test_validation.py::TestGRWeakFieldComparison::test_time_dilation_matches_gr_weak_field
+tests/test_validation.py::TestGRWeakFieldComparison::test_gravitational_redshift_formula
+tests/test_validation.py::TestGRWeakFieldComparison::test_pound_rebka_experiment
+tests/test_validation.py::TestGPSValidation::test_gps_satellite_time_dilation
+tests/test_validation.py::TestGPSValidation::test_gps_position_error_without_correction
+tests/test_validation.py::TestAtomicClockValidation::test_nist_optical_clock_experiment
+tests/test_validation.py::TestAtomicClockValidation::test_tokyo_skytree_experiment
+tests/test_validation.py::TestTheoreticalConsistency::test_xi_and_time_dilation_consistency
+tests/test_validation.py::TestTheoreticalConsistency::test_gradient_consistency
+tests/test_validation.py::TestTheoreticalConsistency::test_energy_conservation_proxy
+tests/test_validation.py::TestTheoreticalConsistency::test_schwarzschild_limit
+tests/test_validation.py::TestQubitValidation::test_qubit_height_sensitivity
+tests/test_validation.py::TestQubitValidation::test_pair_mismatch_scaling
+tests/test_validation.py::TestQubitValidation::test_decoherence_physical_bounds
+tests/test_validation.py::TestDimensionalAnalysis::test_xi_dimensionless
+tests/test_validation.py::TestDimensionalAnalysis::test_gradient_has_correct_units
+tests/test_validation.py::TestDimensionalAnalysis::test_time_offset_has_correct_units
+
+=============================== warnings summary ===============================
+comprehensive_test.py:28
+  /home/error/physics/ssz-qubits/comprehensive_test.py:28: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi = xi_segment_density(R_EARTH)
+
+comprehensive_test.py:29
+  /home/error/physics/ssz-qubits/comprehensive_test.py:29: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    grad = xi_gradient(R_EARTH)
+
+ssz_qubits.py:410: 33 warnings
+  /home/error/physics/ssz-qubits/ssz_qubits.py:410: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi = xi_segment_density(r, M, regime=regime)
+
+comprehensive_test.py:31
+  /home/error/physics/ssz-qubits/comprehensive_test.py:31: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    dD = ssz_time_dilation_difference(R_EARTH, R_EARTH + 1)
+
+ssz_qubits.py:587: 16 warnings
+  /home/error/physics/ssz-qubits/ssz_qubits.py:587: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi_a = xi_segment_density(r_a, M)
+
+ssz_qubits.py:588: 16 warnings
+  /home/error/physics/ssz-qubits/ssz_qubits.py:588: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi_b = xi_segment_density(r_b, M)
+
+ssz_qubits.py:594: 16 warnings
+  /home/error/physics/ssz-qubits/ssz_qubits.py:594: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    delta_d = abs(ssz_time_dilation_difference(r_a, r_b, M))
+
+ssz_qubits.py:544
+  /home/error/physics/ssz-qubits/ssz_qubits.py:544: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi = xi_segment_density(r, M)
+
+ssz_qubits.py:546
+  /home/error/physics/ssz-qubits/ssz_qubits.py:546: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    gradient = xi_gradient(r, M)
+
+ssz_paper_a_support.py:263: 14 warnings
+  /home/error/physics/ssz-qubits/ssz_paper_a_support.py:263: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    delta_D_closed = ssz_time_dilation_difference(r1, r2, M_EARTH)
+
+ssz_entanglement.py:75
+ssz_entanglement.py:75
+ssz_entanglement.py:75
+  /home/error/physics/ssz-qubits/ssz_entanglement.py:75: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    delta_D = ssz_time_dilation_difference(r_a, r_b, M)
+
+ssz_entanglement.py:188
+ssz_entanglement.py:188
+ssz_entanglement.py:188
+  /home/error/physics/ssz-qubits/ssz_entanglement.py:188: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    delta_D = abs(ssz_time_dilation_difference(r1, r2, M))
+
+ssz_qubits.py:818
+ssz_qubits.py:818
+ssz_qubits.py:818
+ssz_qubits.py:818
+  /home/error/physics/ssz-qubits/ssz_qubits.py:818: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi = xi_segment_density(r, M)
+
+ssz_qubits.py:826
+ssz_qubits.py:826
+ssz_qubits.py:826
+ssz_qubits.py:826
+  /home/error/physics/ssz-qubits/ssz_qubits.py:826: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    grad = abs(xi_gradient(r, M))
+
+test_paper_consistency.py:38
+  /home/error/physics/ssz-qubits/test_paper_consistency.py:38: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    xi_surface = xi_segment_density(R_EARTH, M_EARTH)
+
+test_paper_consistency.py:63
+  /home/error/physics/ssz-qubits/test_paper_consistency.py:63: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    grad = xi_gradient(R_EARTH, M_EARTH)
+
+test_paper_consistency.py:78
+  /home/error/physics/ssz-qubits/test_paper_consistency.py:78: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    delta_D = ssz_time_dilation_difference(r1, r2, M_EARTH)
+
+test_paper_consistency.py:177
+  /home/error/physics/ssz-qubits/test_paper_consistency.py:177: DeprecationWarning: regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at r/r_s=100). Use an explicit model: 'weak', 'strong_A', 'strong_B' or — as labeled research hypothesis — 'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.
+    delta_D_1mm = abs(ssz_time_dilation_difference(R_EARTH, R_EARTH + 1e-3, M_EARTH))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+290 tests collected in 0.39s

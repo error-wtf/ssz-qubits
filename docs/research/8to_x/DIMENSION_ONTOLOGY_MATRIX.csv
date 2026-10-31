@@ -1,0 +1,10 @@
+candidate,source_space,target,legitimate_mechanism,critical_distinction,status_per_corpus,reference
+Superstring-Lichtkegel,D=10 Zielraum,8 transversale Moden,Lichtkegelwahl + Virasoro-Constraints,KEINE 8→6-Qubit-Reduktion; Modenzahl ≠ Zustandszahl,PROVEN_EXTERNAL (Standardliteratur; im Korpus nur als Abgrenzung),Polchinski Vol.1 Ch.2
+Relativistisches Teilchen,8D Phasenraum (x,p),6D auf Massenschale,Massenbedingung + Reparametrisierung,Eliminiert keinen Raum; Gauge/Constraint statt Dimensionenverlust,PROVEN_EXTERNAL (Dirac 1964 Lectures),Dirac Lectures on QM
+3 Qubits Spinaddition,C2⊗C2⊗C2≅C8,C6⊕C2,((1/2⊕1/2)⊗1/2) → Drehimpulskopplung,Blockzerlegung der Dynamik ≠ Projektion/Elimination,PROVEN_IN_MODEL (symbolisch+numerisch; 307-Testsuite),Nielsen&Chuang §2.6
+3-Qubit Bus 8→6 effektiv,C8,C6,Bus-Blockade + Schur/SW-Näherung,Eliminiert virtuelle Population NICHT Information; Näherung bricht nahe Resonanz,PROVEN_IN_MODEL (bus_effective; SW-Fehler O(g²), Resonanz→inf),test_quantum_bus.py
+3-Qubit Bus 8→2 effektiv,C8,C2,Selektion/Encoding/Postselektion,Nicht reversibel für beliebige Eingänge; Kosten explizit machen,OPEN (nur mit Informationsbilanz; Korpus: verlustfrei ausgeschlossen),SSZ_QUBUS_CONSTRAINTS.md
+8 Qubits,C2^8,z.B. C4,Kodierung + Entropieabgabe,8 Qubits ≠ 8 Zustände — anderer Zweig der Taxonomie,OUT_OF_SCOPE hier,Nielsen&Chuang
+Feldtheorie Constraints,8 kanonische Größen,6 oder 4,first-/second-class Constraints (Dirac-Zählung),Erfordert vollständige Constraint-Analyse; im SSZ-Korpus nicht vorhanden,RESEARCH_OPEN (COMMON_ACTION_GAP f3/f4; AX-M3),Dirac Lectures
+SSZ skalare Segmentierung,C8 (Q1-Bus),keine neue Zerlegung,D = D(r_i) wirkt nur diagonal → lokale Phase,Keine nichttriviale Erhaltungsgröße; 6⊕2 nur bei D_A=D_B (Permutation),REFUTED_IN_MODEL (Q_SSZ negativ; Mischterm=Zeitdilatation 2φ ausgeschlossen),SSZ_SYMMETRY_PROBE_Q.md + SSZ_SINGLET_MIXING_OBSERVABLE.md
+Photonen-Kanal-Illusion,C8,effektiv 2,nur-photonischer Detektor an M,Messblindheit ist Kanal- nicht Zustandseigenschaft; beide Richtungen der Ontologie verboten,PROVEN_IN_MODEL (photon_channel_demo; 4 Tests),photon_channel_demo.py
