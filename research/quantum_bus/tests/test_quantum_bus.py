@@ -66,19 +66,22 @@ class TestExplicit6Plus2:
         assert np.max(np.abs(U.conj().T @ U - np.eye(8))) < 1e-12
 
     def test_bell_definition(self):
-        """U|00m> muss |T+>|m> sein (Konvention T+ = |00>)."""
+        """U|a=0,m=0,b=0⟩ = |T+>|m=0⟩ (Konvention T+ = |00⟩ des Paares A,B)."""
         U = rd.bell_unitary()
-        psi = U @ np.eye(8)[0b000]  # |00 m=0>
+        psi = U @ np.eye(8)[0b000]  # |a=0, m=0, b=0⟩ → Paar |00⟩
         assert abs(psi[0] - 1.0) < 1e-12            # Zeile 0 = |T+ m=0>
-        psi = U @ np.eye(8)[0b001]  # |00 m=1>
-        assert abs(psi[1] - 1.0) < 1e-12            # Zeile 1 = |T+ m=1>
+        psi = U @ np.eye(8)[0b001]  # |a=0, m=0, b=1⟩ → Paar |01⟩
+        assert abs(psi[2] - 1 / np.sqrt(2)) < 1e-12  # |T0 m=0|-Anteil
+        assert abs(psi[6] - 1 / np.sqrt(2)) < 1e-12  # |S m=0|-Anteil
 
     def test_singlet_row(self):
-        """U|01 m=0> = (|T0>|0> − |S>|0>)/√2 — S-Anteil liegt im 2er-Block."""
+        """U|a=1,m=0,b=0⟩ = (|T0⟩ − |S⟩)|m=0⟩/√2 — S-Anteil im 2er-Block.
+        (FIX 31.10.: Input korrekt auf Paar (A,B) gestellt; vorher
+        (A,M)-fehllabeliert — B-Anteil von |10⟩ des Paares ist b=0 mit a=1.)"""
         U = rd.bell_unitary()
-        psi = U @ np.eye(8)[0b010]  # |01 m=0>
+        psi = U @ np.eye(8)[0b100]  # |a=1, m=0, b=0⟩ → Paar |10⟩
         assert abs(psi[2] - 1 / np.sqrt(2)) < 1e-12   # |T0 m=0>
-        assert abs(psi[6] - 1 / np.sqrt(2)) < 1e-12   # |S m=0>
+        assert abs(psi[6] + 1 / np.sqrt(2)) < 1e-12   # −|S m=0>
 
     def test_generic_h_not_block_diagonal(self):
         """NEGATIVKONTROLLE: generischer Austauschbus koppelt S⊗M an T⊗M —
@@ -88,11 +91,11 @@ class TestExplicit6Plus2:
         assert np.linalg.norm(B62) > 1e-3
 
     def test_symmetric_ising_IS_block_diagonal(self):
-        """Nur wenn die Symmetrie es verlangt: Ising auf dem Paar lässt den
-        Singulett-Sektor invariant → B62 = 0 exakt."""
+        """Nur wenn die Symmetrie es verlangt: Ising auf dem Paar (A,B) —
+        Z_A⊗I_M⊗Z_B — lässt den Singulett-Sektor invariant → B62 = 0 exakt.
+        (FIX 31.10.: vorher Z⊗Z⊗I = (A,M)-Ising — fehlgelabelt.)"""
         J = 0.7
-        ZAB = np.kron(mb.Z, mb.Z)
-        H = J * np.kron(ZAB, mb.I2) / 4.0
+        H = J * np.kron(np.kron(mb.Z, mb.I2), mb.Z) / 4.0
         _, _, B62, _ = rd.block_decompose(H)
         assert np.max(np.abs(B62)) < 1e-12
 

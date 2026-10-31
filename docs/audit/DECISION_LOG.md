@@ -183,3 +183,23 @@ Evidenzklassen: `proven_bug` | `documented_inconsistency` | `model_hypothesis` |
   Segmentprinzipien). → SSZ_SINGLET_MIXING_OBSERVABLE.md.
 - **Tests:** 6 Fälle (Mischmatrixelement, T±-Null, Rabi-Dynamik, 2φ-Verhältnis,
   kein Bus-Anteil). Suite: 290 passed, Exit 0.
+
+## D9 — Doppeltest 8→x + reduction.py-Ordnungsfix (31.10.)
+- **Befund 1 (proven_bug):** reduction.bell_unitary dokumentierte Bell auf
+  (A,B), bellte faktisch (A,M) (kron(B,I2) in Q1-Ordnung); P2 war der
+  (A,M)-Singulett-Projektor (Indizes {2,3,4,5}), ‖[H_sym,P2]‖=0.80. Alte
+  Tests konsistent fehlgelabelt (Ising-Test baute (A,M)-Ising) → grün.
+- **Fix:** explizite Q1-Index-Platzierung; P2 ≡ singlet_projector_full
+  (starker Konsistenztest); Header-Ordnungskommentar korrigiert; zwei
+  Test-Inputs auf dokumentierte Semantik umgestellt (Semantik war falsch,
+  nicht die Assertions abgeschwächt).
+- **Befund 2:** Doppeltest A: H-RED REFUTED_IN_MODEL (kein Constraint,
+  P2·X_A·P6=1.41, Leakage mirror 1.9e-30 vs. differential 0.133). B: H-OBS
+  PROVEN_IN_MODEL (Rang 2/64, Kern 62, Algebra dim 4, Zeitkonversion
+  0.0133 vs. exakt 0). C: Faking demonstriert (Fidelity 0.642 bei konstanter
+  M-Statistik); Abschlussfrage: operational unterscheidbar nur MIT
+  Zusatzressource (AB-Zugriff oder kontrollierte Kopplung).
+- **Alternativen:** P2-Definition in (A,B,M)-Ordnung belassen und nur Doku
+  anpassen — verworfen (tests mischen Module; paketweite Ordnung ist
+  (A,M,B); Wurzel beheben statt Symptom).
+- **Tests:** 14 neue Doppeltest-Fälle; Suite 322 passed, Exit 0.

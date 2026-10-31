@@ -30,32 +30,37 @@ def kron_all(ops):
     return out
 
 
-# Qubit-Ordnung: (A, B, M)  → Basisindex |abm> = a·4 + b·2 + m  (a,b,m ∈ {0,1})
+# Qubit-Ordnung (PAKETWEIT, FIX 31.10.): (A, M, B) → Basisindex a·4 + m·2 + b.
+# (Vorher hier (A, B, M) dokumentiert — inkompatibel zu models/probe/mixing;
+# bell_unitary bellte dadurch faktisch (A,M). Jetzt durchgängig (A,M,B).)
 
 def bell_unitary():
-    """U mit (U⊗Order) |abm>-Basis → geordnete Basis [T+M, T0M, T−M, SM] (6)
-    gefolgt von [S m=0, S m=1] (2).
+    """U in Q1-Ordnung (A, M, B), Index = a·4+m·2+b: bellt das PAAR (A,B),
+    M bleibt Flagge. U|abm⟩ = |Bell(ab)⟩⊗|m⟩, Zielordnung
+    [T+0, T+1, T00, T01, T−0, T−1, S0, S1] (Bell-Ebene × M).
 
-    Konkret: erst Bell-Transformation auf (A,B): 
+    Konkret: Bell-Transformation auf (a,b) der Q1-Indizes:
       |00> → |T+>, |11> → |T−>, (|01>+|10>)/√2 → |T0>, (|01>−|10>)/√2 → |S>.
-    Dann Permutation der 8 Basisvektoren auf die Reihenfolge
-    [T+0,T+1,T00,T01,T−0,T−1, S0,S1] (m = M-Zustand).
+    FIX (31.10., Doppeltest-A2): früher kron(B, I2) — das bellte faktisch
+    (A,M) statt (A,B) und P2 war der (A,M)-Singulett-Projektor. Jetzt
+    explizite Index-Platzierung; P2 ≡ singlet_projector_full (testfixiert).
     """
-    # Bell-Transformationsmatrix B mit B|ab> = Bell-Zustand:
-    # Spalten = Bilder von |00>,|01>,|10>,|11> in der Basis (T+,T0,T−,S):
-    # |00> → T+ ; |01> → (T0+S)/√2 ; |10> → (T0−S)/√2 ; |11> → T−
+    # Bell-Spalten: Bilder von |00>,|01>,|10>,|11> in (T+,T0,T−,S):
     B = np.array([
         [1, 0,          0,         0],
         [0, 1/np.sqrt(2), 1/np.sqrt(2), 0],
         [0, 0,          0,         1],
         [0, 1/np.sqrt(2), -1/np.sqrt(2), 0],
     ], dtype=complex)
-    U_full = np.kron(B, I2)   # auf (A,B) ⊗ M, Basis |abm>
-    # Permutation: aktuelle Ordnung (Bell-Index b ∈ 0..3 [T+,T0,T−,S]) × m:
-    # Zielreihenfolge: [b=0,1,2 (Triplett) mit m=0,1] + [b=3 (S) mit m=0,1]
-    perm_src = [0 * 2 + 0, 0 * 2 + 1, 1 * 2 + 0, 1 * 2 + 1,
-                2 * 2 + 0, 2 * 2 + 1, 3 * 2 + 0, 3 * 2 + 1]
-    U = U_full[perm_src, :]     # Zeilen umordnen = Zielbasis
+    U = np.zeros((8, 8), dtype=complex)
+    for a in range(2):
+        for b in range(2):
+            for m in range(2):
+                src = a * 4 + m * 2 + b
+                for k in range(4):
+                    amp = B[k, a * 2 + b]
+                    if amp != 0:
+                        U[k * 2 + m, src] += amp   # Ziel: Ebene k × m
     return U
 
 

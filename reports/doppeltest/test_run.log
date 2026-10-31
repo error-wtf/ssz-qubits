@@ -1,0 +1,21 @@
+============================= test session starts ==============================
+platform linux -- Python 3.14.8, pytest-9.2.0, pluggy-1.7.0 -- /home/error/physics/ssz-qubits-audit-20261031/venv314/bin/python
+rootdir: /home/error/physics/ssz-qubits
+collecting ... collected 14 items
+
+research/quantum_bus/tests/test_doppeltest_8tox.py::TestA_Reduction::test_projectors_rank_and_consistency PASSED [  7%]
+research/quantum_bus/tests/test_doppeltest_8tox.py::TestA_Reduction::test_commutator_mirror_vs_differential PASSED [ 14%]
+research/quantum_bus/tests/test_doppeltest_8tox.py::TestA_Reduction::test_no_constraint_restriction PASSED [ 21%]
+research/quantum_bus/tests/test_doppeltest_8tox.py::TestA_Reduction::test_leakage_mirror_zero_differential_positive PASSED [ 28%]
+research/quantum_bus/tests/test_doppeltest_8tox.py::TestA_Reduction::test_four_way_classification PASSED [ 35%]
+research/quantum_bus/tests/test_doppeltest_8tox.py::TestB_Observability::test_indistinguishable_family PASSED [ 42%]
+research/quantum_bus/tests/test_doppeltest_8tox.py::TestB_Observability::test_supplementary_channel_distinguishes PASSED [ 50%]
+research/quantum_bus/tests/test_doppeltest_8tox.py::TestB_Observability::test_observation_map_rank_kernel_algebra PASSED [ 57%]
+research/quantum_bus/tests/test_doppeltest_8tox.py::TestB_Observability::test_time_conversion_of_blindness PASSED [ 64%]
+research/quantum_bus/tests/test_doppeltest_8tox.py::TestB_Observability::test_tomography_dimensions PASSED [ 71%]
+research/quantum_bus/tests/test_doppeltest_8tox.py::TestC_DirectComparison::test_restricted_channel_fakes_reduction PASSED [ 78%]
+research/quantum_bus/tests/test_doppeltest_8tox.py::TestC_DirectComparison::test_resources_registered PASSED [ 85%]
+research/quantum_bus/tests/test_doppeltest_8tox.py::TestC_DirectComparison::test_ssz_gr_ratio_still_2phi PASSED [ 92%]
+research/quantum_bus/tests/test_doppeltest_8tox.py::TestVerdict::test_operational_separability_verdict PASSED [100%]
+
+============================== 14 passed in 0.39s ==============================
