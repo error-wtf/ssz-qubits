@@ -39,6 +39,22 @@ PHI = (1 + np.sqrt(5)) / 2  # φ ≈ 1.618033988749895
 ALPHA_SSZ = 1.0           # Coupling constant for segment density
 KAPPA_SSZ = 1e-9          # Refractive index coupling (dimensionless)
 
+# -----------------------------------------------------------------------------
+# MODEL TAXONOMY (repair 2026-10-31, audit R2):
+#   'weak'                     Xi = 1/(2x)                      [established]
+#   'strong_A' (alias 'strong') Xi = 1 - exp(-phi/x)            [established]
+#   'strong_B'                 Xi = 1 - exp(-phi*x)             [documented variant]
+#   'smooth_bridge_hypothesis' C2 quintic blend A->weak on [BLEND_X0, BLEND_X1]
+#                              RESEARCH HYPOTHESIS (construction, NOT a field-
+#                              equation solution; never used by default).
+#   'auto' / 'legacy_auto'     historical DISCONTINUOUS switch at x=100
+#                              (DEPRECATED — kept for old code, warns).
+# The legacy switch jumps at x=100: Xi(100)=0.01605014135 vs
+# Xi(100+eps)=0.00499999995 (documented in tests/test_regressions_r2_models.py).
+# -----------------------------------------------------------------------------
+BLEND_X0 = 50.0           # blend start [x = r/r_s] (construction choice — OPEN_MODEL_CHOICE)
+BLEND_X1 = 150.0          # blend end   [x = r/r_s] (construction choice — OPEN_MODEL_CHOICE)
+
 # Didactic scaling factor (S=1e8) used ONLY in Paper B simulations
 # to visualize SSZ effects above noise floors.
 # Physical ΔΦ is S times smaller; set S=1 for real-world predictions.
@@ -143,6 +159,108 @@ def _validate_mass(M: float) -> float:
     return float(M)
 
 
+def _canonical_model(regime: str) -> str:
+    """Map public regime strings to canonical model names (audit R2).
+
+    'auto' and 'legacy_auto' emit a DeprecationWarning: the historical
+    auto-selection is discontinuous at r/r_s = 100 and must not be used
+    implicitly in new code. Explicit models: 'weak', 'strong_A' (alias
+    'strong'), 'strong_B', 'smooth_bridge_hypothesis'.
+    """
+    if regime in ('auto', 'legacy_auto'):
+        warnings.warn(
+            "regime='auto'/'legacy_auto' is DEPRECATED (discontinuous at "
+            "r/r_s=100). Use an explicit model: 'weak', 'strong_A', "
+            "'strong_B' or — as labeled research hypothesis — "
+            "'smooth_bridge_hypothesis'. See docs/audit/ISSUE_MATRIX.md R2.",
+            DeprecationWarning,
+            stacklevel=3,
+        )
+        return 'legacy_auto'
+    if regime == 'strong':
+        return 'strong_A'
+    if regime in ('weak', 'strong_A', 'strong_B', 'smooth_bridge_hypothesis'):
+        return regime
+    raise ValueError(
+        f"Unknown regime/model {regime!r}. Valid: 'weak', 'strong_A', 'strong', "
+        "'strong_B', 'smooth_bridge_hypothesis', 'legacy_auto' (deprecated), "
+        "'auto' (deprecated alias of legacy_auto).")
+
+
+def _smoothstep_quintic(x: np.ndarray) -> np.ndarray:
+    """C2-continuous quintic smoothstep on [BLEND_X0, BLEND_X1] (0 outside)."""
+    t = np.clip((x - BLEND_X0) / (BLEND_X1 - BLEND_X0), 0.0, 1.0)
+    return t**3 * (10.0 - 15.0 * t + 6.0 * t**2)
+
+
+def _smoothstep_quintic_dx(x: np.ndarray) -> np.ndarray:
+    """d(smoothstep)/dx — 30 t²(1−t)²/(X1−X0), zero outside the blend band."""
+    t = np.clip((x - BLEND_X0) / (BLEND_X1 - BLEND_X0), 0.0, 1.0)
+    return 30.0 * t**2 * (1.0 - t)**2 / (BLEND_X1 - BLEND_X0)
+
+
+def _xi_by_model(r: float, r_s: float, model: str) -> float:
+    """Xi(r) for a canonical model — single closed form per model."""
+    x = r / r_s
+    if model == 'weak':
+        return r_s / (2.0 * r)
+    if model == 'strong_A':
+        # 1 - exp(-phi/x), expm1-stable
+        return -np.expm1(-PHI / x)
+    if model == 'strong_B':
+        # 1 - exp(-phi*x), expm1-stable
+        return -np.expm1(-PHI * x)
+    if model == 'smooth_bridge_hypothesis':
+        # RESEARCH HYPOTHESIS: C2 blend (1-s)*A + s*weak. Construction, not
+        # physics: no field equation derives this (ISSUE_MATRIX R2).
+        s = float(_smoothstep_quintic(x))
+        xi_a = -np.expm1(-PHI / x)
+        xi_w = 1.0 / (2.0 * x)
+        return (1.0 - s) * xi_a + s * xi_w
+    raise ValueError(f"No closed form for model {model!r}")
+
+
+def _u_exponent(model: str, r: float, r_s: float):
+    """Exponent u(r) in Xi = 1 − exp(−u(r)) for the exponential models
+    (strong_A: u = φ r_s/r; strong_B: u = φ r/r_s). None otherwise."""
+    if model == 'strong_A':
+        return PHI * r_s / r
+    if model == 'strong_B':
+        return PHI * r / r_s
+    return None
+
+
+def _du_analytic(model: str, r1: float, r2: float, r_s: float) -> float:
+    """Exact u(r1) − u(r2) — analytic form, no cancellation of nearly-equal u."""
+    if model == 'strong_A':
+        return PHI * r_s * (r2 - r1) / (r1 * r2)
+    if model == 'strong_B':
+        return PHI * (r1 - r2) / r_s
+    raise ValueError(f"No analytic u-difference for model {model!r}")
+
+
+def _dxi_by_model(r: float, r_s: float, model: str) -> float:
+    """Exact dXi/dr for a canonical model — SAME model API as _xi_by_model."""
+    x = r / r_s
+    if model == 'weak':
+        return -r_s / (2.0 * r**2)
+    if model == 'strong_A':
+        return -(PHI * r_s / r**2) * np.exp(-PHI / x)
+    if model == 'strong_B':
+        return (PHI / r_s) * np.exp(-PHI * x)
+    if model == 'smooth_bridge_hypothesis':
+        # dXi/dr = (1/r_s) * [ (1-s)*A_x + s*W_x + s_x*(W - A) ]
+        t = float(np.clip((x - BLEND_X0) / (BLEND_X1 - BLEND_X0), 0.0, 1.0))
+        s = t**3 * (10.0 - 15.0 * t + 6.0 * t**2)
+        s_x = 30.0 * t**2 * (1.0 - t)**2 / (BLEND_X1 - BLEND_X0)
+        a_x = -(PHI / x**2) * np.exp(-PHI / x)
+        w_x = -1.0 / (2.0 * x**2)
+        xi_a = -np.expm1(-PHI / x)
+        xi_w = 1.0 / (2.0 * x)
+        return ((1.0 - s) * a_x + s * w_x + s_x * (xi_w - xi_a)) / r_s
+    raise ValueError(f"No closed derivative for model {model!r}")
+
+
 def xi_segment_density(r: float, M: float = M_EARTH, regime: str = 'auto') -> float:
     """
     Calculate SSZ segment density Xi(r) at radius r from mass M.
@@ -193,23 +311,17 @@ def xi_segment_density(r: float, M: float = M_EARTH, regime: str = 'auto') -> fl
     r_s = schwarzschild_radius(M)
     if r_s == 0.0:  # M = 0: flat spacetime by definition
         return 0.0
-    ratio = r / r_s
-    
-    # Auto-select regime based on r/r_s ratio
-    if regime == 'auto':
-        if ratio > 100:  # Weak field (Earth, Solar System)
-            regime = 'weak'
-        else:  # Strong field (near compact objects)
-            regime = 'strong'
-    
-    if regime == 'weak':
-        # WEAK FIELD: Xi(r) = r_s / (2r)
-        # This gives measurable effects on Earth
-        return r_s / (2 * r)
-    else:
-        # STRONG FIELD (Saturation): Xi(r) = 1 - exp(-phi * r_s / r)
-        # This is singularity-free for black holes
+
+    model = _canonical_model(regime)
+
+    if model == 'legacy_auto':
+        # DEPRECATED historical semantics (kept bit-compatible for old code):
+        ratio = r / r_s
+        if ratio > 100:
+            return r_s / (2 * r)
         return 1.0 - np.exp(-PHI * r_s / r)
+
+    return _xi_by_model(r, r_s, model)
 
 
 def xi_gradient(r: float, M: float = M_EARTH, regime: str = 'auto') -> float:
@@ -256,18 +368,17 @@ def xi_gradient(r: float, M: float = M_EARTH, regime: str = 'auto') -> float:
     if r_s == 0.0:  # M = 0: flat spacetime by definition
         return 0.0
 
-    ratio = r / r_s
+    model = _canonical_model(regime)
 
-    if regime == 'auto':
-        regime = 'weak' if ratio > 100 else 'strong'
-
-    if regime == 'weak':
-        # WEAK FIELD: dXi/dr = -r_s / (2r^2)
-        return -r_s / (2 * r**2)
-    else:
-        # STRONG FIELD (Ansatz A): dXi/dr = -(phi*r_s/r^2) * exp(-phi*r_s/r)
-        # exp underflows to 0.0 for tiny r — gradient stays finite.
+    if model == 'legacy_auto':
+        # DEPRECATED historical semantics (kept bit-compatible): weak formula
+        # above 100 r_s, Ansatz-A derivative below (REPAIRED in R1).
+        ratio = r / r_s
+        if ratio > 100:
+            return -r_s / (2 * r**2)
         return -(PHI * r_s / r**2) * np.exp(-PHI * r_s / r)
+
+    return _dxi_by_model(r, r_s, model)
 
 
 def ssz_time_dilation(r: float, M: float = M_EARTH, regime: str = 'auto') -> float:
@@ -353,44 +464,38 @@ def ssz_time_dilation_difference(r1: float, r2: float, M: float = M_EARTH,
     if r_s == 0.0:  # M = 0: flat spacetime
         return 0.0
 
-    ratio1 = r1 / r_s
-    ratio2 = r2 / r_s
-    if regime == 'auto':
-        eff1 = 'weak' if ratio1 > 100 else 'strong'
-        eff2 = 'weak' if ratio2 > 100 else 'strong'
+    model = _canonical_model(regime)
+
+    # DEPRECATED historical semantics: per-radius weak/strong-A switch
+    if model == 'legacy_auto':
+        eff1 = 'weak' if (r1 / r_s) > 100 else 'strong_A'
+        eff2 = 'weak' if (r2 / r_s) > 100 else 'strong_A'
     else:
-        eff1 = eff2 = regime
+        eff1 = eff2 = model
 
     # Weak model at both radii: exact stable rational closed form
     if eff1 == 'weak' and eff2 == 'weak':
         return 2 * r_s * (r1 - r2) / ((2 * r1 + r_s) * (2 * r2 + r_s))
 
-    # Xi values per model (strong via expm1 — stable for small u)
-    def _xi(r, eff):
-        if eff == 'weak':
-            return r_s / (2.0 * r)
-        u = PHI * r_s / r
-        return -np.expm1(-u)
-
-    xi1 = _xi(r1, eff1)
-    xi2 = _xi(r2, eff2)
-
-    # Stable ΔΞ ≡ Xi2 − Xi1 (ΔD = D1 − D2 = ΔΞ / ((1+Xi1)(1+Xi2)) for BOTH
-    # branches, since D = 1/(1+Xi) there).
-    if eff1 == 'strong' and eff2 == 'strong':
-        u1 = PHI * r_s / r1
-        u2 = PHI * r_s / r2
-        # u1 − u2 = phi*r_s*(r2−r1)/(r1*r2)  (analytisch — keine Float-
-        #  Differenz zweier fast gleicher u; exakt für beliebig kleines Δr)
-        du = PHI * r_s * (r2 - r1) / (r1 * r2)
+    # Same exponential model (A or B) at both radii: Xi = 1 - exp(-u(r)),
+    # stable expm1 evaluation with ANALYTIC u-difference (no float
+    # cancellation of nearly-equal u values).
+    u1 = _u_exponent(eff1, r1, r_s)
+    if eff1 == eff2 and u1 is not None:
+        du = _du_analytic(eff1, r1, r2, r_s)
         # Xi2 − Xi1 = exp(-u1) − exp(-u2) = -exp(-u1) * expm1(u1 − u2)
         d_xi = -np.exp(-u1) * np.expm1(du)
-    else:
-        # mixed regimes: no harmful cancellation at the boundary scale
-        # (Xi ~ 5e-3, ΔXi ~ dXi/dr * Δr >> eps * Xi)
-        d_xi = xi2 - xi1
+        u2 = u1 - du
+        xi1 = -np.expm1(-u1)
+        xi2 = -np.expm1(-u2)
+        return d_xi / ((1.0 + xi1) * (1.0 + xi2))
 
-    return d_xi / ((1.0 + xi1) * (1.0 + xi2))
+    # General path: mixed regimes (deprecated legacy auto at the 100 r_s
+    # boundary) or the bridge hypothesis. No harmful cancellation at the
+    # boundary scale (Xi ~ 5e-3..1e-2, ΔXi ~ dXi/dr * Δr >> eps * Xi).
+    xi1 = _xi_by_model(r1, r_s, eff1)
+    xi2 = _xi_by_model(r2, r_s, eff2)
+    return (xi2 - xi1) / ((1.0 + xi1) * (1.0 + xi2))
 
 
 def time_difference_per_second(r1: float, r2: float, M: float = M_EARTH) -> float:

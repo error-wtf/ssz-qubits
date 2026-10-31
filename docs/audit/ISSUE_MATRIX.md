@@ -13,7 +13,7 @@ in dieser Baseline. Jede Zeile wird bei Reparatur mit Regressionstest-Referenz e
 | ID | Befund | Klasse | Schwere | Status | Evidenz / Regression |
 |---|---|---|---|---|---|
 | R1 | Strong-Field-Ableitung `xi_gradient` falsch: implementiert `+(phi/r_s)*exp(-phi*r_s/r)`, korrekt für Modell A: `-(phi*r_s/r**2)*exp(-phi*r_s/r)`. Erdmasse @2r_s: alt +81.2310 m⁻¹, korrekt −20.3078 m⁻¹ | proven_bug | S1 | **REPAIRED** (R1+R3-Commit) | AUDIT §1; mpmath-Nachrechnung exakt; Regression: `tests/test_regressions_audit.py::TestR1StrongFieldGradient` (10 Fälle, RED 13 failed → GREEN 20 passed, Suite 204/204) |
-| R2 | Regime-Auto-Umschaltung x≤100/x>100 unstetig (Xi 0.01605 → 0.005; Sprung in D). Keine Hermite im Kerncode; Doku beschreibt anderes Modell | documented_inconsistency | S2 | OPEN | AUDIT §2; Regression: Stetigkeits-/Modelltrenntest |
+| R2 | Regime-Auto-Umschaltung x≤100/x>100 unstetig (Xi 0.01605 → 0.005; Sprung in D). Keine Hermite im Kerncode; Doku beschreibt anderes Modell | documented_inconsistency | S2 | **REPAIRED** (explizite Modelle weak/strong_A/strong_B/smooth_bridge_hypothesis; auto→legacy_auto mit DeprecationWarning; Brücke als gelabelte HYPOTHESE, nie Default) | AUDIT §2; Regression: `tests/test_regressions_r2_models.py` (23 Fälle, RED 12 failed → GREEN); Blend-Grenzen [50,150] = OPEN_MODEL_CHOICE |
 | R3 | `ssz_time_dilation_difference` nutzt überall D_weak; inkonsistent zur `ssz_time_dilation`-Auswahl (r_s/2r_s: −0.13333 vs −0.08818). 1 mm → 0.0 durch Auslöschung statt 1.0926e−19 | proven_bug | S1 | **REPAIRED** (R1+R3-Commit; regime-Parameter + expm1-stabile ΔD + Mismatch nutzt stabile Funktion) | AUDIT §3,§5; Regression: `TestR3TimeDifferenceModelConsistency` + `TestR3HighPrecisionOracle` (mpmath) |
 | R4 | Grenzwerte/Tabellen: Xi-Grenzwerte vertauscht behauptet; D_A-Taylor fehlt Term; Monotonie falsch behauptet; A/B-Formeln vermischt (`exp(-phi*x)` vs `exp(-phi/x)`) | documented_inconsistency | S3 | OPEN | AUDIT §4, φ-Abschnitt; Regression: Tabellen aus Code generiert |
 | R5 | Singularitäts-/Regularitätsbehauptungen aus D>0 abgeleitet; GR-Horizont als „physikalische Singularität" bezeichnet | unverified_physical_claim (+ external_literature_fact für Martel&Poisson) | S3 | OPEN | AUDIT §4; Korrektur in Doku + Invarianten-Check wo beansprucht |
@@ -25,7 +25,7 @@ in dieser Baseline. Jede Zeile wird bei Reparatur mit Regressionstest-Referenz e
 | T1 | `pytest.main()` in 8 Testdateien ohne `sys.exit` → Subprocess-Exit 0 unabhängig vom pytest-Urteil | proven_bug (Testarchitektur) | S4 | OPEN | `run_tests.py`/Datei-`__main__`-Blöcke: Exitcode propagieren |
 | T2 | `test_corrections.py` = 0 Assertions (Print-only) | proven_bug (Testarchitektur) | S4 | OPEN | Echte Assertions oder als Demo umlabeln |
 | T3 | `test_paper_consistency.py`/`comprehensive_test.py`: Assertions nur beim Import, nicht pytest-sammelbar | documented_inconsistency | S4 | OPEN | In pytest-Funktionen overführen (Erhalt der Prüfungen) |
-| T4 | scipy fehlt in `requirements.txt` (Import in verify_phi_discretization.py:6) | proven_bug | S4 | OPEN | requirements ergänzen (D0.3) |
+| T4 | scipy fehlt in `requirements.txt` (Import in verify_phi_discretization.py:6) | proven_bug | S4 | **REPAIRED** (scipy>=1.0.0 ergänzt) | Baseline: Exit 1 ohne scipy → Exit 0 mit scipy (BASELINE.md) |
 | T5 | „REPOSITORY IS 100% CORRECT" als Programmausgabe | unverified_physical_claim | S3 | OPEN | Text ändern; claims in CLAIM_REGISTER |
 
 ## C. φ-Leiter / diskrete Struktur (Phase 2)

@@ -56,6 +56,50 @@ Evidenzklassen: `proven_bug` | `documented_inconsistency` | `model_hypothesis` |
 ---
 (Einträge für R1–R5, φ, Schumann, Quantum-Bus folgen pro Reparatureinheit.)
 
+## D2.1 — R2: Explizite Modell-Taxonomie statt stiller auto-Umschaltung
+- **Befund** (`documented_inconsistency`): legacy-'auto' springt bei x=100 unstetig
+  (Ξ: 0.01605014135 → 0.00499999995; D entsprechend). Im Kerncode existiert KEINE
+  Hermite-Interpolation; `docs/DISCRETE_SSZ_STATE_FORMULATION.md` beschreibt ein
+  ANDERES Modell (Cap min(1−e^{−φx}, Ξ_max), Grenzen 1.8/2.2) als der implementierte Kern.
+- **Alternativen:** (a) Toleranzen erhöhen bis Tests grün — VERWORFEN (Auftragsverbot:
+  keine Scheinreparatur); (b) auto stillschweigend glatt machen — VERWORFEN (ändern
+  Alt-Verhalten heimlich); (c) Blend-Grenzen [50,150] — Konstruktionswahl, als
+  OPEN_MODEL_CHOICE gelabelt.
+- **Entscheidung:** 
+  1. Explizite Modelle: `'weak'`, `'strong_A'` (Alias `'strong'`, etabliert),
+  `'strong_B'` (dokumentierte Variante, Xi_B(∞)=1, D_B(∞)=1/2 — NICHT asymptotisch
+  flach), `'smooth_bridge_hypothesis'`.
+  2. `'auto'`/`'legacy_auto'`: historische unstetige Semantik BIT-KOMPATIBEL erhalten,
+  mit DeprecationWarning (1096 Warnungen in der Suite = bewusst sichtbarer Schuldzinns).
+  3. Glatte Brücke: C²-Quintic-Blend Xi=(1−s)·A+s·weak auf [50,150] — als
+  FORSCHUNGSHYPOTHESE gelabelt; nie Default; nie mit anderen Modellen in einer
+  Auswertung vermischt (Modellwahl-Flag durchgängig; Unbekannte → ValueError).
+  Numerische Studie vor Implementierung (`logs/bridge_monotonicity_study.py`,
+  200k-Punkte-Gitter): Blend über ALLE getesteten Intervalle streng monoton fallend;
+  [50,150] gewählt (kleinstes Intervall um den Legacy-Sprung, exakte Anfügung beidseits).
+  **WICHTIG (Grenze):** Die Brücke ist KONSTRUKTION. Sie ist damit keine
+  Feldgleichungslösung und keine physikalische Konsequenz der Dokumente —
+  Energiebedingungen/Scheinkrümmung der Brückenmetrik sind NICHT geprüft (offen).
+- **Tests:** tests/test_regressions_r2_models.py — 23 Fälle (Deprecation, Legacy-Sprung
+  als PINNTER Negativbefund, Ein-Formel-über-alle-Radien je Modell, B-Grenzwerte,
+  A≠B außerhalb x=1, Brücke: exakte Anfügung, C¹-FD-Konsistenz, Fugen-Stetigkeit,
+  Monotonie, Differenzfunktion, Modell-Gradient-Konsistenz via FD-Orakel).
+  RED: 12 failed (`r2_RED.log`) → GREEN 43/43 (mit R1/R3-Datei), Suite 227/227.
+- **Orakel-Präzisionsgrenze (dokumentiert):** FD des strong_B-Gradienten verliert bei
+  u=φ·x ≳ 10 die Präzision (expm1-Ergebnisse runden nahe −1.0 auf identische Doubles);
+  Implementierung wurde direkt gegen die geschlossene Form geprüft (exakt). FD-Gitter
+  für strong_B deshalb auf x ≤ 5 begrenzt — Grenze des ORAKELS, nicht des Codes.
+- **Offen:** Interne Caller (analyze_qubit_segment etc.) nutzen noch Default-'auto'
+  (warnen jetzt). Migration auf explizite Modelle ohne Verhaltensänderung erfordert
+  eine Modellentscheidung pro Funktion (M ist generisch) — OPEN_MODEL_CHOICE, Phase 7.
+
+## D2.2 — T4: scipy in requirements.txt ergänzt
+- **Befund** (`proven_bug`): `verify_phi_discretization.py` importiert scipy;
+  requirements deklarierte es nicht → Baseline Exit 1 (belegt in BASELINE.md).
+- **Entscheidung:** `scipy>=1.0.0` aufgenommen (brentq ist stabil; bewusst keine
+  obere Pins, konsistent mit vorhandenem Stil). Audit-venv hatte scipy isoliert
+  nachinstalliert (Log `scipy-install.log`) — Verhalten identisch.
+
 ## D1.1 — R1: Strong-Field-Ableitung repariert (Commit: R1+R3-Einheit)
 - **Befund** (`proven_bug`): `xi_gradient` gab im Strong-Zweig
   `+(phi/r_s)*exp(-phi*r_s/r)` zurück — falsches Vorzeichen UND falscher radialer
