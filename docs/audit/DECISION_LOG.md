@@ -152,3 +152,19 @@ Evidenzklassen: `proven_bug` | `documented_inconsistency` | `model_hypothesis` |
   RECHENVORHERSAGE unter Modellannahmen — kein experimenteller Nachweis
   (Audit §5; gelabelt im Test-Docstring).
 
+
+## D7 — Forschungsfrage [H, Q_SSZ]=0 (Carmen, 31.10.) — NEGATIV mit geschärftem Inhalt
+- **Frage:** Erzeugt Segmentierung eine nichttriviale Erhaltungsgröße mit
+  {6,2}-Eigenräumen?
+- **Methode:** Kommutanten-Kernraumberechnung (exakt), P_S-Sektor-Leckage,
+  11³-D-Gitterscan; Modell Q1 mit SSZ-D auf den Diagonalen.
+- **Befunde:** F1 Kommutant generisch = {f(H)} (dim 8) ⇒ keine {6,2}-Zerlegung;
+  F2 Spiegelsymmetrie (ω_A=ω_B, g_A=g_B, D_A=D_B): P_S kommutiert — Permutations-
+  algebra; F3 Invarianz genau auf D_A=D_B-Diagonale (121/121, 0 off-diagonal);
+  F4 Differenzsegmentierung D_A≠D_B bricht [H,P_S] — SSZ zerstört die Invarianz,
+  statt sie zu erzeugen; F5 diagonale Q-Familie: gleich=Anregungszahl (kein
+  SSZ-Inhalt), ungleich=Brechung.
+- **Entscheidung/Status:** Q_SSZ existiert in der skalaren Formulierung nicht;
+  6⊕2 = Drehimpulsalgebra. Offen präzisiert: nicht-diagonaler Paar-Segment-
+  Operator wäre nötig (COMMON_ACTION_GAP/AX-M3). → SSZ_SYMMETRY_PROBE_Q.md.
+- **Tests:** 13 Fälle (tests/test_ssz_symmetry_probe.py), Suite 284 passed.
