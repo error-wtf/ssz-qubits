@@ -31,6 +31,20 @@ Zu leisten morgen:
 
 ## Seite 2 — INFORMATIONSZUGÄNGLICHKEIT (Was ist messbar?)
 
+**Leitfrage (formuliert von Lino/Carmen, 31.10.):**
+> Welche Eigenschaften des Gesamtsystems lassen sich aus einem
+> eingeschränkten Beobachtungskanal rekonstruieren?
+Mathematisch untersuchbar ohne neue Kosmologie; Rekonstruktionstheorie
+(Quantum Tomography, channel identification) liefert den Werkzeugkasten.
+
+**Begriffsfeinheit geklärt (Carnens Einwand, 31.10.):** „2 von 8" ist KEIN
+algebraischer Rang (weder Projektionsrang noch Rang eines linearen
+Beobachtungsoperators), sondern operationale Aussage: Die Outcome-Abbildung
+ρ ↦ (Tr E₀ρ, Tr E₁ρ) mit E_m = I_AB⊗|m⟩⟨m| faktorisiert über die
+M-Reduktion; Zustände sind kanal-unterscheidbar ⟺ ihre M-Reduktionen
+verschieden sind. Beide Richtungen ⟺ sind testfixiert
+(`test_outcome_map_factors_through_M_reduction_iff`).
+
 Existierender Anker: photon_channel_demo.py (Messblindheit als
 Kanaleigenschaft, in keine Richtung ontologisch verwertbar), partial_trace-
 Analysen, CHSH/Fidelity-Instrumente in reduction.py.

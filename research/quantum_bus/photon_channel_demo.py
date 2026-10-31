@@ -7,8 +7,15 @@ scheinbar reduzierte Dimensionalität vortäuschen? (Carmens Impuls
 
 Demonstriert an C²⊗C²⊗C² (A, M, B), Detektor koppelt NUR an M:
 
- 1. DETEKTORALGEBRA: Effekte Π_m ⊗ I_AB erzeugen eine Algebra mit Rang 2 —
-    der Kanal „sieht" 2 von 8 Dimensionen.
+ 1. DETEKTORALGEBRA — präzise gefasst (nicht „Rang 2"): Der Kanal hat die
+    Effekt-Algebra {E = I_AB ⊗ E_M | E_M ≥ 0} ≅ B(C²) und die outcome-Abbildung
+    ρ ↦ (Tr E₀ρ, Tr E₁ρ) — eine affine Abbildung in das 1-Simplex mit 2
+    Ausgängen. Sie faktorisiert über die M-Reduktion:
+        Tr(E ρ) = Tr(E_M · Tr_AB ρ).
+    Zwei Zustände sind kanal-unterscheidbar ⟺ ihre M-Reduktionen verschieden
+    sind (⟺-Richtung testfixiert). „2 von 8" ist daher HEURISTIK für
+    „ein Qubit Unterscheidungsvermögen", kein algebraischer Rang einer
+    Projektion oder eines linearen Operators.
  2. BLINDHEIT: Zwei Zustände, die sich NUR im Paar (A,B) unterscheiden,
     liefern für ALLE M-Effekte identische Statistiken, haben aber
     Fidelity < 1 — sie sind physikalisch verschieden und für diesen Kanal
@@ -77,3 +84,10 @@ def emission_probability(rho):
     """P(Photon emittiert) = Tr(L†L ρ) = Tr(ρ · P_{m=1})."""
     P_m1 = kron_all([I2, np.diag([0, 1]), I2])
     return float(np.real(np.trace(P_m1 @ rho)))
+
+
+def _outcome(rho, m):
+    """Operationale Outcome-Wahrscheinlichkeit des M-Kanals:
+    Tr(E_m ρ) mit E_m = I_AB ⊗ |m><m|_M."""
+    E_m = kron_all([I2, np.diag([1.0 if i == m else 0.0 for i in range(2)]), I2])
+    return float(np.real(np.trace(E_m @ rho)))

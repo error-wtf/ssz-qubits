@@ -51,10 +51,14 @@ Grade, „Quantum Bus") und der spätere Photon-Impuls („Wir sind Photonenleut
 
 ## 4. FD-Brücke (Auftrag F) — nur gekennzeichnete Analogie
 
-- FD-5-Restwert **0.7247315849739798** gegen Artefakte bestätigt:
+- FD-5-Restwert **0.7247315849739798 gegen Artefakte bestätigt**:
   `SSZ_FRAME_DRAGGING_20261030/fd_run4/5/6/7_20261030.log:81-82`
   („numerischer Rest des Treibers … ⇒ Störungsantwort echt ≠ 0: True").
-  Es ist ein Restwert eines Treiberterms — KEINE unabhängige Validierung.
+  **Status-Kennzeichnung (verbindlich):** dies ist ein **numerisches Residuum
+  eines definierten Testfalls** (Störungstreiber-Treiberrest in den
+  FD-Run-Logs) — **weder eine universelle Konstante noch eine bestätigte
+  SSZ-Observable**. Beweiskraft: vorhanden ist der Störungstreiber; die
+  Dynamik dahinter bleibt offen.
 - Lokales radiales Gleichgewicht ≠ stationäre Gesamtgeometrie: g_tφ-Struktur,
   Drehimpulsfluss, Sagnac/Holonomie, Beobachterprojektionen bleiben getrennt
   (FD_VALIDIERUNGSPROTOKOLL_20261030.md; Labels C=VERIFIED, teils offen).
